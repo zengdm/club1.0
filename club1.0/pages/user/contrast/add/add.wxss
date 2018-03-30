@@ -1,0 +1,156 @@
+/* pages/contrast_add/contrast_add.wxss */
+@import "../../../inc/drawer/drawer.wxss";
+
+.none{
+  display: none;
+}
+.year{
+  height: 60rpx;
+  line-height: 60rpx;
+  background:#dff2ff;
+  padding-left: 40rpx;
+  box-sizing: border-box;
+  font-size:28rpx;
+  color:#33adff;
+}
+.year-left{
+  margin-left: 40rpx;
+}
+
+.drawer-content-title {
+  display: block;
+  background: #fff;
+  font-size: 34rpx;
+  color: #333;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 40rpx;
+}
+
+
+.swiper-content {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+/*品牌列表*/
+
+.brand-scroll {
+  /*height:667px; *//*??*/
+}
+.brand-item{
+  background-color: #fff;
+}
+
+.brand-item view {
+  display: block;
+}
+
+.brand-item > text {
+  display: block;
+ color:#666666;
+  background:#fafafa;
+  font-size: 34rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 30rpx;
+}
+
+.brand-item > view {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 0 30rpx;
+   border-bottom: 1rpx solid #f2f2f2; 
+}
+
+
+.brand-name {
+  width: 100%;
+  -webkit-box-flex: 1;
+  padding-left: 20rpx;
+  font-size:34rpx;
+  color:#333333;
+}
+
+.letter-item {
+  width: 52rpx;
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  right: 10rpx;
+  transform: translate(0, -50%);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+  border-radius:200rpx;
+  padding: 26rpx 0;
+  box-sizing: border-box;
+}
+
+
+.letter-none {
+  display: none;
+}
+
+.letter-block {
+  display: block;
+}
+
+.flex-item {
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
+}
+
+.letter-hover {
+  position: fixed;
+  width: 20px;
+  top: 54%;
+  right: 26rpx;
+  transform: translate(0, -50%);
+  border-radius: 7px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.letter-li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  font-size:28rpx;
+  color:#999;
+  line-height:38rpx; 
+}
+
+.add-color {
+  color:#33adff;
+  font-weight: bold;
+  font-size:35rpx;
+}
+
+.letter-li .five {
+  width: 22rpx;
+  height: 20rpx;
+}
+
+.letter-li:target {
+  color: red;
+}
+
+.img {
+  /*background: url("chu.png") no-repeat;*/
+  background-size: cover;
+
+  width: 80rpx;
+  height: 80rpx;
+
+  /*border-radius:50%;*/
+  background: #fff;
+}
+
+.img-list {
+  display: inline-block;
+
+}

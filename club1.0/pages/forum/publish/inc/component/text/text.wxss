@@ -1,0 +1,41 @@
+/* pages/forum/publish/inc/component/text/text.wxss */
+
+.content {
+  /* padding-top: 40rpx;
+  box-sizing: border-box; */
+}
+
+.content-title {
+  font-size: 28rpx;
+  color: #8a9199;
+  margin-bottom: 14rpx;
+}
+
+.content-intro {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12rpx;
+  width: 100%;
+  height: 200rpx;
+  padding: 16rpx 60rpx 16rpx 20rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.content-intro textarea {
+  width: 100%;
+  height: 180rpx; 
+  z-index: 10;
+}
+textarea{
+  z-index: 10;
+  position: static;
+}
+.content-intro image {
+  width: 28rpx;
+  position: absolute;
+  top: 16rpx;
+  right: 20rpx;
+}

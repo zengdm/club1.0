@@ -1,0 +1,47 @@
+<!--pages/user/follow/follow.wxml-->
+<view class='main'>
+    <view class='header'>
+        <text class="{{globalData.showTab ? 'border' : ''}}" bindtap='onTab' data-current='0'>好友</text>
+        <text class="{{globalData.showTab ? '' : 'border'}}" bindtap='onTab' data-current='1'>话题</text>
+    </view>
+
+    <view class="{{globalData.showTab ? '' : 'none' }}">
+        <view class='item' wx:if="{{globalData.isfollowList}}" wx:for="{{globalData.followList}}">
+            <view class='item-box'>
+                <view class='item-box-img'>
+                    <image mode='widthFix' src='{{item.img}}'></image>
+                </view>
+                <view class='item-box-info'>
+                    <text>{{item.name}}</text>
+                    <view>{{item.self_desc}}</view>
+                </view>
+                 <!-- <view class="item-box-state follow" wx:if="{{item.type == 2}}" data-followindex='{{index}}' data-followid='{{item.id}}' bindtap='removefollow'>关注</view> -->
+                <view class="item-box-state" data-followindex='{{index}}' data-followid='{{item.id}}' wx:if="{{item.type == 1}}" bindtap='removefollow'>互相关注</view>
+                <view class="item-box-state" wx:if="{{item.type == 0}}" data-followindex='{{index}}' data-followid='{{item.id}}' bindtap='removefollow'>取消关注</view>
+               
+            </view>
+        </view>
+        <view class='collectnot' wx:if="{{!globalData.isfollowList}}">
+            <text>这里已经空空如也</text>
+            <text>“关注更美好…”</text>
+        </view>
+    </view>
+    <view class="{{globalData.showTab ? 'none' : '' }}">
+        <view wx:if="{{globalData.istagsList}}" class='item' wx:for="{{globalData.tagsList}}">
+            <view class='item-box'>
+                <view class='item-box-img item-topic-img'>
+                    <image src='{{item.tag_img_url}}'></image>
+                </view>
+                <view class='item-box-info'>
+                    <text>#{{item.tag_name}}#</text>
+                    <view>{{item.tag_summary}}</view>
+                </view>
+                <view class="item-box-state" data-nodeindex='{{index}}' data-tagid='{{item.tag_id}}' bindtap='removetagfollow'>取消关注</view>
+            </view>
+        </view>
+        <view class='collectnot' wx:if="{{!globalData.istagsList}}">
+            <text>这里已经空空如也</text>
+            <text>“关注更美好…”</text>
+        </view>
+    </view>
+</view>

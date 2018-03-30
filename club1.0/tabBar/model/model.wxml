@@ -1,0 +1,119 @@
+ <!-- <view class='hh' bindtouchmove="mo"></view>  -->
+<scroll-view class="swiper-content" scroll-y="{{scrollBoolean}}"  enable-back-to-top='true' style="height:{{winHeight}}px"   bindscroll="scroll" scroll-into-view="{{toView}}"  class="{{showmask ? 'hiddenClass' :''}}">
+
+  <swiper class="header-pic">
+    <block>
+      <swiper-item>
+        <image class='headerimg' mode='widthFix' src="http://i1.dd-img.com/assets/image/1517466287-c9410f73f5d7c3c0-750w-320h.png"></image>
+
+
+        <!-- <swiper autoplay="{{autoplay}}" interval="5000" duration="500" class="header-pic">
+    <block>
+      <swiper-item>
+        <image src="http://i2.dd-img.com/upload/2017/1107/1510011965417.jpg" mode='widthFix'></image>
+ -->
+
+
+
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 条件选车S -->
+  <view class='choose-box'>
+    <view class='choose-title'>教你选车</view>
+    <view class='choose-view' bindtap="getsubsidy">
+      <view class="chooseimg">
+        <image src=" http://i1.dd-img.com/assets/image/1511852331-5bc707b3c055085d-100w-100h.png" mode='widthFix'></image>
+      </view>
+      <view class='choosetxt'>补贴排行</view>
+    </view>
+    <view class='choose-view' bindtap="getendurance">
+      <view class="chooseimg">
+        <image src="http://i1.dd-img.com/assets/image/1511852331-4958dbe6cb339d8f-100w-100h.png" mode='widthFix'></image>
+      </view>
+      <view class='choosetxt'>续航排行</view>
+    </view>
+    <view class='choose-view' bindtap="getnew_car">
+      <view class="chooseimg">
+        <image src=" http://i1.dd-img.com/assets/image/1511852331-7761feb8284b8c13-100w-100h.png" mode='widthFix'></image>
+      </view>
+      <view class='choosetxt'>新车上市</view>
+    </view>
+    <view class='choose-view' bindtap="getcoming_soon">
+      <view class="chooseimg">
+        <image src="http://i1.dd-img.com/assets/image/1511852331-bccf042db68fcb19-100w-100h.png" mode='widthFix'></image>
+      </view>
+      <view class='choosetxt'>即将上市</view>
+    </view>
+    <view class='choose-cars' bindtap="getchoose">
+      <image class='choose-cars-img' src='http://i1.dd-img.com/assets/image/1510121786-1cb3c7684d470ae8-40w-40h.png'></image>
+      条件选车
+    </view>
+  </view>
+  <!-- 条件选车E -->
+
+  <!-- 热门车型 S -->
+  <view class='hot-csrs'>
+    <text class="hot-title">热门车型</text>
+    <scroll-view class='hot-scroll' scroll-x="false{{}}" data-banner="{{bannerTab}}">
+      <view class="banner">
+        <view class='hot-view' wx:for="{{brandData}}" wx:for-item="hotCaritem" bindtap="gotoSeries" data-pinyin="{{hotCaritem.pinyin}}" data-pserid="{{hotCaritem.cxid}}">
+          <view class="hotimg">
+            <image src=" {{hotCaritem.focus}}" mode='widthFix'></image>
+          </view>
+          <view class='hottxt'>{{hotCaritem.pp_name}}{{hotCaritem.cx_name}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 热门车型 E -->
+
+  <!--品牌列表 S-->
+  <view class="brand-scroll">
+    <view class="brand-item" wx:for="{{brandList}}" wx:for-index="letterIndex" wx:for-item="letterItem">
+      <text id="{{letterItem.flag}}">{{letterItem.flag}}</text>
+      <view wx:for="{{letterItem.items}}" wx:for-item="carItem" bindtap="showDrawer" data-id="{{carItem.ppid}}">
+        <image class="img img-list" src="{{carItem.logo}}" mode="aspectFit"></image>
+        <text class="brand-name">{{carItem.pp_name}}</text>
+      </view>
+    </view>
+  </view>
+
+
+  <!--字母列表 S-->
+
+  <view class="letter-item {{scrollTop>350 ? 'letter-block' : 'letter-none'}}" bindtap="clickLetter" catchtouchmove="touchMove" catchtouchend="touchEnd">
+    <view class="letter-li {{currentLetter==letterIndex ? 'add-color' : ''}}" data-current="{{letterIndex}}" wx:for="{{brandList}}" wx:for-item="letterItem" wx:for-index="letterIndex" data-letter="{{letterItem.flag}}">{{letterItem.flag}}</view>
+
+  </view>
+
+
+  <!--字母列表 E-->
+
+
+  <button animation="{{animationData}}" class="sharebtn" open-type="share">
+    <text>分享给好友</text>
+    <image class="sharebtnicon" mode="widthFix" src='http://i1.dd-img.com/assets/image/1510898451-a672fd0868b82de9-48w-48h.png'></image>
+  </button>
+
+  <!--品牌列表 E-->
+
+</scroll-view>
+
+
+<!-- 城市保留值 -->
+<view class="cityIdval" data-cityval="{{cityIdData}}"></view>
+
+
+<!--抽屉 S-->
+<import src="../../pages/inc/drawer/drawer.wxml" />
+<template is="drawer" data="{{showDrawerFlag,animationDrawer,drawerSeriesData,num,scrollBoolean}}"></template>
+<!--标签切换内容E-->
+
+<!--标签切换 E-->
+
+
+<loading hidden="{{hidden}}">
+  加载中...
+</loading>

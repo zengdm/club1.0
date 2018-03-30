@@ -1,0 +1,156 @@
+<!--condition.wxml-->
+<!--  条件选车结果  -->
+<view class="container {{showmask==1 ? 'hiddenClass' : 'showClass'}} ">
+  <!--选项卡  S-->
+  <view class="swiper-tab">
+    <block wx:if="{{currentbox}}">
+      <view class="swiper-tab-item  {{currentTab1==0  ?  'ondown'  :  'onup'}}" data-current="0" bindtap="swichNav1">价格</view>
+      <view class="swiper-tab-item twokong" data-current="1" bindtap="swichNav2">续航</view>
+    </block>
+    <block wx:else>
+      <view class="swiper-tab-item twokong" data-currents="0" bindtap="swichNav3">价格</view>
+      <view class="swiper-tab-item  {{currentTab1==1  ?  'ondown'  :  'onup'}}" data-currents="1" bindtap="swichNav4">续航</view>
+    </block>
+  </view>
+  <!--选项卡  E-->
+  <!--车型列表 peizhi_count S-->
+  <view class='main-box'>
+    <view class="choose">共找到
+      <text>{{carsnumber}}</text>个车系</view>
+    <block wx:for="{{jgListdata}}">
+      <view class="drawer-child" bindtap="gotoSeries" data-pinyin="{{item.pinyin}}">
+        <view class='drawer-child-intro'>
+          <image class="img  img-model" src="{{item.focus}}"></image>
+          <view class="drawer-info">
+            <text>{{item.pp_name}} {{item.name}}</text>
+            <view class='drawer-info-price'>
+              <block wx:if="{{item.min>0.00 || item.max>0.00}}">
+                指导价：
+                <text class="drawer-price" wx:if="{{item.min!=item.max}}">{{item.min}}-{{item.max}}万</text>
+                <text class="drawer-price" wx:else>{{item.min}}万</text>
+                
+              </block>
+              <block wx:else>
+                <block wx:if="{{item.product_status==3}}">
+                  即将上市
+                </block>
+                <block wx:elif="{{item.product_status==2}}">
+                  停产
+                </block>
+              </block>
+            </view>
+            <view class='drawer-info-num'>
+              共{{item.peizhi_count}}款车型符合需求 >
+            </view>
+
+          </view>
+        </view>
+        <view class='drawer-endurance'>
+          <text wx:if="{{item.cron_xhlc != 0}}">{{item.cron_xhlc}}</text>
+          <text wx:if="{{item.cron_xhlc == 0}}">-</text>
+          <view>公里</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!--车型列表 E-->
+  <!-- 二级列表 -->
+
+  <view class="nicemenu-mask {{showmask==1 ? 'showClass' : 'hideClass'}}" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" bindtap='getmask'></view>
+  <view class='nicemenubg'></view>
+  <view class='nicemenu'>
+    <view class="nicemenu-item">
+      <view wx:if="{{isjg}}" class="{{show==0 ? 'color-blue' : 'color-hui'}}" bindtap="headmenu">
+        <image class='nicemenuimg' src=''></image>
+        <view class="nicemenu-item-head" data-index="0">不限价格</view>
+      </view>
+      <view wx:else class="color-hui {{show==0 ? 'color-blue' : ''}} " bindtap="headmenu">
+        <image class='nicemenuimg' src=''></image>
+        <view class="nicemenu-item-head niceblue" data-index="0">{{choosepricepara}}</view>
+      </view>
+      <view class="nicemenu-item-box {{show==0 ? 'showClass' : 'hideClass'}}">
+        <view class='car-item-button'>
+          <text class="car-item-unlimited" bindtap="getreset">取消</text>
+          <text class="car-item-submit" bindtap="getsubmit">确定</text>
+        </view>
+        <text class="car-item-title">价格：</text>
+        <view class='canvasnumber'>
+          <text>10</text>
+          <text>20</text>
+          <text>30</text>
+          <text>40</text>
+          <text>50</text>
+        </view>
+
+
+        <canvas disable-scroll canvas-id="canvasone" bindtouchstart="js_touchstartone" bindtouchmove="js_touchmoveone" bindtouchend="js_touchendone"></canvas>
+      </view>
+    </view>
+    <view class="nicemenu-item">
+      <view wx:if="{{islx}}" class="{{show==1 ? 'color-blue' : 'color-hui'}}" bindtap="headmenu">
+        <image class='nicemenuimg' src=''></image>
+        <view class="nicemenu-item-head" data-index="1">不限类型</view>
+      </view>
+      <view wx:else class="color-hui {{show==1 ? 'color-blue' : ''}}" bindtap="headmenu">
+        <image class='nicemenuimg' src=''></image>
+        <view class="nicemenu-item-head niceblue" data-index="1">
+          <text class='roundblue ' data-index="1">{{driveparaDatalen}}</text>类型</view>
+      </view>
+      <view class="nicemenu-item-box {{show==1 ? 'showClass' : 'hideClass'}}">
+        <view class='car-item-button'>
+          <text class="car-item-unlimited" bindtap="getreset">取消</text>
+          <text class="car-item-submit" bindtap="getsubmit">确定</text>
+        </view>
+        <view class='clearfix'>
+          <block wx:for="{{driveparaData}}" wx:for-item="driveparaDataItem" wx:key="index">
+            <view class="car-item-list {{driveparaDataItem.type}}" data-current="{{index}}" data-val="{{driveparaDataItem.val}}" bindtap="activess">{{driveparaDataItem.name}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="nicemenu-item">
+      <view wx:if="{{isxh}}" class="{{show==2 ? 'color-blue' : 'color-hui'}}" bindtap="headmenu">
+        <image class='nicemenuimg' src=''></image>
+        <view class="nicemenu-item-head" data-index="2">不限续航</view>
+      </view>
+      <view wx:else class="color-hui {{show==2 ? 'color-blue' : ''}}" bindtap="headmenu">
+        <image class='nicemenuimg' src=''></image>
+        <view class="nicemenu-item-head niceblue" data-index="2">
+          <text class='roundblue' data-index="2">{{enduranceparaDatalen}}</text>续航</view>
+      </view>
+      <view class="nicemenu-item-box {{show==2 ? 'showClass' : 'hideClass'}}">
+        <view class='car-item-button'>
+          <text class="car-item-unlimited" bindtap="getreset">取消</text>
+          <text class="car-item-submit" bindtap="getsubmit">确定</text>
+        </view>
+        <view class='clearfix'>
+          <block wx:for="{{enduranceparaData}}" wx:key="index">
+            <view class="car-item-list {{item.type}}" data-current="{{index}}" data-val="{{item.val}}" bindtap="active">{{item.name}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="nicemenu-item">
+      <view wx:if="{{islb}}" class="{{show==3 ? 'color-blue' : 'color-hui'}}" bindtap="headmenu">
+        <image class='nicemenuimg' src=''></image>
+        <view class="nicemenu-item-head" data-index="3">不限类别</view>
+      </view>
+      <view wx:else class="color-hui {{show==3 ? 'color-blue' : ''}}" bindtap="headmenu">
+        <image class='nicemenuimg' src=''></image>
+        <view class="nicemenu-item-head niceblue" data-index="3">
+          <text class='roundblue' data-index="3">{{choosecarTypeparalen}}</text>类别</view>
+      </view>
+      <view class="nicemenu-item-box {{show==3 ? 'showClass' : 'hideClass'}}">
+        <view class='car-item-button'>
+          <text class="car-item-unlimited" bindtap="getreset">取消</text>
+          <text class="car-item-submit" bindtap="getsubmit">确定</text>
+        </view>
+        <view class='clearfix carType'>
+          <block wx:for="{{carTypeparaData}}" wx:key="index">
+            <view class="product-level-{{index+1}}  product-level-choose  {{item.type}}" data-current="{{index}}" data-val="{{item.val}}" bindtap="choose"></view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

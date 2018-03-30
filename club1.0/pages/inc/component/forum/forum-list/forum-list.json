@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "login-tips": "/pages/inc/component/login/login",
+    "button-zan": "/pages/inc/component/button/zan/zan"
+  }
+}

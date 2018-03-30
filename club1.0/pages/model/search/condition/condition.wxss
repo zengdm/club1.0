@@ -1,0 +1,245 @@
+/**choose.wxss**/
+
+.container {
+  padding: 0 30rpx;
+  font-size: 26rpx;
+}
+canvas{
+	width: 100%;
+  overflow: hidden;
+	box-sizing: border-box;
+	height:155px;
+  top: -90rpx;
+   /* left: -20rpx;  */
+  /* border-top: 1px solid #cff;
+  border-bottom: 1px solid #cff */
+}
+.canvasnumber{
+ position: absolute;
+left:70px;
+ top:60px;
+ font-size: 34rpx;
+ color:#666666;
+}
+.canvasnumber text{
+  margin: 0 25rpx;
+}
+/* 分类--S */
+
+.car-item {
+  padding-bottom: 60rpx;
+  background:#ffffff;
+box-shadow:0 1px 0 0 #f2f2f2;
+ border-bottom: 1rpx solid #f2f2f2; 
+}
+.car-item:nth-child(1){
+  height:135px;
+  position: relative;
+  padding-bottom: 30rpx;
+}
+.car-item:nth-child(2) .car-item-title,.car-item:nth-child(3) .car-item-title{
+  height:62rpx;
+}
+.car-item-title {
+  height: 80rpx;
+  line-height: 80rpx;
+  color:#000;
+  font-size:34rpx;
+  display: block;
+}
+
+.car-item-title::after {
+  content: "";
+  width:12rpx;
+  height: 34rpx;
+  background:#33adff;
+  float: left;
+  margin-top: 25rpx;
+  margin-right: 16rpx;
+}
+
+.car-item-title::before {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+.car-item-list {
+  /* width: 212rpx; */
+  height: 60rpx;
+  float: left;
+  padding: 0 28rpx;
+  line-height: 60rpx;
+   /* background:#fafafa;
+border:1rpx solid #e6e6e6; */
+border-radius:200rpx;
+  color: #242726;
+  margin-top: 30rpx;
+  margin-right: 20rpx;
+  text-align: center;
+}
+
+.circle{
+  background-color:#fafafa;
+border:1rpx solid #e6e6e6;
+}
+.success{
+ border: 1rpx solid #33adff; 
+  color: #fff;
+  background-color:#33adff;
+}
+/* .car-item-list:nth-child(3n) {
+  margin-right: 0;
+} */
+.on {
+   border: 1rpx solid #33adff; 
+  color: #fff;
+  background:#33adff;
+  border-radius:200rpx;
+}
+
+.product-level-choose {
+  height: 100rpx;
+  width:100rpx;
+  margin: 0 41rpx;
+  float: left;
+  text-align: center;
+  color: #b2b2b2;
+   background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-bottom: 20rpx;
+}
+
+.product-level-choose:nth-child(4n) {
+  margin-right: 22rpx;
+}
+
+.product-level-choose:nth-child(1), .product-level-choose:nth-child(5),
+.product-level-choose:nth-child(9) {
+  margin-left: 22rpx;
+}
+
+
+.chooseon {
+  color: #33adff;
+}
+.carType .circle_car{
+  border: none;
+  background-color: none;
+}
+.carType .success_car{
+  border: none;
+    background-color: none;
+}
+.product-level-1.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-9381441f8d0f1352-100w-100h.png);
+}
+
+.product-level-1.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-601f1e32d650d308-100w-100h.png);
+}
+
+.product-level-2.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-47c8bd2587e9b114-100w-100h.png);
+}
+
+.product-level-2.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-d95ca8e9a2870be9-100w-100h.png);
+}
+
+.product-level-3.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-700d0e446730ab83-100w-100h.png);
+}
+
+.product-level-3.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-8bf5291f9b2d921e-100w-100h.png);
+}
+
+.product-level-4.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-d48788288cf87f27-100w-100h.png);
+}
+
+.product-level-4.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-0e5958fcac6acd4a-100w-100h.png);
+}
+
+.product-level-5.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-6f1f4701a7d59323-100w-100h.png);
+}
+
+.product-level-5.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-3a8a7629261807ae-100w-100h.png);
+}
+
+.product-level-6.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-62980e0e0edcd0c9-100w-100h.png);
+}
+
+.product-level-6.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-4d3e841cfd0b6005-100w-100h.png);
+}
+
+.product-level-7.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-97c0d395170cac04-100w-100h.png);
+}
+
+.product-level-7.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-e9611cdda1205b9b-100w-100h.png);
+}
+
+.product-level-8.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-3870f8f4744475e1-100w-100h.png);
+}
+
+.product-level-8.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-add6f1bf9a08ed2e-100w-100h.png);
+}
+
+.product-level-9.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-81316e48b81d3046-100w-100h.png);
+}
+
+.product-level-9.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-9efad79b4bbb598c-100w-100h.png);
+}
+
+.product-level-10.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-b40852da3df664fe-100w-100h.png);
+}
+
+.product-level-10.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-a4241f2cfee2b692-100w-100h.png);
+}
+
+/* 分类--E */
+
+.choose-button{
+  position: fixed;
+  bottom: 0;
+  height: 100rpx;
+    display: flex;
+  flex-flow: row;
+  line-height: 100rpx;
+  text-align: center;
+}
+.choose-resetting{
+  width: 176rpx;
+flex: 1;
+background:#f8f8f8;
+color:#33adff;
+}
+
+.choose-results {
+  width: 574rpx;
+  background: #33adff;
+  color: #fff;
+  text-align: center;
+
+}
+.choosebg{
+  height: 100rpx;
+}
+
+.forbid{
+    background: #e6e6e6;
+}

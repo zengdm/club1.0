@@ -1,0 +1,3 @@
+<!--tabBar/tabtab/tabtab.wxml-->
+
+<login-tips show="{{loginShow}}"></login-tips>

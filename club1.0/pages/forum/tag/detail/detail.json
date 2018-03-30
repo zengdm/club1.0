@@ -1,0 +1,10 @@
+{
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark",
+    "navigationBarTitleText": "标签详情页",
+    "usingComponents": {
+        "component-forum-list": "/pages/inc/component/forum/forum-list/forum-list",
+        "login-tips": "/pages/inc/component/login/login",
+        "component-publish-btn": "/pages/inc/component/forum/publish-btn/publish-btn"
+    }
+}

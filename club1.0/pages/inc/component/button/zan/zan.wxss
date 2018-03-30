@@ -1,0 +1,11 @@
+/* pages/inc/component/button/zan.js.wxss */
+text {
+  font-size:24rpx;
+  margin-left:12rpx;
+  /* height:100%; */
+  /* vertical-align:text-bottom; */
+}
+.clicked {
+  /* font-size:24rpx; */
+  color:#3399ff;
+}

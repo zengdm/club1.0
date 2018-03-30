@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "forum-bar": "../bar/forum-bar",
+    "forum-text": "../text/text"
+  }
+}

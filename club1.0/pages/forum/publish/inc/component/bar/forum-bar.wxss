@@ -1,0 +1,23 @@
+/* pages/forum/publish/inc/component/bar/bar.wxss */
+
+.btn {
+  text-align: center;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+
+.btn view {
+  width: 160rpx;
+  height: 60rpx;
+  border: 1px solid #39f;
+  border-radius: 200rpx;
+  line-height: 60rpx;
+  padding-left: 50rpx;
+  color: #39f;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0 16rpx;
+  background: #fff url('http://i1.dd-img.com/assets/image/1514342911-4868f4dee9035581-28w-28h.png') no-repeat 32rpx;
+  background-size: 26rpx;
+}

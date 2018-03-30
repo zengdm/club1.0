@@ -1,0 +1,105 @@
+<!--pages/contrast_add/contrast_add.wxml-->
+<!--品牌列表 S-->
+<scroll-view class="swiper-content" style="height:{{winHeight}}px" scroll-y="true" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+
+  <view class="brand-scroll">
+    <view class="brand-item" wx:for="{{brandList}}" wx:for-index="letterIndex" wx:for-item="letterItem">
+      <text id="{{letterItem.flag}}">{{letterItem.flag}}</text>
+      <view wx:for="{{letterItem.items}}" wx:for-item="carItem" bindtap="showDrawer" data-id="{{carItem.pbid}}">
+        <image class="img img-list" src="{{carItem.logo}}" mode="aspectFit"></image>
+        <text class="brand-name">{{carItem.pbname}}</text>
+      </view>
+    </view>
+  </view>
+
+
+  <!--字母列表 S-->
+  <view class="letter-item" bindtap="clickLetter" catchtouchmove="touchMove" catchtouchend="touchEnd">
+
+    <view class="letter-li {{currentLetter==letterIndex ? 'add-color' : ''}}" data-current="{{letterIndex}}" wx:for="{{brandList}}" wx:for-item="letterItem" wx:for-index="letterIndex" data-letter="{{letterItem.flag}}">{{letterItem.flag}}</view>
+
+  </view>
+
+
+  <!--字母列表 E-->
+</scroll-view>
+
+
+
+
+
+
+<!-- 选择车系弹层 -->
+<view class='car-series'>
+  <!--遮罩 S-->
+  <view class="drawer-mask" bindtap="hideDrawer" wx:if="{{showDrawerFlag}}" catchtouchmove></view>
+  <!--遮罩 E-->
+  <!--抽屉内容 S-->
+  <scroll-view animation="{{animationDrawer}}" class="drawer-box" scroll-y="true">
+    <scroll-view class="drawer-content" scroll-y="true">
+      <view wx:for="{{drawerSeriesData}}" class="drawer-content-item">
+        <text>{{item.text}}</text>
+        <view wx:for="{{item.children}}" class="drawer-child" bindtap="carType" data-id='{{item.id}}' data-pinyin="{{item.pinyin}}" data-cityval="{{cityIdData}}">
+          <image class="img-drawer" src="{{item.focus}}"></image>
+          <view class="drawer-info">
+            <text>{{item.name}}</text>
+            <view class="price-color" wx:if="{{item.price.length!=0}}">
+              <block wx:if="{{item.price.minprice!=item.price.maxprice}}">指导价
+                <text class="drawer-price">{{item.price.minprice}}-{{item.price.maxprice}}万</text>
+              </block>
+              <block wx:elif="{{item.price.minprice==item.price.maxprice}}">指导价
+                <text class="drawer-price">{{item.price.minprice}}万</text>
+              </block>
+
+            </view>
+            <view class="price-color" wx:else>
+              <text class='price-no'>未上市</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </scroll-view>
+
+</view>
+
+
+
+
+<!-- 选择车型弹层 -->
+<view class='car-type' hidden="{{hidden}}">
+  <view class="drawer-mask" bindtap="hideDrawer" wx:if="{{showDrawerFlag}}" catchtouchmove></view>
+  <!--遮罩 E-->
+  <!--抽屉内容 S-->
+  <scroll-view animation="{{animationDrawer}}" class="drawer-box" scroll-y="true">
+    <scroll-view class="drawer-content" scroll-y="true">
+    
+          <text class='drawer-content-title'>{{carYear.pp_name}} {{carYear.cx_name}}</text>
+      <view wx:for="{{carYear.peizhi}}"  class="drawer-content-item">
+        <view class='year'>{{item.niankuan}}款</view>
+
+        <view  class="drawer-child" wx:for="{{item.cars}}" bindtap='chooseList' data-pzid='{{item.pzid}}' data-pinyin="{{item.pinyin}}" data-cityval="{{cityIdData}}">
+           <!-- <image class="img img-drawer" src="{{item.focus}}"></image>  -->
+          <view class="drawer-info year-left">
+            <text>{{item.name}}</text>
+            <view class="price-color" wx:if="{{item.price.length!=0}}">
+              <block wx:if="{{item.actual_price!=item.guide_price}}">指导价
+                <text class="drawer-price">{{item.actual_price}}-{{item.guide_price}}万</text>
+              </block>
+              <block wx:elif="{{item.actual_price==item.guide_price}}">指导价
+                <text class="drawer-price">{{item.actual_price}}万</text>
+              </block>
+
+            </view>
+            <view class="price-color" wx:else>
+              <text class='price-no'>未上市</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </scroll-view>
+
+
+</view>
+

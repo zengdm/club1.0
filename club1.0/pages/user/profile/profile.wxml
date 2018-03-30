@@ -1,0 +1,124 @@
+<!--pages/user/profile/profile.wxml-->
+<view class="section {{imageSrc == '' ?'':'none'}}">
+    <view class='list'>
+        <view class='list-column' bindtap="">  
+            <view class='list-column-intro'>头像</view>
+             <!--修改头像事件 bindtap='changephoto' -->
+            <view class='list-column-next'>
+                <block wx:if="{{userList.img}}">
+                    <!-- <view class='list-column-picinfoimg'> -->
+                        <image class="list-column-picinfo" style='width:80rpx;height:80rpx' data-avatarUrl='{{userList.img}}' mode='aspectFill' src='{{userList.img}}'></image>
+                    <!-- </view> -->
+                    <!-- <image src='http://i1.dd-img.com/assets/image/1514528369-f630d5bbd6f115f8-12w-28h.png'></image> -->
+                </block>
+                <block wx:else>
+                    <image class="list-column-picinfo" style='width:80rpx;' mode='widthFix' bindtap='redelegation' src='http://i1.dd-img.com/assets/image/1517466287-bb81d5d98c3824fd-512w-509h.png'></image>
+                </block>
+            </view>
+        </view>
+    </view>
+    <view class='list'>
+        <view class='list-column' bindtap="">
+            <view class='list-column-intro'>昵称</view>
+            <view class='list-column-next'>{{userList.name}}
+                <image></image>
+            </view>
+        </view>
+
+        <view class='list-column' bindtap="">
+
+            <view class='list-column-intro'>性别</view>
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <view class="list-column-next">
+                    <block wx:if="{{array[index].length > 0}}">{{array[index]}}</block>
+                     <block wx:else>
+                        <block wx:if="{{userList.sex == 0}}">保密</block>
+                        <block wx:if="{{userList.sex == 1}}">男</block>
+                        <block wx:if="{{userList.sex == 2}}">女</block>
+                    </block> 
+                    <image src='http://i1.dd-img.com/assets/image/1514528369-f630d5bbd6f115f8-12w-28h.png'></image>
+                </view>
+            </picker>
+
+        </view>
+
+
+        <view class='list-column' bindtap="">
+            <view class='list-column-intro'>生日</view>
+            <picker mode="date" value="{{userList.birthday}}" start="1900-09-01" end="2013-12-31" bindchange="bindDateChange">
+                <view class="list-column-next">
+                    <block wx:if="{{date.length > 0}}">{{userList.birthday}}</block>
+                    <block wx:else>{{userList.birthday}}</block>
+                    <image src='http://i1.dd-img.com/assets/image/1514528369-f630d5bbd6f115f8-12w-28h.png'></image>
+                </view>
+            </picker>
+        </view>
+
+
+
+          <view class='list-column' bindtap="">
+            <view class='list-column-intro'>城市</view>
+
+            <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+                <view class="list-column-next">
+                    {{region[1]}}
+                    <image src='http://i1.dd-img.com/assets/image/1514528369-f630d5bbd6f115f8-12w-28h.png'></image>
+                </view>
+            </picker>
+        </view>  
+
+
+
+    </view>
+    <view class='list'>
+        <view class='list-column' bindtap="">
+            <view class='list-column-intro'>手机号</view>
+            <view class='list-column-next'>{{mobileReal}}
+                <image></image>
+            </view>
+        </view>
+    </view>
+    <view class='list-profile'>
+        <text>个人简介</text>
+        <textarea class='list-profile-textarea' value='{{userList.self_desc}}' bindinput='bindText' placeholder="买电动车，上电动邦！" auto-height cursor-spacing="20px" show-confirm-bar="{{}}false">
+        </textarea>
+    </view>
+    <!-- <view class="savechanges {{btnColor ? 'btn-color' : ''}}" bindtap='bindSave'>保存修改</view> -->
+    <view style='padding-bottom:30rpx'><view class="savechanges" bindtap='bindSave'>保存修改</view></view>
+</view>
+<!-- <view class='profilebg' wx:if="{{profileurl}}">
+    <image src='{{profileurl}}'></image>
+</view> -->
+<view class="wx-content-info profilebg" wx:if="{{imageSrc}}">
+    <view wx:if="{{isShowImg}}" class="wx-corpper" style="width:{{cropperInitW}}rpx;height:{{cropperInitH}}rpx;background:#000">
+        <view class="wx-corpper-content" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL}}rpx;top:{{cropperT}}rpx">
+            <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx"></image>
+            <view class="wx-corpper-crop-box" bindtouchstart="contentStartMove" bindtouchmove="contentMoveing" style="width:{{cutW}}rpx;height:{{cutH}}rpx;left:{{cutL}}rpx;top:{{cutT}}rpx">
+                <view class="wx-cropper-view-box">
+                    <!-- <view class="wx-cropper-viewer">
+            <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL - cutL}}rpx;top:{{cropperT - cutT}}rpx"></image>
+          </view> -->
+                    <view class="wx-cropper-dashed-h"></view>
+                    <view class="wx-cropper-dashed-v"></view>
+                    <view class="wx-cropper-line-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+                    <view class="wx-cropper-line-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+                    <view class="wx-cropper-line-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+                    <view class="wx-cropper-line-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+                    <view class="wx-cropper-point point-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+                    <view class="wx-cropper-point point-tr" data-drag="topTight"></view>
+                    <view class="wx-cropper-point point-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+                    <view class="wx-cropper-point point-rb" data-drag="rightBottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+                    <view class="wx-cropper-point point-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+                    <view class="wx-cropper-point point-bl" data-drag="bottomLeft"></view>
+                    <view class="wx-cropper-point point-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+                    <view class="wx-cropper-point point-lt" data-drag="leftTop"></view>
+                </view>
+            </view>
+        </view>
+        <!-- <view class="wx-cropper-drag-box"></view> -->
+    </view>
+    <canvas canvas-id="myCanvas" style="position:absolute;border: 1px solid red; width:{{imageW}}rpx;height:{{imageH}}rpx;top:-9999px;left:-9999px;"></canvas>
+    <!-- <canvas canvas-id="myCanvas" style="position:absolute;border: 1px solid red;background:red; width:400rpx;height:400rpx;top:0;left:0;"></canvas> -->
+    <button type="primary" bindtap="getImageInfo" style="position:fixed;bottom:120rpx;width:90%;left:50%;transform:translate3d(-50%,0,0)"> 点击生成图片 </button>
+    <image src="{{returnImage}}"></image>
+</view>

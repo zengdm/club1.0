@@ -1,0 +1,504 @@
+/* @keyframes kf-marque-animation{ 0% { transform: translateX(0); } 100% { transform: translateX(-24.3%); } } */
+
+.club-card-bottom-up {
+  display: none;
+  position: absolute;
+  bottom: 80rpx;
+  right: 57rpx;
+  width: 220rpx;
+  height: auto;
+  background: #fff;
+  border: 1rpx solid #e6e6e6;
+}
+
+.textcenter {
+  text-align: center;
+}
+
+.club-card-block {
+  display: block;
+}
+
+.club-card-bottom-up text {
+  height: 80rpx;
+  line-height: 80rpx;
+  display: block;
+  width: 200rpx;
+  padding-left: 20rpx;
+  font-size: 30rpx;
+  color: #2e3033;
+  border-bottom: 1rpx solid #e6e6e6;
+}
+
+.club-card {
+  background: #f2f2f2;
+  overflow: hidden;
+}
+
+.club-card-list {
+  background: #fff;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+
+.club-card-head {
+  /* width: 100%; */
+  padding: 0 30rpx;
+  height: 80rpx;
+  margin-top: 30rpx;
+  margin-bottom: 26rpx;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+}
+
+.club-card-head-img {
+  width: 80rpx;
+  /* height: 80rpx; */
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.club-card-head-img image {
+  width: 80rpx;
+  height: 88rpx;
+}
+
+.club-card-head-info {
+  -webkit-box-flex: 1;
+  margin-left: 20rpx;
+  /* overflow: hidden; */
+}
+
+.club-card-head-info-view {
+  font-size: 30rpx;
+  color: #5c6166;
+  min-height: 38rpx;
+}
+
+.club-card-head-info text {
+  /* display: block;
+    float: left; */
+  font-size: 22rpx;
+  line-height: 45rpx;
+  color: #8a9199;
+  margin-left: 0;
+}
+
+.club-card-head-info-btn {
+  width: 68rpx;
+  height: 30rpx;
+  background: #f63;
+  background-position: center;
+  border-radius: 8rpx;
+  font-size: 20rpx;
+  color: #fff;
+  text-align: center;
+  margin-right: 12rpx;
+  display: inline-block;
+}
+
+.club-card-head-attention {
+  font-size: 28rpx;
+  color: #39f;
+  line-height: 80rpx;
+}
+
+.club-card-head-attention image {
+  width: 26rpx;
+  margin-right: 10rpx;
+}
+
+.club-card-text {
+  padding: 0 30rpx;
+  font-size: 30rpx;
+  color: #2e3033;
+  line-height: 50rpx;
+  margin-bottom: 14rpx;
+}
+
+.club-card-text-all {
+  color: #39f;
+}
+
+.club-card-bottom {
+  height: 80rpx;
+  padding: 0 30rpx;
+  padding-left: 60rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  color: #8a9199;
+  position: relative;
+}
+
+button.club-card-bottom-view {
+  display: inline;
+  font-size: 28rpx;
+  color: #8a9199;
+  background-color: #fff;
+  margin-right: 120rpx;
+  padding: 0;
+}
+
+button.club-card-bottom-view::after {
+  border: none;
+}
+
+.club-card-bottom-view {
+  width: 190rpx;
+}
+
+.club-card-bottom-img {
+  width: 28rpx;
+  margin-left: 36rpx;
+  margin-right: 14rpx;
+}
+
+.club-card-bottom-text {
+  text-align: center;
+  margin-left: 14rpx;
+}
+
+.club-card-center {
+  overflow: hidden;
+}
+
+.club-card-bottom-more {
+  width: 28rpx;
+  margin: 16rpx;
+}
+
+.club-card-center {
+  padding: 0 30rpx;
+  margin-bottom: 26rpx;
+}
+
+.club-card-center-one {
+  width: 100%;
+  /* background: #d8d8d8; */
+  border-radius: 12rpx;
+  height: 344rpx;
+  overflow: hidden;
+  /* margin-bottom: 26rpx; */
+}
+
+.club-card-center-one image {
+  width: 100%;
+}
+
+.club-card-center-more {
+  /* background: #d8d8d8; */
+  border-radius: 2px;
+  width: 220rpx;
+  /* height: 220rpx; */
+  overflow: hidden;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+  float: left;
+}
+
+.club-card-center-more image {
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.club-card-good {
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 24rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #8a9199;
+  padding: 0 30rpx;
+}
+
+.club-card-good-img {
+  width: 26rpx;
+  margin-right: 8rpx;
+  height: 26rpx;
+}
+
+.club-card-article {
+  position: relative;
+  width: 690rpx;
+  height: 374rpx;
+  overflow: hidden;
+  margin: 0 auto 26rpx auto;
+}
+
+.club-card-article-img {
+  width: 100%;
+}
+
+.club-card-article-label {
+  position: absolute;
+  width: 100rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  background: #2e3033;
+  font-size: 22rpx;
+  color: #fff;
+  border-radius: 80rpx 0 0 80rpx;
+  right: 0;
+  top: 20rpx;
+}
+
+.club-card-article-icon {
+  width: 24rpx;
+  margin: 0 8rpx 0 12rpx;
+}
+
+.club-card-head-info text.club-card-original {
+  background: #f63;
+  border-radius: 8rpx;
+  width: 68rpx;
+  margin-top: 7rpx;
+  text-align: center;
+  height: 32rpx;
+  line-height: 32rpx;
+  font-size: 24rpx;
+  color: #fff;
+  margin-right: 10rpx;
+}
+
+.club-card-article-title {
+  font-size: 32rpx;
+  color: #2e3033;
+  line-height: 50rpx;
+  padding: 0 30rpx;
+  font-weight: 600;
+  margin-bottom: 30rpx;
+  margin-top: 14rpx;
+}
+
+.blue {
+  color: #39f;
+}
+
+.forum-list-not {
+  /* padding-top:160rpx; */
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 30rpx;
+  color: #8a9199;
+  line-height: 50rpx;
+  margin: 160rpx 50rpx 0;
+}
+
+.forum-list-notimg {
+  width: 140rpx;
+  height: 120rpx;
+}
+
+.forum-list-notlen {
+  margin-top: 20rpx;
+  line-height: 50rpx;
+}
+
+.forum-list-notimgjia {
+  /* float: left; */
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  display: inline-block;
+  background: #39f;
+  border-radius: 100%;
+  color: #fff;
+  font-size: 20rpx;
+  margin: 0 6rpx 6rpx;
+}
+
+.forum-list-notjiaimg {
+  width: 25rpx;
+  height: 25rpx;
+}
+
+.dotbg {
+  background: #e6e6e6;
+}
+
+.little-one {
+  padding: 26rpx 30rpx;
+  background-color: #fff;
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.little-one-text {
+  width: 440rpx;
+}
+
+.little-one-photo image {
+  min-width: 228rpx;
+  min-height: 152rpx;
+  width: 100%;
+}
+
+.stream-item-title {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 50rpx;
+  margin-bottom: 26rpx;
+  min-height: 100rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.stream-item-info {
+  font-size: 22rpx;
+  color: #999;
+  line-height: 32rpx;
+}
+
+.stream-item-info text {
+  margin-right: 10rpx;
+}
+
+/* 
+.swiper-container {
+  position: relative;
+}
+
+.swiper-container .swiper {
+  height: 500rpx;
+}
+
+.title {
+  position: absolute;
+  bottom: 30rpx;
+  left: 26rpx;
+  color: #fff;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  font-weight: 600;
+}
+
+.title-little {
+  font-weight: normal;
+  font-size: 30rpx;
+}
+
+.swiper-container .swiper .img {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-container .dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-container .dots .dot {
+  margin: 0 8rpx;
+  width: 14rpx;
+  height: 14rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  transition: all 0.6s;
+}
+
+.swiper-container .dots .dot.active {
+  width: 24rpx;
+  background: #00b7ee;
+}
+
+.stream-item {
+  background-color: #f4f4f4;
+  overflow: hidden;
+}
+
+.little-one, .little-three, .big-one {
+  padding: 26rpx 24rpx;
+  margin-bottom: 18rpx;
+  background-color: #fff;
+}
+
+.little-one {
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.little-one-text {
+  width: 440rpx;
+}
+
+.little-one-photo image {
+  min-width: 244rpx;
+  min-height: 158rpx;
+  width: 100%;
+}
+
+.little-three .stream-item-photo {
+  display: flex;
+}
+
+.little-three .stream-item-photo image {
+  width: 100%;
+  min-width: 226rpx;
+  min-height: 150rpx;
+}
+
+.big-one .stream-item-photo image {
+  width: 100%;
+  min-width: 702rpx;
+  min-height: 386rpx;
+}
+
+.stream-item-title {
+  font-size: 30rpx;
+  color: #292929;
+  line-height: 48rpx;
+  margin-bottom: 26rpx;
+}
+
+.stream-item-info {
+  font-size: 22rpx;
+  color: #adadad;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stream-item-info text {
+  margin-right: 10rpx;
+}
+
+.stream-item-photo {
+  padding-bottom: 18rpx;
+}
+
+.little-one-photo, .big-img-box, .img-box {
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin: 0 5rpx;
+}
+
+.big-img-box {
+  width: 702rpx;
+  height: 386rpx;
+}
+
+.img-box {
+  width: 226rpx;
+  height: 150rpx;
+}
+
+.little-one-photo {
+  width: 244rpx;
+  height: 158rpx;
+}
+
+.rich {
+  font-size: 50rpx;
+}
+
+.little-one .stream-item-title {
+  min-height: 96rpx;
+} */

@@ -1,0 +1,92 @@
+<!--pages/forum/inc/component/detail-comment/detail-comment.wxml-->
+
+<view class='comment'>
+  <view class='comment-empty'></view>
+  <view class='comment-header'>
+    <view class='comment-header-new'>
+      最新评论
+      <text>{{replies}}</text>
+    </view>
+    <view class='comment-header-praise'>
+      赞
+      <text>{{agree}}</text>
+    </view>
+  </view>
+
+ <view class='comment-no' wx:if="{{replies == 0}}">
+    <view class='comment-no-box'>暂无评论</view>
+  </view>
+
+  <view class='comment-section' wx:else>
+    <view class='comment-section-item'>
+      <view class='comment-section-item-img'>
+        <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514343692-b303625c90d9c379-40w-40h.png'></image>
+      </view>
+      <view class='comment-section-item-info'>
+        <view class='comment-section-item-info-author'>
+          <view>帮老师</view>
+          <text>15分钟前</text>
+        </view>
+        <view class='comment-section-item-info-intro'>特斯拉是一家生产和销售电动汽车以及零件的公司。</view>
+        <view class='comment-section-item-info-other'>
+          <view class='comment-section-item-info-other-btn'>
+            <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514366671-24402078ac865c42-28w-28h.png'></image>
+            <!-- <image src='http://i1.dd-img.com/assets/image/1514366671-169c0463ff119344-28w-28h.png'></image> -->
+            <text>回复</text>
+          </view>
+          <view class='comment-section-item-info-other-btn'>
+            <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514366671-e518604aece5f260-28w-28h.png'></image>
+            <!-- <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514366672-afa1ede0e1647234-28w-28h.png'></image> -->
+            <text>赞</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class='comment-section-item'>
+      <view class='comment-section-item-img'>
+        <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514343692-b303625c90d9c379-40w-40h.png'></image>
+      </view>
+      <view class='comment-section-item-info'>
+        <view class='comment-section-item-info-author'>
+          <view>帮老师</view>
+          <text>15分钟前</text>
+        </view>
+        <view class='comment-section-item-info-intro'>特斯拉是一家生产和销售电动汽车以及零件的公司。</view>
+        <view class='comment-section-item-info-other'>
+          <view class='comment-section-item-info-other-btn'>
+            <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514366671-24402078ac865c42-28w-28h.png'></image>
+            <!-- <image src='http://i1.dd-img.com/assets/image/1514366671-169c0463ff119344-28w-28h.png'></image> -->
+            <text>回复</text>
+          </view>
+          <view class='comment-section-item-info-other-btn'>
+            <!-- <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514366671-e518604aece5f260-28w-28h.png'></image> -->
+            <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514366672-afa1ede0e1647234-28w-28h.png'></image>
+            <text>1</text>
+          </view>
+        </view>
+
+        <view class='comment-section-item-info-reply'>
+
+          <view class='comment-section-item-info-reply-item'>
+            <text>六耳你好</text>：颜色Regular 14px #5C6166
+          </view>
+          <view class='comment-section-item-info-reply-item'>
+            <text>孙悟空</text>回复
+            <text>@六耳你好</text>：背景#F8F8F8，内边距20px，没有圆角，可以多行显示
+          </view>
+          <view class='comment-section-item-info-reply-item'>
+            <text>法海</text>：颜色Regular 14px #5C6166
+          </view>
+          <view class='comment-section-item-info-reply-item'>
+            <text>猪八戒</text>：这个PDF包括了用户手册里所有的东西
+          </view>
+
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+
+</view>

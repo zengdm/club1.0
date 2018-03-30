@@ -1,0 +1,110 @@
+/**app.wxss**/
+
+/*
+  整个小程序的公共样式表
+  可以在页面组件的class属性上直接使用app.wxss中声明的样式规则
+*/
+
+/* 容器部分 */
+
+page {
+  background-color: #fff;
+  height: 100%;
+  font-size: 32rpx;
+  font-family: 'PingFang-SC-Light',
+                 "Lantinghei SC",
+                 "Microsoft YaHei",
+                 "\5FAE\8F6F\96C5\9ED1",
+                 "Helvetica Neue",
+                 Helvetica,
+                 STHeiTi,
+                 Arial,
+                 sans-serif;
+}
+
+/*搜索部分*/
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100%;
+  overflow-x: hidden;
+  /*justify-content: space-between;*/
+}
+
+.clearfix:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+/* 小程序中也存在web端一样的问题*/
+
+image {
+  vertical-align: middle;
+}
+
+
+/* 分享 */
+.sharebtn {
+  /* animation: kf-marque-animation 3s linear infinite; */
+  background: #33adff;
+  padding: 0 30rpx 0 20rpx;
+  box-shadow: 0 4rpx 12rpx 0 rgba(50, 173, 255, 0.30);
+  border-radius: 0 200rpx 200rpx 0;
+  /* width:280rpx;  */
+  height: 60rpx;
+  position: fixed;
+  bottom: 40rpx;
+  font-size: 24rpx;
+  color: #fff;
+  left: 0; 
+  line-height: 60rpx
+}
+
+.sharebtnicon {
+  width: 36rpx;
+  margin:0 0 5rpx 12rpx;
+}
+.forum-list-not{
+    /* padding-top:160rpx; */
+box-sizing:border-box;
+text-align:center;
+font-size:30rpx;
+color:#8a9199;
+line-height:50rpx;
+     margin:160rpx  50rpx 0; 
+}
+.forum-list-notimg{
+    width: 140rpx;
+    height: 120rpx;
+}
+.forum-list-notlen{
+    margin-top: 20rpx;
+}
+.forum-list-notimgjia{
+    /* float: left; */
+    width: 50rpx;
+    height: 50rpx;
+    display: inline-block;
+    background:#3399ff;
+    border-radius: 100%;
+}
+.forum-list-notjiaimg{
+    width: 25rpx;
+    height: 25rpx;
+}
+

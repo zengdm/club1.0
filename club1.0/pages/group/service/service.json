@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "微信客服",
+  "usingComponents": {
+    "loginShade": "../../inc/component/login/login"
+  }
+}

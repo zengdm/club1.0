@@ -1,0 +1,11 @@
+<template name="more-img">
+  <view class='club-card-text' wx:if="{{item.summary}}" data-sourceid="{{item.sourceid}}" data-platid="{{item.platid}}" data-ctype="{{item.ctype}}" bindtap='itemClick'>{{item['summary']}}
+    <!-- 特斯拉MODEL#特斯拉# Model 3的用户手册是按需定制的，最近这个160页的PDF传到了互联网。 -->
+    <text wx:if="{{item.summary.length>35}}" class='club-card-text-all'>...全文</text>
+  </view>
+  <view wx:if="{{item.imgs.length>0}}" class='club-card-center' style='max-height:680rpx;' data-sourceid="{{item.sourceid}}" data-platid="{{item.platid}}" data-ctype="{{item.ctype}}" bindtap='itemClick'>
+    <view class='club-card-center-more' wx:for="{{item.imgs}}" wx:for-item="imgs">
+      <image mode='aspectFill' src="{{imgs.imgurl}}"></image>
+    </view>
+  </view>
+</template>

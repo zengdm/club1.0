@@ -1,0 +1,24 @@
+<!--pages/user/fans/fans.wxml-->
+<view class='collectnot' wx:if="{{iskong == 1}}">
+    <text>这里已经空空如也</text>
+    <text>“加粉更美好…”</text>
+</view>
+<view class='main'>
+    <view class='item' wx:for="{{globalData.fansList}}">
+        <view class='item-box'>
+            <view class='item-box-img'>
+                <image mode='widthFix' src='{{item.img}}'></image>
+            </view>
+            <view class='item-box-info'>
+                <text>{{item.name}}</text>
+                <view>{{item.self_desc}}</view>
+            </view>
+            <view class="item-box-state" wx:if="{{item.type == 1}}" data-followid='{{item.id}}' bindtap='removefollow'>
+                互相关注
+            </view>
+            <view class="item-box-state follow" wx:if="{{item.type == 0}}" data-followid='{{item.id}}' bindtap='addfollow'>
+                关注
+            </view>
+        </view>
+    </view>
+</view>

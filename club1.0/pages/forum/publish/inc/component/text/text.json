@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "forum-bar": "../bar/forum-bar"
+  }
+}

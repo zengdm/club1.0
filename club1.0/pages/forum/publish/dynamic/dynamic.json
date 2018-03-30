@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "短文",
+    "usingComponents": {
+        "forum-tags": "../inc/component/tags/tags"
+    }
+}

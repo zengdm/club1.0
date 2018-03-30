@@ -1,0 +1,110 @@
+{
+    "pages": [
+        "tabBar/forum/forum",
+        "tabBar/user/user",
+        "tabBar/model/model",
+        "tabBar/tabtab/tabtab"
+    ],
+    "subPackages": [
+        {
+            "root": "pages/forum/",
+            "pages": [
+                "detail/detail",
+                "publish/dynamic/dynamic",
+                "publish/long/long",
+                "publish/test/test",
+                "tag/detail/detail"
+            ]
+        },
+        {
+            "root": "pages/model/",
+            "pages": [
+                "rank/early/early",
+                "rank/mileage/mileage",
+                "rank/subsidy/subsidy",
+                "rank/none/none",
+                "search/condition/condition",
+                "search/list/list",
+                "serie/serie",
+                "photos/photos",
+                "city/city",
+                "parameter/parameter"
+            ]
+        },
+        {
+            "root": "pages/group/",
+            "pages": [
+                "list/list",
+                "detail/detail",
+                "car/car",
+                "hot/hot",
+                "area/area",
+                "service/service",
+                "feedback/feedback"
+            ]
+        },
+        {
+            "root": "pages/user/",
+            "pages": [
+                "collect/collect",
+                "follow/follow",
+                "personal/personal",
+                "fans/fans",
+                "profile/profile",
+                "contrast/index/index",
+                "contrast/add/add",
+                "amount/amount"
+            ]
+        },
+        {
+            "root": "pages/news/",
+            "pages": [
+                "index/index",
+                "detail/detail"
+            ]
+        }
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#3399ff",
+        "navigationBarTextStyle": "#fff",
+        "onReachBottomDistance": "1120px"
+    },
+    "tabBar": {
+        "color": "#a9b7b7",
+        "selectedColor": "#33ADFF",
+        "borderStyle": "#fff",
+        "backgroundColor": "#fff",
+        "list": [
+            {
+                "pagePath": "tabBar/forum/forum",
+                "text": "首页",
+                "iconPath": "pages/images/tab2.png",
+                "selectedIconPath": "pages/images/tab2s.png"
+            },
+            {
+                "pagePath": "tabBar/tabtab/tabtab",
+                "text": "问答",
+                "iconPath": "pages/images/table_answer_off.png",
+                "selectedIconPath": "pages/images/table_answer_on.png"
+            },
+            {
+                "pagePath": "tabBar/model/model",
+                "text": "选车",
+                "iconPath": "pages/images/tab1.png",
+                "selectedIconPath": "pages/images/tab1s.png"
+            },
+            {
+                "pagePath": "tabBar/user/user",
+                "text": "我",
+                "iconPath": "pages/images/tab3.png",
+                "selectedIconPath": "pages/images/tab3s.png"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "downloadFile": 10000
+    },
+    "debug": true
+}

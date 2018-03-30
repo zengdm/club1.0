@@ -1,0 +1,21 @@
+<template name="card-header">
+    <view class='club-card-good' wx:if="{{item.digest>0}}">
+        <image class='club-card-good-img' mode="widthFix" src='http://i1.dd-img.com/assets/image/1514342094-ccf5f9048c4a25f1-26w-26h.png'></image>精华
+    </view>
+    <view class='club-card-head'>
+        <view class='club-card-head-img' bindtap="_personal" data-id="{{authorid}}">
+            <image wx:if="{{item.avatar}}" mode='aspectFill' src='{{item.avatar}}'></image>
+            <image wx:else mode='widthFix' src='http://i1.dd-img.com/assets/image/1517466287-bb81d5d98c3824fd-512w-509h.png'></image>
+        </view>
+        <view class='club-card-head-info'>
+            <view  class='club-card-head-info-view' bindtap="getpersonal">{{item.author}}</view>
+            <!-- <view class='club-card-head-info-view' wx:else>邦老师</view> -->
+             <view class='club-card-head-info-btn' wx:if="{{item.reserved == 0}}">原创</view> 
+            <text>{{item.showTime}}</text>
+        </view>
+        <view class='club-card-head-attention' wx:if="{{menus.follow[authorid+'_0']==0 && authorid>0 && loginInfo.id!=item.authorid}}" data-authorid="{{item.authorid}}" data-opt="follow" data-key="{{key}}" bindtap="_bindfav">
+            <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514342911-4868f4dee9035581-28w-28h.png'></image>
+            <text>关注</text>
+        </view>
+    </view>
+</template>

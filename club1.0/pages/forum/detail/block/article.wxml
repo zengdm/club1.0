@@ -1,0 +1,85 @@
+<template name="article">
+  <view class='elite' wx:if="{{isdigest == 1}}">
+    <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514342094-ccf5f9048c4a25f1-26w-26h.png'></image>
+    精华
+  </view>
+  <view class='banner'>
+    <view class='banner-img'>
+      <image mode='aspectFill' src='{{detailData.cover}}'></image>
+    </view>
+    <view class='banner-title'>{{detailData.title}}</view>
+  </view>
+  <view class='content'>
+    <view class='content-author'>
+      <view wx:if="{{detailData.original == 1}}">原创</view>
+      <block wx:if="{{detailData.author}}">{{detailData.author}}</block> {{detailData.feedTime}}
+    </view>
+    <!-- <view class='content-sign'>
+      <text></text>
+      <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514374380-a244168a166fba52-60w-60h.png'></image>
+      <text></text>
+    </view> -->
+    <view class='content-preamble' wx:if="{{detailData.summary.length > 0}}">
+      <text>{{detailData.summary}}</text>
+    </view>
+    <block wx:for="{{detailData.content}}">
+      <!-- <view class='content-title'>次级标题 Blod 16pt #2E3033</view>  -->
+      <text class='content-paragraph' wx:if="{{item.type == 'text'}}" decode="true">{{item.decode.alt}}</text>
+      <view class='content-img' wx:if="{{item.type == 'img'}}">
+        <image bindtap="previewImage" data-src="{{item.decode.src}}" mode='widthFix' src='{{item.decode.src}}'></image>
+        <view class='content-img-intro'>
+          <text>{{item.decode.alt}}</text> </view>
+      </view>
+    </block>
+
+    <view class='content-source' wx:if="{{detailData.original == 0 && detailData.source_name || detailData.source_author}}">来源：{{detailData.source_name}} <block wx:if="{{detailData.source_author}}">{{detailData.source_author}}</block> </view>
+
+    <!-- <view class='content-introduction'>引言 Regular 14pt #8A9199 行高44px 左右外边距60px，背景颜色#FFFFFF；首行左侧和末行右侧加双引号“” 18pt #8A9199 行高44px。</view>
+
+    <view class='content-sign'>
+      <text></text>
+      <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514374380-a244168a166fba52-60w-60h.png'></image>
+      <text></text>
+    </view> -->
+
+    <!-- <view class='content-title'>次级标题 Blod 16pt #2E3033</view>
+    <view class='content-paragraph'>#特斯拉# Model 3的用户手册是按需定制的，最近这个160页的PDF传到了互联网，使未来 #Model 3# 的车主和现在关注特斯拉的人能够研究其最新的产品。这个PDF包括了用户手册里所有的东西，比如如何锁门和什么时候更换轮胎(每6250英里)。</view>
+
+    <view class='content-img'>
+      <image mode='widthFix' src='http://i2.dd-img.com/upload/2017/1226/1514259447706.jpg@815w_350h_1e_1c_0o_0l.src'></image>
+      <view class='content-img-intro'>
+        <text>图片描述 居中 12pt #8A9199</text>
+      </view>
+    </view>
+
+    <view class='content-paragraph'>#特斯拉# Model 3的用户手册是按需定制的，最近这个160页的PDF传到了互联网，使未来 #Model 3# 的车主和现在关注特斯拉的人能够研究其最新的产品。这个PDF包括了用户手册里所有的东西，比如如何锁门和什么时候更换轮胎(每6250英里)。</view>
+
+    <view class='content-paragraph'>Model 3的用户手册是按需定制的，最近这个160页的PDF传到了互联网，使未来的车主和现在关注特斯拉的人能够研究其最新的产品。</view> -->
+
+
+
+  </view>
+  <!--作者-->
+  <view class='author'>
+    <view class='author-header'></view>
+    <view class='author-sign'>
+      <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514427840-9ba37d78f1c26483-26w-26h.png'></image>
+      作者
+    </view>
+    <view class='author-section'>
+      <view class='author-section-img'>
+        <image mode='aspectFill' src='{{detailData.avatar}}'></image>
+      </view>
+      <view class='author-section-author'>
+        <text>{{detailData.author}}</text>
+        <view>{{detailData.self_desc}}</view>
+      </view>
+      <block wx:if="{{detailData.authorid > 0}}">
+        <view class='author-section-btn' wx:if="{{isfollow == 0}}" data-followid='{{detailData.authorid}}' bindtap='addfollow'>
+          <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514429324-ec137e4adbc65fb8-28w-28h.png'></image>
+          关注
+        </view>
+      </block>
+    </view>
+  </view>
+</template>

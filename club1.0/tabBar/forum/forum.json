@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "电动邦",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle":"dark",
+    "usingComponents": {
+        "component-forum-list": "/pages/inc/component/forum/forum-list/forum-list",
+        "component-publish-btn": "/pages/inc/component/forum/publish-btn/publish-btn"
+    }
+}

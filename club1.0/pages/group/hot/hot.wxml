@@ -1,0 +1,18 @@
+<!--pages/wx_hot/wx_hot.wxml-->
+<view class='body'>
+  <view class='section'>
+    <view class='title'>
+      <text>热门群组</text>
+    </view>
+
+    <view class='car'>
+
+        <view class='car-intro' bindtap="carDetail" wx:for="{{hotGroup}}"  data-id="{{item.id}}" data-name='{{item.name}}' data-summary='{{item.summary}}' data-masterName='{{item.master_name}}' data-masterNumber='{{item.master_number}}' data-masterQr='{{item.master_qr}}' data-cover='{{item.cover}}'>
+        <image mode='widthFix' class='car-intro-img' src='{{item.cover}}'></image>
+        <view class='car-intro-name'>{{item.name}}</view>
+      </view>
+
+    </view>
+  </view>
+
+</view>

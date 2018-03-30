@@ -1,0 +1,107 @@
+/*mask*/
+
+.drawer-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+/*content*/
+
+.drawer-box {
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  right: -80%;
+  bottom: 0;
+  z-index: 1001;
+  background: #fff;
+}
+
+
+.drawer-head {
+  text-align: center;
+  font-size: 32rpx;
+  color: #444;
+  height: 88rpx;
+  width: 100%;
+  line-height: 88rpx;
+  background: #f3f3f3;
+  border-bottom: solid 1rpx #dedede;
+}
+
+.drawer-content {
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.drawer-content-item > text {
+  display: block;
+  background: #fff;
+  font-size: 34rpx;
+  color: #333;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 40rpx;
+}
+
+::-webkit-scrollbar {
+  /*隐藏滚动条*/
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.drawer-child {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 34rpx;
+  color: #333;
+  height: 200rpx;
+  margin: 0 20rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.drawer-info {
+  margin-left: 10rpx;
+}
+
+.price-color {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.drawer-info > text {
+  display: block;
+  padding-bottom: 20rpx;
+  font-size: 34rpx;
+  color: #333;
+}
+
+.drawer-price {
+  font-size: 28rpx;
+  color: #d0011b;
+}
+
+.drawer-close {
+  position: absolute;
+  right: 20rpx;
+}
+
+.price-no {
+  color: #d0011b;
+}
+
+.img-drawer {
+  width: 240rpx;
+  height: 160rpx;
+  border-radius: 0;
+}

@@ -1,0 +1,4 @@
+<view bindtap="_clickEvent" style="{{width?'width:'+width+'rpx;':''}} {{height?'height:'+height+'rpx;line-height:'+height+'rpx;':''}}">
+    <image mode='widthFix' style="width:{{icon_size}}rpx" src="{{!clicked?icons[action].icon_img:icons[action].icon_img_clicked}}"></image>
+  <text class="{{clicked?'clicked':''}}" wx:if="{{value !== ''}}" style="line-height:{{icon_size}}rpx;">{{value}}</text>
+</view>

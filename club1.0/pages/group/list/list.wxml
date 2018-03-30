@@ -1,0 +1,75 @@
+<!--pages/weChat_group/weChat_group.wxml-->
+
+<view class='body'  bindtouchstart="handletouchstart" bindtouchmove="handletouchmove" bindtouchend="handletouchend">
+  <view class='section'>
+    <view class='title'>
+      <text class='title-hot'>热门群组</text>
+      
+      <view wx:if="{{hotLen > 3}}" class='title-more' bindtap="hotGroup">
+        <text>更多</text>
+        <image src='http://i1.dd-img.com/assets/image/1510297035-7de83c764e584509-16w-26h.png'></image>
+      </view>
+
+      
+    </view>
+
+    <view class='car'>
+
+      <view class='car-intro' bindtap="carDetail" wx:for="{{hotGroup}}" data-id="{{item.id}}" data-name='{{item.name}}' data-summary='{{item.summary}}' data-masterName='{{item.master_name}}' data-masterNumber='{{item.master_number}}' data-masterQr='{{item.master_qr}}' data-cover='{{item.cover}}'>
+
+        <image mode='widthFix' class='car-intro-img' src='{{item.cover}}'></image>
+        <view class='car-intro-name'>{{item.name}}</view>
+      </view>
+
+
+    </view>
+  </view>
+
+  <view class='section'>
+    <view class='title'>
+      <text class='title-hot'>按车型找群组</text>
+      <view  wx:if="{{carLen > 3}}" class='title-more' bindtap="carGroup">
+        <text>更多</text>
+        <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1510297035-7de83c764e584509-16w-26h.png'></image>
+      </view>
+    </view>
+
+    <view class='car'>
+
+      <view class='car-intro' bindtap="carDetail" wx:for="{{carGroup}}" data-id="{{item.id}}" data-name='{{item.name}}' data-summary='{{item.summary}}' data-masterName='{{item.master_name}}' data-masterNumber='{{item.master_number}}' data-masterQr='{{item.master_qr}}' data-cover='{{item.cover}}'>
+        <image mode='widthFix' class='car-intro-img' src='{{item.cover}}'></image>
+        <view class='car-intro-name'>{{item.name}}</view>
+      </view>
+
+    </view>
+  </view>
+
+
+  <!-- <view class='section'>
+    <view class='title'>
+       <text class='title-hot'>地区群组</text> 
+       <view class='title-more' bindtap="cityGroup">
+       <text>更多</text>
+        <image src='http://i1.dd-img.com/assets/image/1510297035-7de83c764e584509-16w-26h.png'></image>  
+        </view>
+    </view>
+
+    <view class='car'>
+
+    <view class='car-intro' bindtap="carDetail" wx:for="{{cityGroup}}" data-name='{{item.name}}' data-summary='{{item.summary}}' data-masterName='{{item.master_name}}' data-masterNumber='{{item.master_number}}' data-masterQr='{{item.master_qr}}' data-cover='{{item.cover}}'>
+        <image class='car-intro-img' src='{{item.cover}}'></image>
+        <view class='car-intro-name'>{{item.name}}</view>
+      </view>
+
+    </view>
+  </view> -->
+
+
+
+
+</view>
+
+<button  animation="{{animationData}}" class="sharebtn" open-type="share"><text>分享给好友</text><image  class="sharebtnicon" 
+
+mode="widthFix" src='http://i1.dd-img.com/assets/image/1510898451-a672fd0868b82de9-48w-48h.png'></image></button>
+

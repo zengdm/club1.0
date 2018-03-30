@@ -1,0 +1,542 @@
+/* pages/brandCar/brandCar.wxss */
+
+
+
+page {
+  font-family: "Microsoft YaHei";
+  color: #444;
+
+  background: #fff;
+/* 
+  background: #f3f3f3; */
+}
+
+.header-pic {
+  width: 750rpx;
+  height: 320rpx;
+}
+
+ .hiddenClass{
+  width: 100%;
+  height:100%;
+  overflow: hidden;
+  position: fixed; 
+} 
+
+
+.headerimg {
+  width: 750rpx;
+  display: block;
+}
+
+.choose-box {
+  width: 686rpx;
+  height: 352rpx;
+  background: #fff;
+  border: 2rpx solid #f2f2f2;
+  border-radius: 15rpx;
+  margin: 0 auto;
+  position: relative;
+  top: -40rpx;
+}
+
+.choose-title {
+  width: 686rpx;
+  font-size: 28rpx;
+  color: #999;
+  line-height: 50rpx;
+  text-align: center;
+  padding: 10rpx 0;
+}
+
+.choose-view {
+  width: 100rpx;
+  height: 165rpx;
+  margin: 0 35.9rpx;
+  float: left;
+}
+
+.chooseimg {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.chooseimg image {
+  width: 100rpx;
+}
+
+.choosetxt {
+  font-size: 24rpx;
+  color: #333;
+  line-height: 50rpx;
+  text-align: center;
+}
+
+.choose-cars {
+  width: 640rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 15rpx;
+  font-size: 34rpx;
+  color: #fff;
+  text-align: center;
+  clear: both;
+  margin: 0 auto;
+  background: #33adff;
+}
+
+.choose-cars-img {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.hot-csrs {
+  width: 100%;
+  height:216rpx;
+  position: relative;
+}
+
+.hot-title {
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  font-size: 28rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  color: #999;
+  position: absolute;
+  top: -28rpx;
+  z-index: 11;
+}
+
+.hot-view {
+  width: 200rpx;
+  margin: 0 14rpx;
+}
+
+.hotimg {
+  width: 200rpx;
+}
+
+.hotimg image {
+  width: 200rpx;
+}
+
+.hottxt {
+  text-align: center;
+  font-size: 28rpx;
+  color: #666;
+  height: 40rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.hot-scroll{
+  height: 196rpx;
+  overflow: hidden;
+  padding-top: 20rpx;
+}
+.banner {
+  display:-webkit-box;
+-webkit-box-orient:horizontal;
+}
+
+.tianjiatxt, .tianjiapic {
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background: #f60;
+  color: #fff;
+}
+
+.tianjiapic {
+  background: #00cdf2;
+  margin-top: 10rpx;
+}
+
+.addto-text, .addto-pic {
+  width: 600rpx;
+  height: 200rpx;
+  border: 2rpx solid #3572ce;
+  margin-top: 10rpx;
+  color: #000;
+  overflow: hidden;
+}
+
+.addto-pic {
+
+  border: 1px solid pink;
+}
+
+/*图片*/
+
+.img {
+  /*background: url("chu.png") no-repeat;*/
+  background-size: cover;
+
+  width: 80rpx;
+  height: 80rpx;
+
+  /*border-radius:50%;*/
+  background: #fff;
+}
+
+.img-hot {
+  display: block;
+  margin: 0 auto;
+}
+
+.img-list {
+  display: inline-block;
+
+}
+
+.img-drawer {
+  width: 240rpx;
+  height: 160rpx;
+  border-radius: 0;
+}
+
+/* 搜索框--S */
+
+.city {
+  /*float: left;*/
+}
+
+.search {
+  padding: 18rpx;
+  background-color: #00cdf2;
+  position: relative;
+}
+
+.search-box {
+  width: 100%;
+  height: 56rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  text-align: center;
+  font-size: 26rpx;
+  line-height: 56rpx;
+  color: #9a9a9a;
+}
+
+.icon-search {
+  position: absolute;
+  top: 32rpx;
+  left: 50%;
+  margin-left: -62rpx;
+}
+
+/* 搜索框--E */
+
+/* 标签切换--S */
+
+.swiper-head {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 30rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #444;
+  background: #fff;
+  border-bottom: solid 1rpx #e8e8e8;
+  border-top: solid 1rpx #e8e8e8;
+}
+
+.swiper-head-item:first-child {
+  width: 50%;
+  border-right: solid 1rpx #e8e8e8;
+}
+
+.swiper-head-item:last-child {
+  width: 50%;
+}
+
+.on {
+  color: #3572ce;
+}
+
+.swiper-content {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 标签切换--E */
+
+/*热门品牌*/
+
+.hot-view {
+  background: #fff;
+  /* background: url(http://i1.dd-img.com/assets/image/1502700082-d495b9d10c3988a8-22w-20h.png); *//* background-repeat: repeat-x; *//*margin-top:20rpx;*/
+}
+
+.hot-view  > .hot {
+  display: block;
+  font-size: 32rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  color: #242726;
+  background-color: #f4f4f4;
+  margin-top: 20rpx;
+}
+
+.hot-view  > .hot::before {
+  content: "";
+  width: 7rpx;
+  height: 30rpx;
+  border-radius: 10rpx;
+  background: #00cdf2;
+  float: left;
+  margin: 27rpx 16rpx 0 20rpx;
+}
+
+.hot-item {
+  /*默认不换行*//*padding:20rpx;*/
+  padding-bottom: 34rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #9a9a9a;
+}
+
+.hot-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hot-row > view {
+  padding-top: 30rpx;
+  width: 20%;
+}
+
+.hot-name {
+  padding-top: 18rpx;
+}
+
+/* 热门车型 */
+
+.hot-car  > .hot {
+  display: block;
+  font-size: 32rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  color: #242726;
+  background-color: #f4f4f4;
+  margin-top: 20rpx;
+}
+
+.hot-car  > .hot::before {
+  content: "";
+  width: 7rpx;
+  height: 30rpx;
+  border-radius: 10rpx;
+  background: #00cdf2;
+  float: left;
+  margin: 27rpx 16rpx 0 20rpx;
+}
+
+.hot-car .banner {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  background-color: #f4f4f4;
+  padding-bottom: 46rpx;
+}
+
+.banner .banner-img {
+  width: 272rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  margin: 54rpx 10rpx 0;
+  /* border: 1rpx solid #000; */
+}
+
+.banner .banner-bigger {
+  width: 408rpx;
+  height: 300rpx;
+  margin-top: 0;
+  box-shadow: 10rpx 10rpx 10rpx #e3e3e3;
+}
+
+.banner-img .banner-img-img {
+  position: relative;
+  text-align: center;
+}
+
+.banner-img .banner-img-img .banner-img-img-logo {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+}
+
+.banner-bigger .banner-img-img .banner-img-img-logo {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.banner-img .banner-img-img .banner-img-img-main {
+  width: 208rpx;
+  height: 140rpx;
+}
+
+.banner-bigger .banner-img-img .banner-img-img-main {
+  width: 313rpx;
+  height: 209rpx;
+}
+
+.banner-img .banner-img-title {
+  margin-left: 16rpx;
+}
+
+.banner-bigger .banner-img-title {
+  margin-left: 26rpx;
+}
+
+.banner-img-title>view {
+  font-size: 20rpx;
+  color: #242727;
+  line-height: 8rpx;
+  margin-top: 6rpx;
+}
+
+.banner-bigger .banner-img-title>view {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  margin-top: 8rpx;
+}
+
+.banner-img-title>text {
+  font-size: 20rpx;
+  color: #f60;
+}
+
+.banner-bigger .banner-img-title>text {
+  font-size: 24rpx;
+}
+/*品牌列表*/
+.brand-item{
+  background-color: #fff;
+}
+
+.brand-item view {
+  display: block;
+}
+
+.brand-item > text {
+  display: block;
+ color:#666666;
+  background:#fafafa;
+  font-size: 34rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 30rpx;
+}
+
+.brand-item > view {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 0 30rpx;
+   border-bottom: 1rpx solid #f2f2f2; 
+}
+
+/* .brand-item view:not(:last-child) .brand-name {
+  border-bottom: solid 1rpx #eee;
+} */
+
+.brand-name {
+  width: 100%;
+  -webkit-box-flex: 1;
+  padding-left: 20rpx;
+  font-size:34rpx;
+  color:#333333;
+}
+
+.letter-item {
+  width: 52rpx;
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  right: 10rpx;
+  transform: translate(0, -50%);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+  border-radius:200rpx;
+  padding: 26rpx 0;
+  box-sizing: border-box;
+}
+
+
+.letter-none {
+  display: none;
+}
+
+.letter-block {
+  display: block;
+}
+
+.flex-item {
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
+}
+
+.letter-hover {
+  position: fixed;
+  width: 20px;
+  top: 54%;
+  right: 26rpx;
+  transform: translate(0, -50%);
+  border-radius: 7px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.letter-li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  font-size:28rpx;
+  color:#999;
+  line-height:38rpx; 
+}
+
+.add-color {
+  color:#33adff;
+  font-weight: bold;
+  font-size:35rpx;
+}
+
+.letter-li .five {
+  width: 22rpx;
+  height: 20rpx;
+}
+
+.letter-li:target {
+  color: red;
+}
+
+/* .cityIdval{
+  display: none;
+} */
+
+/*抽屉*/
+@import "../../pages/inc/drawer/drawer.wxss";
+
+.red {
+  background: red;
+}
+
+.blue {
+  background: blue;
+}
+

@@ -1,0 +1,50 @@
+<!--pages/forum/index/index.wxml-->
+<view>
+    <!-- <view bindtap='goTagDetail'>我是标签，点我去标签详情页</view> -->
+    <view class='nav-tab-bg'></view>
+    <scroll-view wx:if="{{navList}}" class='nav-tab-bgs' scroll-x>
+        <view class='nav-tab'>
+            <text wx:for="{{navList}}" class="text-off {{defaultNav.path == item.path ? 'text-on' : ''}}" data-navid='{{item.navid}}' data-path="{{item.path}}" data-args='{{item.args}}' bindtap='switchNav'>{{item.name}}</text>
+        </view>
+    </scroll-view>
+
+    <view class="club-swiper-container" wx:if="{{defaultNav.path=='recommend'}}">
+        <swiper autoplay="" interval="5000" duration="500" current="0" circular="true" bindchange="swiperChange" class="club-swiper">
+            <block wx:for="{{focusImg}}" wx:key="unique">
+                <swiper-item class="club-swiper-item" bindtap="photoClick" data-ext_info="{{item.ext_info}}">
+                    <image mode='widthFix' wx:if="{{item.img}}" src="{{item.img}}" class="club-swiper-img"></image>
+                    <!-- <view wx:if="{{item.title}}" class='club-swiper-titlebg'></view>
+                    <view class="club-swiper-title">{{item.title}}</view> -->
+                </swiper-item>
+            </block>
+        </swiper>
+
+        <view class="dots">
+            <block wx:for="{{focusImg}}" wx:key="unique">
+                <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+            </block>
+        </view>
+
+        <view class="club-dots">
+            <block wx:for="{{focusImg}}" wx:key="unique">
+                <view class="club-dot {{index == swiperCurrent ? 'club-active' : ''}}"></view>
+            </block>
+        </view>
+
+    </view>
+    <scroll-view wx:if="{{defaultNav.path=='recommend'}}" class='home-label' scroll-x>
+        <view class='home-label-page'>
+            <view class='home-label-list' wx:for="{{hotTags}}" bindtap='goTagDetail' data-id='{{item.tag_id}}'>
+                <view class='home-label-pic'>
+                    <image class='home-label-pic-img' mode='aspectFill' src="{{item.tag_img_url?item.tag_img_url:'http://i2.dd-img.com/data/photo/03/a5/41933/1500618782.png'}}"></image>
+                    <image class='home-label-pic-hot' src='http://i1.dd-img.com/assets/image/1514344084-a829f050a2953522-30w-40h.png'></image>
+                </view>
+                <view class='home-label-text'>{{item.tag_name}}</view>
+            </view>
+        </view>
+    </scroll-view>
+
+    <!-- feed流列表 tlist:帖子列表  goIndex:底部菜单是否显示返回首页 -->
+    <component-forum-list wx:if="{{typeof(forumList[defaultNav.path])!='undefined' && (!floading || forumList[defaultNav.path]['list'].length>0)}}" index="{{defaultNav.path}}" tlist="{{forumList[defaultNav.path]}}" loginInfo="{{loginInfo}}" goIndex="" points="{{points}}"></component-forum-list>
+    <component-publish-btn></component-publish-btn>
+</view>

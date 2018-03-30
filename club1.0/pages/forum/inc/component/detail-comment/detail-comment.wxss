@@ -1,0 +1,142 @@
+/* pages/forum/inc/component/detail-comment/detail-comment.wxss */
+.comment {
+  padding-bottom: 100rpx;
+}
+
+.comment-header {
+  width: 100%;
+  height: 48rpx;
+  background: #f8f8f8;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #2e3033;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.comment-empty {
+  width: 100%;
+  height: 12rpx;
+  background-image: linear-gradient(to bottom, #f2f2f2, #f8f8f8);
+}
+
+.comment-header-new text {
+  color: #8a9199;
+}
+
+.comment-header-praise {
+  color: #8a9199;
+}
+
+.comment-section-item {
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.comment-section-item-img {
+  width: 80rpx;
+  height: 80rpx;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.comment-section-item-img image {
+  width: 80rpx;
+}
+
+.comment-section-item-info {
+  -webkit-box-flex: 1;
+  margin-left: 20rpx;
+}
+
+.comment-section-item-info-author {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-section-item-info-author view {
+  font-size: 30rpx;
+  color: #8a9199;
+}
+
+.comment-section-item-info-author text {
+  font-size: 22rpx;
+  color: #ccc;
+}
+
+.comment-section-item-info-intro {
+  font-size: 30rpx;
+  color: #5c6166;
+  line-height: 50rpx;
+  margin: 8rpx 0 14rpx;
+}
+
+.comment-section-item-info-other {
+  text-align: right;
+}
+
+.comment-section-item-info-other-btn {
+  width: 160rpx;
+  height: 60rpx;
+  border: 1px solid #ccc;
+  border-radius: 200rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #8a9199;
+  text-align: center;
+  display: inline-block;
+  margin-left: 30rpx;
+}
+
+.comment-section-item-info-other-btn image {
+  width: 28rpx;
+  margin-right: 8rpx;
+  margin-bottom: 6rpx;
+}
+
+.comment-section-item-info-other-btn text {
+  margin-left: 8rpx;
+}
+
+.comment-section-item-info-reply {
+  width: 100%;
+  background: #f8f8f8;
+  padding: 20rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+  color: #5c6166;
+  font-size: 28rpx;
+}
+
+.comment-section-item-info-reply-item {
+  line-height: 44rpx;
+  margin: 6rpx 0;
+}
+
+.comment-section-item-info-reply-item text {
+  color: #6e92db;
+}
+
+.comment-no {
+  width: 100%;
+  height: 300rpx;
+  background-color: #f8f8f8;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+.comment-no-box {
+  width: 100%;
+  height: 200rpx;
+  line-height: 200rpx;
+  text-align: center;
+  background: #f2f2f2;
+  font-size: 28rpx;
+  color: #8a9199;
+}

@@ -1,0 +1,303 @@
+@import "../../inc/inc.wxss";
+
+.sharebtn {
+  /* animation: kf-marque-animation 3s linear infinite; */
+  background: #33adff;
+  padding: 0 30rpx 0 20rpx;
+  box-shadow: 0 4rpx 12rpx 0 rgba(50, 173, 255, 0.30);
+  border-radius: 0 200rpx 200rpx 0;
+  /* width:280rpx;  */
+  height: 60rpx;
+  position: fixed;
+  bottom: 126rpx;
+  font-size: 24rpx;
+  color: #fff;
+  z-index: 11111;
+  left:0;
+  line-height: 60rpx;
+}
+
+.sharebtnicon {
+  width: 36rpx;
+  margin: 0 0 5rpx 12rpx;
+}
+
+.info_main {
+  padding: 0 23.55rpx;
+}
+
+.info_title {
+  font-size: 42.27rpx;
+  padding: 22.343rpx 0 42.27rpx 0;
+  line-height: 60.99rpx;
+  color: #303030;
+  font-weight: 600;
+}
+
+.info_person {
+  line-height: 72.464rpx;
+  color: #aaa;
+  margin-bottom: 44rpx;
+  clear: both;
+  overflow: hidden;
+}
+
+.info_person_img {
+  width: 72.464rpx;
+  height: 72.464rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+}
+
+.info_person_txt {
+  font-size: 25.36rpx;
+  margin-left: 25rpx;
+  float: left;
+  color: #292929;
+}
+
+.info_person_comment {
+  font-size: 21.74rpx;
+  float: right;
+}
+
+.info_person_time {
+  font-size: 21.74rpx;
+  float: right;
+  margin-right: 24rpx;
+}
+
+.info_cont {
+  color: #6d6d6d;
+  line-height: 48.309rpx;
+  padding: 24.155rpx;
+  background: #f6f6f6;
+  font-size: 28.99rpx;
+}
+
+.info_conttext {
+  font-size: 33.82rpx;
+  color: #6d6d6d;
+  line-height: 57.367rpx;
+  margin: 24.155rpx 0;
+  /* text-indent: 48rpx; */
+}
+
+.info_conttext_img {
+  overflow: hidden;
+  width: 100%;
+  /* margin: 24.155rpx 0; */
+}
+
+.info_dianzan {
+  width: 278rpx;
+  height: 98rpx;
+  line-height: 98rpx;
+  margin: 60rpx auto;
+  margin-bottom: 40rpx;
+  border: 1rpx solid #f2f2f2;
+  border-radius: 60rpx;
+  /* padding-left: 45rpx; */
+  text-align: center;
+  position: relative;
+  z-index: 1000;
+}
+
+.info_praise_img {
+  width: 40rpx;
+  /* height: 72.464rpx; */
+  overflow: hidden;
+  margin-right: 10rpx;
+  margin-top: -8px;
+}
+
+.info_bg {
+  height: 20rpx;
+  background: #eee;
+}
+
+.info_discuss_list {
+  overflow: hidden;
+}
+
+.info_discuss_img {
+  width: 72.464rpx;
+  height: 72.464rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 51rpx;
+  margin-left: 24rpx;
+  float: left;
+}
+
+.info_discuss_list_right {
+  width: 610rpx;
+  float: right;
+  margin-top: 51rpx;
+  padding-bottom: 54.348rpx;
+  padding-right: 23.55rpx;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 28.99rpx;
+}
+
+.info_discuss_list:last-child .info_discuss_list_right {
+  border: none;
+}
+
+.info_discuss_list_person {
+  padding-top: 5rpx;
+  clear: both;
+  overflow: hidden;
+  padding-bottom: 15rpx;
+}
+
+.info_discuss_time {
+  float: right;
+  color: #aaa;
+  font-size: 21.74rpx;
+}
+
+.info_discuss_txt {
+  float: left;
+  color: #5a5d5e;
+  font-size: 25.36rpx;
+}
+
+.info_bottom {
+  position: fixed;
+  width: 100%;
+  z-index: 11;
+  bottom: 0;
+}
+
+.info_bottombg {
+  height: 88rpx;
+}
+
+.info_section {
+  float: left;
+  margin-top: 18rpx;
+}
+
+.info_section input {
+  width: 445.048rpx;
+  height: 50rpx;
+  border-radius: 30rpx;
+  border: 1rpx solid #eee;
+  padding-left: 25rpx;
+}
+
+.show_comment {
+  height: 210rpx;
+}
+
+.empty {
+  height: 122rpx;
+}
+
+.info_icon {
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #f8f8f8;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.info_icon text {
+  font-size: 34rpx;
+  color: #999;
+  display: inline-block;
+  width: 540rpx;
+  margin-right: 10rpx;
+}
+
+.info_icon image {
+  width: 40rpx;
+  margin-bottom: 6rpx;
+}
+
+.info_icon_collet {
+  margin-right: 60rpx;
+}
+
+.write_commit {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  padding: 0 30rpx;
+  position: fixed;
+  top: 0;
+}
+
+.write_commit_txt_title {
+  height: 114rpx;
+  line-height: 114rpx;
+}
+
+.info_textarea {
+  border: 1px solid #e6e6e6;
+  width: auto;
+  border-radius: 3px;
+  background: #fff;
+  height: 316rpx;
+  font-size: 28rpx;
+  line-height: 50rpx;
+  padding: 30rpx;
+}
+
+.write_commit_button {
+  width: 100%;
+  margin-right: 0;
+  text-align: right;
+  height: 60rpx;
+  margin-top: 20rpx;
+
+}
+
+.write_commit_button button {
+  width: 100%;
+  height: 88rpx;
+    display: inline-block; 
+   line-height: 88rpx; 
+   color: #fff;
+  background: #33adff;
+   border-radius: 10rpx;   
+  outline: none;
+  font-size: 34rpx; 
+  border: none;
+}
+
+.info_comment_img {
+  width: 42.874rpx;
+  height: 41.062rpx;
+  padding-right: 10rpx;
+}
+
+.info_comment_count {
+  float: right;
+  margin-top: 22rpx;
+  margin-right: 10rpx;
+  color: #24ceef;
+}
+.write_commit_close{
+  width: 34rpx;
+  height: 34rpx;
+  float: right;
+  margin:40rpx 0;
+}
+/* .btn-area {
+  width: 100rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-left: 20rpx;
+  margin-top: 18rpx;
+  float: left;
+  font-size: 24rpx;
+  padding: 0;
+} */
+
+.none {
+  display: none;
+}

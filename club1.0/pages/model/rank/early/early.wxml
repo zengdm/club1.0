@@ -1,0 +1,45 @@
+<!--pages/new_car/new_car.wxml-->
+<!-- 新车上市排行 -->
+<scroll-view enable-back-to-top='true' scroll-y="true" style="height:{{winHeight}}px" bindscroll="scroll" lower-threshold="50" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" bindscrolltolower="scrolltolower">
+  <view class="container">
+    <!-- <scroll-view class="swiper-content" style="height:{{winHeight}}px" scroll-y="true" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"> -->
+    <view class='explain'>近半年上市的车型</view>
+    <view class="drawer-child" data-pinyin="{{pure.pinyin}}" bindtap="gotoSeries" wx:for="{{listData}}" wx:for-item="pure" wx:for-index="pureIndex">
+
+      <view class='drawer-child-intro'>
+        <image class="img img-model" src="{{pure.focus}}"></image>
+        <view class="drawer-info">
+          <text>{{pure.pinpai_data.name}} {{pure.name}}</text>
+          <view class='drawer-info-price' wx:if="{{pure.product_status == 1}}">指导价
+            <block wx:if="{{pure.min_price!=pure.max_price}}">
+             <text class="drawer-price">￥{{pure.min_price}}-{{pure.max_price}}<text>万</text></text>
+            </block>
+            <block wx:elif="{{pure.min_price== pure.max_price}}">
+             <text class="drawer-price">￥{{pure.min_price}}<text>万</text></text>
+            </block>
+          </view>
+          <view class='drawer-info-price' wx:if="{{pure.product_status == 2}}">
+            <text class="drawer-price">停产</text>
+          </view>
+          <view class='drawer-info-price' wx:if="{{pure.product_status == 3}}">
+            <text class="drawer-price">即将上市</text>
+          </view>
+
+        </view>
+      </view>
+      <view class='drawer-endurance'>
+        <text wx:if="{{pure.cron_xhlc != 0}}">{{pure.cron_xhlc}}</text>
+        <text wx:if="{{pure.cron_xhlc == 0}}">-</text>
+        <view>公里</view>
+      </view>
+
+    </view>
+
+
+    <!-- </scroll-view> -->
+  </view>
+  <button animation="{{animationData}}" class="sharebtn" open-type="share">
+    <text>分享给好友</text>
+    <image class="sharebtnicon" mode="widthFix" src='http://i1.dd-img.com/assets/image/1510898451-a672fd0868b82de9-48w-48h.png'></image>
+  </button>
+</scroll-view>

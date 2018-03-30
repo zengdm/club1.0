@@ -1,0 +1,42 @@
+<!--搜索框 S-->
+<!-- <view class="search-view">
+  <form class="search-form">
+    <icon class="search-icon" type="search" size="12" color="#9a9a9a"></icon>
+    <input type="text" class="search-input" value="" placeholder="搜索城市" bindfocus="" bindinput="" auto-focus="true" name="" />
+  </form>
+</view> -->
+<!--搜索框 E-->
+
+<scroll-view class="swiper-content" style="height:{{winHeight}}px" scroll-y="true" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <view class="current">
+    <text class="current-city">当前城市</text>
+  </view>
+
+  <view class="city"   data-cityId="{{cityId}}" data-cityName="{{cityName}}" bindtap='cityClick'>
+    <text class="city-real">{{cityName}}</text>
+  </view>
+
+  <view class="city-item" wx:for="{{cityLetter}}" wx:for-index="letterIndex" wx:for-item="letterItem" wx:key="flag">
+    <view class="letter">
+      <text id="{{letterItem.zimu}}">{{letterItem.zimu}}</text>
+    </view>
+    <view class="address">
+      <view class="address-city" wx:for="{{letterItem.list}}" wx:for-item="littleCity" wx:for-index="littleId" bindtap="cityClick" data-cityId="{{littleId}}" data-cityName="{{littleCity}}">{{littleCity}}</view>
+    </view>
+  </view>
+</scroll-view>
+
+
+
+<!--字母列表 S-->
+ <view class="letter-item" bindtap="clickLetter" catchtouchmove="touchMove" catchtouchend="touchEnd">
+ 
+   <view class="letter-li  {{currentLetter==letterIndex ? 'add-color' : ''}}" data-current="{{letterIndex}}" wx:for="{{letterList}}" wx:for-item="letterItem" wx:for-index="letterIndex" data-letter="{{letterItem.flag}}">{{letterItem.flag}}</view>
+</view> 
+<!--字母列表 E-->
+
+
+ <!-- <view class="letter-item" bindtap="clickLetter" catchtouchmove="touchMove" catchtouchend="touchEnd">
+    <view class="letter-li {{currentLetter==letterIndex ? 'add-color' : ''}}" data-current="{{letterIndex}}" wx:for="{{brandList}}" wx:for-item="letterItem" wx:for-index="letterIndex" data-letter="{{letterItem.flag}}">{{letterItem.flag}}</view>
+
+  </view> -->

@@ -1,0 +1,39 @@
+<!--choose.wxml-->
+<!-- 条件选车 -->
+<view class="container">
+  <view class="car-item">
+    <text class="car-item-title">价格：</text>
+  
+    <view class='canvasnumber'><text>10</text><text>20</text><text>30</text><text>40</text><text>50</text></view>
+      <canvas canvas-id="canvas" bindtouchstart="js_touchstart" bindtouchmove="js_touchmove" bindtouchend="js_touchend"></canvas>
+  </view>
+  <view class="car-item">
+    <text class="car-item-title">类型</text>
+    <view class="car-item-content">
+      <block wx:for="{{driveparaData}}" wx:for-item="driveparaDataItem" wx:key="index">
+        <view class="car-item-list {{driveparaDataItem.type}}" data-current="{{index}}" data-val="{{driveparaDataItem.val}}" bindtap="swichNav">{{driveparaDataItem.name}}</view>
+      </block>
+    </view>
+  </view>
+  <view class="car-item">
+    <text class="car-item-title">续航</text>
+    <view class="car-item-content">
+      <block wx:for="{{enduranceparaData}}" wx:for-item="enduranceparaDataItem" wx:key="index">
+        <view class="car-item-list {{enduranceparaDataItem.type}}" data-current="{{index}}" data-val="{{enduranceparaDataItem.val}}" bindtap="active">{{enduranceparaDataItem.name}}</view>
+      </block>
+    </view>
+  </view>
+    <view class="car-item">
+    <text class="car-item-title">类别</text>
+    <view class="car-item-content carType">
+      <block wx:for="{{carTypeparaData}}" wx:for-item="carTypeparaDataItem" wx:key="index">
+        <view class="product-level-{{index+1}}  product-level-choose  {{carTypeparaDataItem.type}}" data-current="{{index}}" data-val="{{carTypeparaDataItem.val}}" bindtap="choose"></view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class='choosebg'></view>
+<view class='choose-button'>
+  <view class='choose-resetting' bindtap="reset">重置</view>
+  <view class="choose-results {{carsnumber==0  ?  'forbid'  :  ''}}" bindtap="result">有{{carsnumber}}款车型符合条件</view>
+</view>

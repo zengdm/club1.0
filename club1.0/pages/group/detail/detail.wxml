@@ -1,0 +1,38 @@
+<!--pages/wx_detail/wx_detail.wxml-->
+
+
+
+
+<view class='body'>
+  <view class='body-box'>
+    <view class='main'>
+      <view>
+      <image class='main-img' mode='widthFix' src='{{wxDetail.cover}}'></image>
+      </view>
+      <text class='main-title'>{{wxDetail.name}}</text>
+      <view class='main-boder'></view>
+      <view class='main-intro'>{{wxDetail.summary}}</view>
+    </view>
+
+    <view class='owner'>
+      <view>群主昵称：{{wxDetail.master_name}}</view>
+      <text bindtap='copy'>微信号：{{wxDetail.master_number}}</text>
+      <image bindtap='copy' src='http://i1.dd-img.com/assets/image/1510226711-a2f8a7598cd519d2-116w-34h.png'></image>
+    </view>
+
+    <view class='line'></view>
+    <view class='code'>
+      <text>点击二维码可长按保存，微信扫描</text>
+      <view>快速联系群主，邀请您加入吧</view>
+    </view>
+    <view class='triangular'></view> 
+      <view class='code-img' >  
+      <image mode='widthFix' bindtap='preview' src='{{wxDetail.master_qr}}'></image>
+      </view>  
+
+  </view>
+</view>
+
+  <button  animation="{{animationData}}" class="sharebtn" open-type="share"><text>分享给好友</text><image  class="sharebtnicon" 
+
+mode="widthFix" src='http://i1.dd-img.com/assets/image/1510898451-a672fd0868b82de9-48w-48h.png'></image></button>

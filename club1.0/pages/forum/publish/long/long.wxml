@@ -1,0 +1,104 @@
+<!--pages/forum/publish/long/long.wxml-->
+<!-- 排序开始 -->
+<view  class="sort-page main {{sortPage ? '' :'none'}} ">
+  <view class='head-sort'>
+    <button class='head-sort-btn' bindtap='sortSuccBtn'>完成</button>
+    <text>拖住可调整上下文位置</text>
+  </view>
+
+  <view style="position: relative; z-index: 199;">
+
+    <view class="touchView" style="height:{{scrollPosition.scrollViewHeight}}px;" catchtouchstart="draggleTouch" catchtouchmove="draggleTouch" catchtouchend="draggleTouch">
+    </view>
+
+    <movable-area class="moveable_row {{movableViewPosition.className}}" style="height: {{scrollPosition.scrollViewHeight}}px;">
+      <movable-view style="height: {{scrollPosition.everyOptionCell}}px; width: 100%; background-color: #fff;" direction="vertical" x="{{movableViewPosition.x}}" y="{{movableViewPosition.y}}" inertia="false" damping="9999" friction="9999">
+        <view wx:if="{{movableViewPosition.data.type == 'text'}}" class='section'>
+          <text>{{movableViewPosition.data.decode.alt}}</text>
+          <view class='section-move' data-seccode="{{movableViewPosition.data.sDtSecCode}}">
+            <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514538309-67cfcc7ffd57ebf5-28w-28h.png'></image>
+          </view>
+        </view>
+        <view wx:else class='section imgs'>
+          <image mode='center' src='{{movableViewPosition.data.decode.src}}'></image>
+          <view class='section-move imgs-bg' data-seccode="{{movableViewPosition.data.sDtSecCode}}">
+            <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514538310-80cb8e5797d661f8-28w-28h.png'></image>
+          </view>
+        </view>
+      </movable-view>
+    </movable-area>
+
+    <scroll-view scroll-y="{{scrollPosition.scrollY}}" style="height: {{scrollPosition.scrollViewHeight}}px;" bindscroll="bindscroll">
+      <block wx:for="{{optionsListData}}" wx:key="sDtSecCode">
+
+        <view wx:if="{{item.type == 'text'}}" class='section {{item.selectClass}}'>
+          <text>{{item.decode.alt}}/{{sortPage2}}</text>
+          <view class='section-move'>
+            <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514538309-67cfcc7ffd57ebf5-28w-28h.png'></image>
+          </view>
+        </view>
+
+        <view wx:else class='section imgs {{item.selectClass}} '>
+          <image mode='center' src='{{item.decode.src}}'></image>
+          <!-- <text><image mode='center' src='http://i2.dd-img.com/upload/2017/0711/1499731771122.jpg'></image></text> -->
+          <view class='section-move imgs-bg'>
+            <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514538310-80cb8e5797d661f8-28w-28h.png'></image>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+
+  </view>
+</view>
+<!--排序结束-->
+
+<view class="main {{sortPage ? 'none' :''}} {{tagsPage ? 'none' :''}}">
+  <form bindsubmit="bindFormSubmit">
+
+    <!-- <view class='head'>
+      <button class='head-btn sort' bindtap='sortBtn'>排序</button>
+      <button class='head-btn' bindtap='bindPublish'>发布</button>
+    </view> -->
+
+    <view class='cover'>
+      <view class='cover-img' bindtap='coverImage'>
+        <image class='cover-img-add' mode='widthFix' src='http://i1.dd-img.com/assets/image/1514346396-8ed2e39e57043303-40w-40h.png'></image>
+        添加封面图
+        <image class='cover-img-photo' mode='widthFix' src='{{args.cover.src}}'></image>
+        <view wx:if="{{args.cover.src}}" class='photo-img-change'>更换图片</view>
+      </view>
+      <view class='cover-content'>
+        <input placeholder='请输入标题' bindinput='bindTitle'  placeholder-style="color:#ccc"></input>
+      </view>
+    </view>
+
+    <forum-form>
+      <forum-bar wx:for="{{contents}}" class="bar-{{item.type}}" bind:barevent="_barEvent" id="{{index}}" bind:drag="_onMoveEvent" bind:moveend="_onMoveEndEvent">
+        <forum-image wx:if="{{item.type=='img'}}" bind:_onchangeimg="_onchangeimg" bindinput="_bindTextinput" bind:deleteEvent="_deleteEvent" src="{{item.decode.src}}" islode= "{{item.decode.islode}}" value="{{item.decode.alt}}" id="{{index}}" hasDel="{{contents.length>1?true:false}}"></forum-image>
+        <forum-text wx:else bind:deleteEvent="_deleteEvent" bindinput="_bindTextinput" value="{{item.decode.alt}}" id="{{index}}" hasDel="{{contents.length>1?true:false}}"></forum-text>
+      </forum-bar>
+    </forum-form>
+
+    <view class='tags'>
+      <view class='tags-explain'>您可以关联标签，让您的作品更容易被发现</view>
+      <view class='tags-real' wx:for="{{args.tagids}}">
+        <text>{{item.tag_name}}</text>
+        <image mode='widthFix' data-id='{{index}}' bindtap='tagsDelete' src='http://i1.dd-img.com/assets/image/1514519559-a5c9b6ea92a4df0e-28w-28h.png'></image>
+      </view>
+      <view class='tags-btn' bindtap='tagsBtn'>#添加标签#</view>
+    </view>
+
+
+    <view class='footerbtn'>
+      <button class='footerbtn-sort' bindtap='sortBtn'>排序</button>
+      <button class='footerbtn-publist' disabled="{{pubDisabled}}" bindtap='bindPublish'>立即发布</button>
+    </view>
+
+
+  </form>
+
+</view>
+
+
+
+<forum-tags class="{{tagsPage ? '' :'none'}}"  bind:_onBackBtn="_onBackBtn" bind:tagchange="_bindTagChange" bind:_bindFormSubmit="_bindFormSubmit"></forum-tags>

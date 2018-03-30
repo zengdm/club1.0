@@ -1,0 +1,12 @@
+<!--pages/group/feedback/feedback.wxml-->
+<view class='main'>
+<form bindsubmit="formSubmit">
+  <view class='header'>您的意见和建议</view>
+  <view class='section'>
+    <textarea placeholder='请输入您的宝贵意见和建议' bindinput='bindinput' placeholder-style='color:#ccc' name='textarea'></textarea>
+  </view>
+  <view class='footer'>
+    <button class="{{btnColor ? '' : 'btn-color'}}" loading='{{sending?true:false}}' formType="submit">{{sendName?sendName:'提 交'}}</button>
+  </view>
+  </form>
+</view>

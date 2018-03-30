@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "forum-image": "../image/image",
+    "forum-text": "../text/text",
+    "forum-form": "../form/forum-form"
+  }
+}

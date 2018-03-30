@@ -1,0 +1,29 @@
+<!--pages/wx_car/wx_car.wxml-->
+<scroll-view class="swiper-content" style="height:{{winHeight}}px" scroll-y="true" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+<view class='body'>
+  <view class='section' wx:for="{{carGroup}}">
+    <view class='letter'>
+      <text>{{index}}</text>
+    </view>
+
+    <view class='car'>
+
+        <view class='car-intro' bindtap="carDetail" wx:for="{{carGroup[index]}}" data-id="{{item.id}}" data-name='{{item.name}}' data-summary='{{item.summary}}' data-masterName='{{item.master_name}}' data-masterNumber='{{item.master_number}}' data-masterQr='{{item.master_qr}}' data-cover='{{item.cover}}'>
+        <image mode='widthFix' class='car-intro-img' src='{{item.cover}}'></image>
+        <view class='car-intro-name'>{{item.name}}</view>
+      </view>
+
+  
+    </view>
+  </view>
+
+</view>
+
+<!--字母列表 S-->
+  <view class="letter-item" bindtap="clickLetter" catchtouchmove="touchMove" catchtouchend="touchEnd">
+
+    <view class="letter-li {{currentLetter==letterIndex ? 'add-color' : ''}}" data-current="{{letterIndex}}" wx:for="{{brandList}}" wx:for-item="letterItem" wx:for-index="letterIndex" data-letter="{{letterItem.flag}}">{{letterItem.flag}}</view>
+
+  </view>
+  <!--字母列表 E-->
+  </scroll-view>

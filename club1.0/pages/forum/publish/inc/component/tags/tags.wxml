@@ -1,0 +1,27 @@
+<!--pages/forum/publish/inc/component/tags/tags.wxml-->
+<!-- <text>pages/forum/publish/inc/component/tags/tags.wxml</text> -->
+<view class='tags-page main'>
+<form bindsubmit="_bindFormSubmit" >
+  <view class='tags-page-search'>
+    <input placeholder='请输入关键字' placeholder-style='color:#cccccc;'  name="input" value='{{tvalue}}' ></input>
+    <image mode='widthFix' bindtap="_onBackBtn" src='http://i1.dd-img.com/assets/image/1514533682-9d762e130ac77d6a-40w-40h.png'></image>
+  </view>
+
+  <view class='tags-page-explain'>多个关键词请以
+    <text>空格</text> 或者英文逗号“,”隔开</view>
+
+  <view class='footer'>
+    <button class='btn-color' form-type="submit">确 认</button>
+  </view>
+</form>
+  <view class='hot'>
+    <view class='hot-header'>热门标签</view>
+    <view class='hot-section' wx:for="{{tagsList}}">
+      <view class='hot-section-title'>{{item.type_name}}</view>
+      <view class='hot-section-btn'  wx:for="{{item.list}}" bindtap='_tagsTap' data-id="{{item.tag_id}}" data-name='{{item.tag_name}}'>{{item.tag_name}}</view>
+    </view>
+
+   
+  </view>
+
+</view>

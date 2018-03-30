@@ -1,0 +1,37 @@
+<!--pages/user/inc/component/user-head/user-head.wxml-->
+<view class='head'>
+    <view class='head-img'>
+        <block wx:if="{{userInfo.img}}">
+            <image style='width:120rpx;' mode='aspectFill' bindtap='getpersonal' data-avatarUrl='{{userInfo.img}}' src='{{userInfo.img}}'></image>
+        </block>
+        <block wx:else>
+            <image style='width:120rpx;' mode='widthFix' bindtap='redelegation' src='http://i1.dd-img.com/assets/image/1517466287-bb81d5d98c3824fd-512w-509h.png'></image>
+        </block>
+    </view>
+    <block wx:if="{{userInfo.name}}">
+        <view class='head-name' bindtap='getpersonal'>{{userInfo.name}}</view>
+    </block>
+    <block wx:else>
+        <view class='head-name' bindtap='redelegation'>登录</view>
+    </block>
+
+    <view class='head-info'>
+        <view class='head-info-left' bindtap='_personal' data-id="{{authorid}}">
+            <view wx:if="{{isuserInfoid ==1}}">TA的文章</view>
+            <view wx:else>文章</view>
+            <view class='head-info-right'>{{userInfo.article_num?userInfo.article_num:0}}</view>
+        </view>
+        <view class='head-info-left' bindtap='goFollow' data-id="{{authorid}}">
+            <view wx:if="{{isuserInfoid ==1}}">TA的关注</view>
+            <view wx:else>关注</view>
+            <view class='head-info-right'>{{userInfo.follow_num?userInfo.follow_num:0}}</view>
+        </view>
+        <view class='head-info-left' bindtap='goFans' data-id="{{authorid}}">
+            <view wx:if="{{isuserInfoid ==1}}">TA的粉丝</view>
+            <view wx:else>粉丝</view>
+            <view class='head-info-right'>{{userInfo.fans_num?userInfo.fans_num:0}}</view>
+        </view>
+
+    </view>
+
+</view>

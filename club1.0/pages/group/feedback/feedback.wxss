@@ -1,0 +1,38 @@
+/* pages/group/feedback/feedback.wxss */
+.main{
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.header{
+  padding:40rpx 0 16rpx 10rpx; 
+  font-size:32rpx;
+  color:#2e3033;
+}
+.section{
+  background: #fff;
+  border-radius:6rpx;
+  border:2rpx solid #e6e6e6;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.section textarea{
+  font-size:30rpx;
+  color:#000000;
+}
+.footer button{
+  margin-top: 60rpx;
+  height: 88rpx;
+  background:#cce7ff;
+  color: #fff;
+  border-radius:200rpx;
+}
+.footer button::after{
+  border: none;
+}
+.footer .btn-color{
+  background:#3399ff;
+  box-shadow:0 6rpx 10rpx 0 rgba(51,153,255,0.30);
+}

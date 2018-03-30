@@ -1,0 +1,16 @@
+<!--pages/user/personal/personal.wxml-->
+<!-- <text>pages/user/personal/personal.wxml</text> -->
+<!-- 以下是对一个自定义组件的引用 -->
+
+<!-- <block>
+ <user-head authorid="{{args.authorid}}"></user-head> 
+</block> -->
+ <user-head wx:if="{{ishead}}" authorid="{{args.authorid}}"></user-head> 
+
+<component-forum-list tlist="{{myforum}}" userInfo="{{userInfo}}" goIndex="1" loginInfo="{{userInfo}}"></component-forum-list>
+
+  <component-publish-btn></component-publish-btn>
+
+
+<import src="../../inc/login.wxml" />
+<template is="phone" data="{{verifyCodeTime,buttonDisable,phoneBorder,codeBorder,error,hidden}}"></template>

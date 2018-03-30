@@ -1,0 +1,91 @@
+/**personal.wxss**/
+@import "../../pages/inc/inc.wxss";
+
+/* 个人中心  */
+
+
+
+.count-main {
+  height: 100%;
+  overflow: hidden;
+  background: #f8f8f8;
+}
+
+.section {
+  /* height: 100%; */
+  background-color: #f8f8f8;
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+
+.list {
+  background-color: #fff;
+  margin-bottom: 40rpx;
+}
+
+.list-column {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 24rpx;
+  border-bottom: 1px solid #fafafa;
+}
+
+.list-column-intro {
+  -webkit-box-flex: 1;
+}
+
+.list-column-intro image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+  margin-bottom: 10rpx;
+}
+
+.list-column-intro text {
+  font-size: 34rpx;
+  color: #333;
+}
+
+.list-column-next image {
+  width: 30rpx;
+  height: 40rpx;
+}
+
+.list-column-next text {
+  height: 40rpx;
+  min-width: 40rpx;
+  line-height: 40rpx;
+  display: inline-block;
+  background: #f33;
+  text-align: center;
+  font-size: 28rpx;
+  border-radius: 50%;
+  color: #fff;
+  margin-right: 14rpx;
+}
+.list-column-intro text.list-column-intro_red {
+    color: #d0021b;
+    padding-left: 20rpx;
+}
+
+.list-column-next_status1 {
+    background: #fff;
+    border: 1rpx solid #39f;
+    border-radius: 200rpx;
+    width: 118rpx;
+    height: 58rpx;
+    margin-top: 14rpx;
+    font-size: 28rpx;
+    display: inline-block;
+    color: #39f;
+    line-height: 58rpx;
+    text-align: center;
+}
+
+.list-column-next_status2, .list-column-next_status3 {
+    font-size: 28rpx;
+    color: #8a9199;
+}

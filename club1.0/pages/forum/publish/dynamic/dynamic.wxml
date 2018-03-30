@@ -1,0 +1,47 @@
+<!--pages/forum/publish/dynamic/dynamic.wxml-->
+<view class="main {{tagsPage ? 'none' :''}}">
+    <form bindsubmit="bindFormSubmit">
+        <view class='header'>
+            <text>发布动态</text>
+            <text class='header-cancel' bindtap='removepublish'>取消发布</text>
+        </view>
+        <view class='section'>
+            <!-- <textarea style="{{tagsPage?'display:none':''}}" placeholder='发布内容'  maxlength="-1" bindinput='bindinput' placeholder-style='color:#ccc'></textarea>  -->
+            <textarea placeholder='发布内容' maxlength="-1" bindinput='bindinput' placeholder-style='color:#ccc'></textarea>
+        </view>
+
+        <view class='photos'>
+            <view class='photos-title'>添加图片</view>
+            <view class='photos-add'>
+                <view class='photos-add-none photos-add-item' wx:for="{{photoArr}}">
+                    <image class='photos-add-item-img' src='{{item.src}}'></image>
+                    <image wx:if="{{item.islode == -1 }}" class='photos-add-item-close' data-nodeIndex='{{index}}' bindtap='deleteIage' src='http://i1.dd-img.com/assets/image/1514519559-3eb52988c3c05025-28w-28h.png'></image>
+                    <view wx:else class='photos-add-item-uploading'>上传中</view>
+                </view>
+                <view class='photos-add-none' wx:if="{{uploadIng}}" bindtap='uploadIages'>
+                    <image class='photos-add-none-img' mode='widthFix' src='http://i1.dd-img.com/assets/image/1514518556-ac7e93337e77dca7-40w-40h.png'></image>
+                </view>
+            </view>
+        </view>
+
+        <view class='tags'>
+            <view class='tags-explain'>您可以关联标签，让您的作品更容易被发现</view>
+            <view class='tags-real' wx:for="{{args.tagids}}">
+                <text>{{item.tag_name}}</text>
+                <image mode='widthFix' data-id='{{index}}' bindtap='tagsDelete' src='http://i1.dd-img.com/assets/image/1514519559-a5c9b6ea92a4df0e-28w-28h.png'></image>
+            </view>
+            <view class='tags-btn' bindtap='tagsBtn'>#添加标签#</view>
+        </view>
+
+        <view class='footer' bindtap='publishBtn'>
+            <!-- class为 btn-color 按钮为蓝色 -->
+            <button class="{{btnColor ? '' : 'btn-color'}}"  disabled="{{pubDisabled}}">发 布</button>
+        </view>
+    </form>
+
+    <!-- <forum-tags wx:if="{{!tagsPage}}" bind:_onBackBtn="_onBackBtn"  bind:tagchange="_bindTagChange" bind:_bindFormSubmit="_bindFormSubmit"></forum-tags> -->
+
+</view>
+
+
+<forum-tags class="{{tagsPage ? '' :'none'}}" bind:_onBackBtn="_onBackBtn" bind:tagchange="_bindTagChange" bind:_bindFormSubmit="_bindFormSubmit"></forum-tags>

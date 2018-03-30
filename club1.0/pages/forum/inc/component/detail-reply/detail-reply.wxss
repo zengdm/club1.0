@@ -1,0 +1,144 @@
+/* pages/forum/inc/component/detail-footer/detail-reply.wxss */
+.footer {
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  background: #f8f8f8;
+}
+.onshare{
+    display: block;
+    width:20rpx;
+    float:left;
+
+}
+
+.footer-empty {
+  width: 100%;
+  height: 10rpx;
+  background-image: linear-gradient(to bottom, #e6e6e6, #f8f8f8);
+}
+
+.footer-intro {
+  line-height: 88rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-intro text {
+  font-size: 32rpx;
+  color: #5c6166;
+}
+
+.footer-intro image {
+  width: 36rpx;
+  margin-left: 40rpx;
+}
+
+.write_commit {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  padding: 0 30rpx;
+  position: fixed;
+  top: 0;
+}
+
+.write_commit_txt_title {
+  /* height: 114rpx;
+  line-height: 114rpx; */
+  padding: 40rpx 0 16rpx 10rpx;
+  font-size: 32rpx;
+  color: #2e3033;
+}
+
+.info_textarea {
+  border: 1px solid #e6e6e6;
+  width: auto;
+  border-radius: 3px;
+  background: #fff;
+  height: 290rpx;
+  font-size: 28rpx;
+  line-height: 50rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+.write_commit_button {
+  width: 100%;
+  margin-right: 0;
+  text-align: right;
+  height: 60rpx;
+  margin-top: 60rpx;
+}
+
+/* .write_commit_button button {
+  width: 100%;
+  height: 88rpx;
+  display: inline-block;
+  line-height: 88rpx;
+  color: #fff;
+  background: #39f;
+  outline: none;
+  font-size: 34rpx;
+  border: none;
+  box-shadow: 0 6rpx 10rpx 0 rgba(51, 153, 255, 0.30);
+  border-radius: 200rpx;
+} */
+
+.info_comment_img {
+  width: 42.874rpx;
+  height: 41.062rpx;
+  padding-right: 10rpx;
+}
+
+.info_comment_count {
+  float: right;
+  margin-top: 22rpx;
+  margin-right: 10rpx;
+  color: #24ceef;
+}
+
+.write_commit_close {
+  width: 34rpx;
+  height: 34rpx;
+  float: right;
+}
+
+.none {
+  display: none;
+}
+
+.hint {
+  width: 280rpx;
+  height: 140rpx;
+  background: url('http://i1.dd-img.com/assets/image/1515121963-11647858df0c73d3-302w-146h.png') no-repeat;
+  background-size: 280rpx;
+  position: fixed;
+  bottom: 56rpx;
+  right: 50rpx;
+  z-index: 1000;
+  font-size: 28rpx;
+  color: #fff;
+  padding: 20rpx 0 20rpx 26rpx;
+  box-sizing: border-box;
+}
+
+
+.write_commit_button button{
+  margin-top: 60rpx;
+  height: 88rpx;
+  background:#cce7ff;
+  color: #fff;
+  border-radius:200rpx;
+}
+.write_commit_button button::after{
+  border: none;
+}
+.write_commit_button .btn-color{
+  background:#3399ff;
+  box-shadow:0 6rpx 10rpx 0 rgba(51,153,255,0.30);
+}

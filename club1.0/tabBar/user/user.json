@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "个人中心",
+  "usingComponents": {
+    "user-head": "/pages/inc/component/user/user-head/user-head",
+    "login-tips": "/pages/inc/component/login/login"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "详情",
+  "navigationBarBackgroundColor": "#f8f8f8",
+  "navigationBarTextStyle":"black",
+  "usingComponents": {
+    "login-tips": "/pages/inc/component/login/login"
+  }
+}

@@ -1,0 +1,28 @@
+<!--pages/forum/publish/inc/component/image/image.wxml-->
+
+<!-- <image wx:if="{{src}}" src="{{src}}"></image>
+  <textarea value="{{remark}}" maxlength="220" auto-focus="true" auto-height="true" style="border:1px #999999 solid;"></textarea> -->
+
+
+<view class='photo'>
+  <view class='photo-img'>
+    <image class='photo-img-main' wx:if="{{src}}" src="{{src}}"></image>
+
+
+    <!-- 上传成功 -->
+    <block wx:if='{{islode == -1}}'>
+    
+      <image wx:if="{{hasDel}}" class='photo-img-close' bindtap='_onDelete' src='http://i1.dd-img.com/assets/image/1514519559-3eb52988c3c05025-28w-28h.png'></image>
+      <view class='photo-img-change' bindtap='_onchangeimg'>更换图片</view>
+    </block>
+
+    <!-- 上传状态 -->
+    <view  wx:else  class='photo-img-shade'>
+      <text>上传中</text>
+    </view>
+
+  </view>
+  <view class='cover-content'>
+    <input placeholder='添加图片旁白' value="{{value}}" bindinput='_bindinput' placeholder-style="color:#ccc"></input>
+  </view>
+</view>

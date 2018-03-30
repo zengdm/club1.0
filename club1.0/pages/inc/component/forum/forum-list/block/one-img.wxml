@@ -1,0 +1,16 @@
+<template name="one-img">
+  <!-- <view class='club-card-list'> -->
+   <view class='club-card-text' wx:if="{{item.summary}}" data-sourceid="{{item.sourceid}}" data-platid="{{item.platid}}" data-ctype="{{item.ctype}}" bindtap='itemClick'>{{item.summary}}
+    <text wx:if="{{item.summary.length>35}}" class='club-card-text-all'>...全文</text>
+  </view>
+  <view class='club-card-center' data-sourceid="{{item.sourceid}}" data-platid="{{item.platid}}" data-ctype="{{item.ctype}}" bindtap='itemClick'>
+
+    <view class='club-card-center-one'>
+      <image mode='aspectFill' wx:for="{{item.imgs}}" src="{{item.imgurl}}"></image>
+    </view>
+
+
+  </view> 
+  <!-- </view> -->
+
+</template>

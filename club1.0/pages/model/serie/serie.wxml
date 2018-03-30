@@ -1,0 +1,298 @@
+<!--details.wxml-->
+<!-- 车型详情页 -->
+<scroll-view scroll-y="{{scrollBoolean}}" style='height:{{winHeight}}px' bindscroll="scroll">
+  <!-- <view class="container" bindscroll="scroll" >  -->
+  <view class="main">
+    <view class="main-img">
+      <image wx:if="{{detailData.focus}}" class="main-img-car" src="{{detailData.focus}}" mode='aspectFill' bindtap="picShow"></image>
+      <view class='citybg' bindtap="city">
+        <text class="dizhi" data-pinyin="{{detailData.chexi_pinyin}}"></text>
+        <text class="main-price-city" data-pinyin="{{detailData.chexi_pinyin}}">{{city.cityName}}</text>
+      </view>
+      <view class='carpics' bindtap="picShow">
+        <text class="carpicbg"></text>
+        <text class="carpicshow" wx:if="{{detailData.imgs_count}}">{{detailData.imgs_count}}</text>
+        <text class="carpicshow" wx:else>0</text>
+      </view>
+    </view>
+    <view class="main-price">
+      <view class='main-title'>{{detailData.name}}</view>
+      <view class="main-price-num">厂商指导价：
+        <block wx:if="{{detailData.min_guide_price!=detailData.max_guide_price}}">
+          ￥{{detailData.min_guide_price}}-{{detailData.max_guide_price}}万
+        </block>
+        <block wx:elif="{{detailData.min_guide_price==detailData.max_guide_price}}">
+          ￥{{detailData.min_guide_price}}万
+        </block>
+      </view>
+      <view class="main-price-num">补贴后：
+        <block wx:if="{{detailData.min_actual_price!=detailData.max_actual_price}}">
+          <text class="num-num">￥{{detailData.min_actual_price}}-{{detailData.max_actual_price}}万</text>
+        </block>
+        <block wx:elif="{{detailData.min_actual_price==detailData.max_actual_price}}">
+          <text class="num-num">￥{{detailData.min_actual_price}}万</text>
+        </block>
+      </view>
+      <view class='cars-level'>
+        <image wx:if="{{detailData.type=='1'}}" src='http://i1.dd-img.com/assets/image/1510300689-9381441f8d0f1352-100w-100h.png'></image>
+        <image wx:if="{{detailData.type=='2'}}" src='http://i1.dd-img.com/assets/image/1510300689-47c8bd2587e9b114-100w-100h.png'></image>
+        <image wx:if="{{detailData.type=='3'}}" src='http://i1.dd-img.com/assets/image/1510300689-700d0e446730ab83-100w-100h.png'></image>
+        <image wx:if="{{detailData.type=='4'}}" src='http://i1.dd-img.com/assets/image/1510300689-d48788288cf87f27-100w-100h.png'></image>
+        <image wx:if="{{detailData.type=='5'}}" src='http://i1.dd-img.com/assets/image/1510300689-6f1f4701a7d59323-100w-100h.png'></image>
+        <image wx:if="{{detailData.type=='6'}}" src='http://i1.dd-img.com/assets/image/1510300689-62980e0e0edcd0c9-100w-100h.png'></image>
+        <image wx:if="{{detailData.type=='108'}}" src='http://i1.dd-img.com/assets/image/1510300688-97c0d395170cac04-100w-100h.png'></image>
+        <image wx:if="{{detailData.type=='109'}}" src='http://i1.dd-img.com/assets/image/1510300688-3870f8f4744475e1-100w-100h.png'></image>
+        <image wx:if="{{detailData.type=='7'}}" src='http://i1.dd-img.com/assets/image/1510300688-81316e48b81d3046-100w-100h.png'></image>
+        <image wx:if="{{detailData.type=='2_0'}}" src='http://i1.dd-img.com/assets/image/1510300688-b40852da3df664fe-100w-100h.png'></image>
+      </view>
+    </view>
+    <view class='cars-parameter'>
+      <swiper class="cars-para-swiper" vertical="true" autoplay="true" interval="5000" current="{{swipercurrentt}}">
+        <swiper-item class="cars-para-item" data-current="0" bindtap="getitemtwo">
+          <view class='cars-para-list'>
+            <view class='color-blue'>{{detailData.xhlc}}
+              <text class='color-gray'>公里</text>
+            </view>
+            <view>续航</view>
+          </view>
+          <view class='cars-para-list'>
+            <view class='color-blue'>{{detailData.zdgl}}
+              <text class='color-gray'>千瓦</text>
+            </view>
+            <view>功率</view>
+          </view>
+          <view class='cars-para-list'>
+            <view class='color-blue'>{{detailData.kscd}}
+              <text class='color-gray'>小时</text>
+            </view>
+            <view>快充</view>
+          </view>
+          <view class='cars-para-list'>
+            <view class='color-blue'>{{detailData.zczbnf}}
+              <text class='color-gray'>年</text>
+            </view>
+            <view>质保</view>
+          </view>
+        </swiper-item>
+        <swiper-item class="cars-para-item" data-current="1" bindtap="getitemone">
+          <view class='cars-para-list'>
+            <view class='color-blue'>{{detailData.dcrl}}
+              <text class='color-gray'>千瓦·时</text>
+            </view>
+            <view>电池容量</view>
+          </view>
+          <view class='cars-para-list'>
+            <view class='color-blue'>{{detailData.zhzdnj}}
+              <text class='color-gray'>牛·米</text>
+            </view>
+            <view>扭矩</view>
+          </view>
+          <view class='cars-para-list'>
+            <view class='color-blue'>{{detailData.cgcd}}
+              <text class='color-gray'>小时</text>
+            </view>
+            <view>慢充</view>
+          </view>
+          <view class='cars-para-list'>
+            <view class='color-blue'>{{detailData.zczblc}}
+              <text class='color-gray'>万公里</text>
+            </view>
+            <view>质保</view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+  <!-- <view class='cars-detail'>
+    <view class='cars-detail-view'  bindtap="getsubsidy" >
+      <view class="cars-detailimg">
+        <image src=" http://i1.dd-img.com/assets/image/1510213539-510b6f25cd6dc192-60w-60h.png" mode='widthFix'></image>
+      </view>
+      <view class='cars-detailtxt'>参数配置</view>
+    </view>
+    <view class='cars-detail-view'  bindtap="getendurance">
+      <view class="cars-detailimg">
+        <image src=" http://i1.dd-img.com/assets/image/1510213539-4b9fc01cac43f0e6-60w-60h.png" mode='widthFix'></image>
+      </view>
+      <view class='cars-detailtxt'>实拍图片</view>
+    </view>
+    <view class='cars-detail-view'  bindtap="getnew_car">
+      <view class="cars-detailimg">
+        <image src=" http://i1.dd-img.com/assets/image/1510213539-6ac69f6006acdc4e-60w-60h.png" mode='widthFix'></image>
+      </view>
+      <view class='cars-detailtxt'>测评导购</view>
+    </view>
+    <view class='cars-detail-view'  bindtap="getcoming_soon">
+      <view class="cars-detailimg">
+        <image src=" http://i1.dd-img.com/assets/image/1510213539-57dbb143003beec0-61w-60h.png" mode='widthFix'></image>
+      </view>
+      <view class='cars-detailtxt'>新闻资讯</view>
+    </view>
+  </view>  -->
+
+  <block wx:if="{{carDatalen > 0}}">
+    <!-- <view> -->
+    <!-- <scroll-view scroll-y  bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"> -->
+    <!--选项卡 S-->
+    <view class="swiper-tab {{scrollHeight==0 ? 'scrollHeighton' : ''}}">
+      <!-- <view class="swiper-tab"> -->
+      <block wx:for="{{carsData}}" wx:for-item="carsItem" wx:key="index">
+        <view wx:if="{{carsItem.sales_status==1}}" class="swiper-tab-item {{currentTab==index ? 'on' : ''}}" data-current="{{index}}" bindtap="swichNav">全部在售</view>
+        <view wx:elif="{{carsItem.sales_status==2}}" class="swiper-tab-item {{currentTab==index ? 'on' : ''}}" data-current="{{index}}" bindtap="swichNav">停产停售</view>
+        <view wx:else class="swiper-tab-item {{currentTab==index ? 'on' : ''}}" data-current="{{index}}" bindtap="swichNav">未上市</view>
+      </block>
+    </view>
+    <!--选项卡 E-->
+    <!--车型列表 S-->
+    <swiper current="{{currentTab}}" class="swiper-box  {{scrollHeight==0 ? 'scrollmargin' : ''}}" style='height:{{winHeight*2}}rpx' bindchange="bindChange">
+      <block wx:for="{{carsData}}" wx:for-item="carsItem" wx:key="index" wx:for-index="iindex">
+        <swiper-item>
+          <scroll-view scroll-y style='{{scrollHeights}}'>
+            <block wx:for="{{carsItem.chexingtype}}" wx:for-item="carsItemlist" wx:for-index="jindex">
+              <view wx:if="{{carsItemlist.niankuan}}" class="configuration-title">
+                <text class="configuration-title-pic">{{carsItemlist.niankuan}}</text>
+              </view>
+              <block wx:for="{{carsItemlist.chexing}}" wx:for-item="chexingListItem" wx:for-index="cindex">
+                <block wx:if="{{index=='niankuan'}}">
+                </block>
+                <block wx:else>
+                  <view class='configuration-list'>
+                    <view class='configuration-list-title'>{{index}}{{chexingListItem.name}}
+                      <text wx:if="{{chexingListItem.is_stop==1}}" class='cars-stop'>停产</text>
+                    </view>
+                    <view wx:if="{{chexingListItem.sales_status==2}}" class='configuration-list-price'>
+                      <view>指导价：停产</view>
+                      <view>补贴后：停产</view>
+                    </view>
+                    <view wx:elif="{{chexingListItem.sales_status==3}}" class='configuration-list-price'>
+                      <view>指导价：未上市</view>
+                      <view>补贴后：未上市</view>
+                    </view>
+                    <view wx:else class='configuration-list-price'>
+                      <view>指导价：
+                        <text class='blue'>{{chexingListItem.guide_price}}万</text>
+                      </view>
+                      <view>补贴后：
+                        <text class='red'>{{chexingListItem.actual_price}}万</text>
+                      </view>
+                    </view>
+                    <view class='configuration-list-pic'>
+                      <view wx:if="{{chexingListItem.img_count > 0}}">
+                        <image bindtap="cartypeShow" data-pzid='{{chexingListItem.pzid}}' class='configuration-tu' src='http://i1.dd-img.com/assets/image/1510225898-8de014c581ae4624-30w-30h.png'></image>
+                        <text bindtap="cartypeShow" data-pzid='{{chexingListItem.pzid}}'>图片</text>
+                      </view>
+                      <view wx:else>
+                        <image class='configuration-tu' src='http://i1.dd-img.com/assets/image/1510733570-f6e957f47b2208bf-30w-30h.png'></image>
+                        <text class='color-off'>图片</text>
+                      </view>
+                      <view wx:if="{{chexingListItem.sales_status==3}}">
+                        <image class='configuration-tu' src='http://i1.dd-img.com/assets/image/1510733570-9dbb0c1e47d7f30c-30w-30h.png'></image>
+                        <text class='color-off'>配置</text>
+                      </view>
+                      <view wx:else data-pzid="{{chexingListItem.pzid}}" bindtap="parameters">
+                        <image class='configuration-tu' src='http://i1.dd-img.com/assets/image/1510226265-fefb0fdfca1076c1-30w-30h.png'></image>
+                        <text>配置</text>
+                      </view>
+                      <view wx:if="{{chexingListItem.sales_status==3}}">
+                        <image class='configuration-tu' src='http://i1.dd-img.com/assets/image/1510733570-6077cb1c46c74947-30w-30h.png'></image>
+                        <text class='color-off'>对比</text>
+                      </view>
+                      <!-- <view wx:else class="{{colortab==index ? 'color-off-tab' : ''}}" data-color="{{index}}" id='{{index}}'  bindtap='getaddcontrast' > -->
+                      <view wx:else bindtap='addCar' data-pzid="{{chexingListItem.pzid}}" data-cxid="{{cxid}}">
+                        <image wx:if="{{tipsData.carIds[chexingListItem.pzid]>0}}" class='configuration-tu' src='http://i1.dd-img.com/assets/image/1510733570-6077cb1c46c74947-30w-30h.png'></image>
+                        <image wx:else class='configuration-tu' src='http://i1.dd-img.com/assets/image/1510226265-e40c901d385fad95-30w-30h.png'></image>
+                        <text wx:if="{{tipsData.carIds[chexingListItem.pzid]>0}}" class='color-off'>对比</text>
+                        <text wx:else>对比</text>
+                      </view>
+                    </view>
+                  </view>
+                </block>
+              </block>
+            </block>
+            <view class='buttonbg'></view>
+            <!-- <view class='carslist-number'>共{{carsItem.count}}款车型</view> -->
+          </scroll-view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!--车型列表 E-->
+    <!-- </scroll-view> -->
+  </block>
+  <block wx:else>
+    <view class='unlisted'>
+      <text>该车系还未有车型上市和公布详细信息</text>
+      <text>小编正在为您奋力准备，稍后再见</text>
+    </view>
+  </block>
+
+
+  <view class='configuration-button'>
+
+    <view wx:if="{{!tipsData.serie}}" bindtap='favSerie' data-cxid="{{cxid}}">
+      <image class='configuration-button-pic' src='http://i1.dd-img.com/assets/image/1510226727-7c1d2999b3a07d62-40w-40h.png'></image>
+      <text bindtap='getstore'>加入收藏</text>
+    </view>
+    <view wx:if="{{tipsData.serie}}" bindtap='remFavSerie' data-cxid="{{cxid}}">
+      <image class='configuration-button-pic' src='http://i1.dd-img.com/assets/image/1510125363-f62fcf31025cc29f-40w-40h.png'></image>
+      <text bindtap='getstore' class='color-add'>已收藏</text>
+    </view>
+
+
+    <view wx:if="{{tipsData.carList.length>0}}" bindtap='carTips'>
+      <image class='configuration-button-pic' src='http://i1.dd-img.com/assets/image/1510226727-47732ec50dd5435b-40w-40h.png'></image>
+      <text>车型对比</text>
+      <view wx:if="{{tipsData.carList.length>0}}" class='configuration-number'>{{tipsData.carList.length}}</view>
+    </view>
+    <view wx:else class="forbid">
+      <image class='configuration-button-pic' src='http://i1.dd-img.com/assets/image/1510226727-47732ec50dd5435b-40w-40h.png'></image>
+      <text>车型对比</text>
+    </view>
+  </view>
+  <!-- </view>  -->
+</scroll-view>
+
+<!-- 车型对比弹窗 -->
+<view class='comparison' bindtap='cancel' wx:if="{{comparison}}"></view>
+<view class="drawer-box" animation="{{animationContrast}}">
+  <scroll-view scroll-y="true" style="height:{{winHeight-50}}px">
+
+    <view class='body'>
+      <view class='choose'>
+        <checkbox-group bindchange="selCars">
+          <view class='choose-list' wx:for="{{tipsData.carList}}" wx:key="carindex" wx:for-item="car" checked="{{car.checked}}" data-selected="0" data-pzid="{{car.pzid}}" data-cxid="{{car.cxid}}" data-ppid="{{car.ppid}}">
+            <checkbox value="{{car.pzid}}" checked="{{tipsData.carIds[car.pzid]>1}}" />{{car.pp_name}} | {{car.cx_name}} {{car.name}}
+            <!-- <image  src='http://i1.dd-img.com/assets/image/1510284149-96076f3f0ece8a8f-40w-40h.png'></image> -->
+            <!-- <text>{{car.pp_name}}  |  {{car.cx_name}} {{car.name}}</text> -->
+          </view>
+        </checkbox-group>
+
+      </view>
+
+
+    </view>
+
+
+  </scroll-view>
+
+  <view class='begin'>
+    <view wx:if="{{tipsData.selCars.length>0}}" class='begin-delete' bindtap="remCars">删除</view>
+    <view wx:else class='begin-delete cancel' bindtap='cancel'>关闭</view>
+    <view bindtap="goParam" class='begin-choose reduce-delete {{tipsData.selCars.length>0?"":"zero"}}'>开始对比这
+      <text>{{tipsData.selCars.length}}</text> 款车</view>
+  </view>
+</view>
+
+
+
+<loading hidden="{{hiddenlodding}}">
+  加载中...
+</loading>
+<button animation="{{animationData}}" class="sharebtn" open-type="share">
+  <text>分享给好友</text>
+  <image class="sharebtnicon" mode="widthFix" src='http://i1.dd-img.com/assets/image/1510898451-a672fd0868b82de9-48w-48h.png'></image>
+</button>
+
+
+
+<import src="../../inc/login.wxml" />
+<template is="phone" data="{{verifyCodeTime,buttonDisable,phoneBorder,codeBorder,error,hidden}}"></template>

@@ -1,0 +1,133 @@
+/* pages/wx_detail/wx_detail.wxss */
+
+.sharebtn {
+  /* animation: kf-marque-animation 3s linear infinite; */
+  background: #33adff;
+  padding: 0 30rpx 0 20rpx;
+  box-shadow: 0 4rpx 12rpx 0 rgba(50, 173, 255, 0.30);
+  border-radius: 0 200rpx 200rpx 0;
+  /* width:280rpx;  */
+  height: 60rpx;
+  position: fixed;
+  bottom: 126rpx;
+  font-size: 24rpx;
+  color: #fff;
+  left: -19%; 
+  line-height: 60rpx
+}
+
+.sharebtnicon {
+  width: 36rpx;
+  margin:0 0 5rpx 12rpx;
+}
+
+.body {
+  width: 100%;
+  height: 100%;
+  background: #3399ff;
+  padding: 0 30rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.body-box {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding-top: 80rpx;
+  box-sizing: border-box;
+}
+
+.main {
+  width: 100%;
+  /* height: 280rpx; */
+  text-align: center;
+}
+
+.main-img {
+  width: 200rpx;
+  height: 136rpx;
+  margin: 0 auto;
+}
+
+.main-title {
+  font-size: 34rpx;
+  color: #000;
+}
+
+.main-boder {
+  width: 140rpx;
+  height: 4rpx;
+  background: #33adff;
+  margin: 26rpx auto 28rpx;
+}
+
+.main-intro {
+  width: 560rpx;
+  font-size: 28rpx;
+  color: #999;
+  line-height: 48rpx;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.owner {
+  width: 560rpx;
+  margin: 40rpx auto;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 40rpx;
+}
+
+.owner>text {
+  color: #33adff;
+}
+
+.owner>image {
+  width: 116rpx;
+  height: 34rpx;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+
+.line {
+  width: 610rpx;
+  height: 2rpx;
+  margin: 40rpx auto 60rpx;
+  background: #e6e6e6;
+}
+
+.code {
+  width: 500rpx;
+  height: 122rpx;
+  background-color: #dff2ff;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 28rpx;
+  color: #33adff;
+  border-radius: 20rpx;
+  line-height: 46rpx;
+  padding-top: 16rpx;
+  box-sizing: border-box;
+}
+
+.triangular {
+  width: 0;
+  height: 0;
+  border-top: 14rpx solid #dff2ff;
+  border-bottom: 14rpx solid #fff;
+  border-left: 14rpx solid #fff;
+  border-right: 14rpx solid #fff;
+  margin: 0 auto;
+}
+.code-img{
+  width: 240rpx;
+  height: 240rpx;
+  text-align: center;
+   box-shadow: 0 0 20rpx #e6e6e6; 
+  margin: 20rpx auto 0;
+}
+.code-img image{
+  width: 240rpx;
+  height: 240rpx;
+}

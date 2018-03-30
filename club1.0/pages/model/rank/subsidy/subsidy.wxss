@@ -1,0 +1,173 @@
+/* pages/endurance/endurance.wxss */
+/* 续航排行 */
+.container {
+  font-size: 28rpx;
+  /* background: #f4f4f4; */
+}
+/* 标签切换--S */
+
+.sharebtn {
+  bottom: 126rpx;
+}
+
+
+.mian-scroll{
+  margin-top: 82rpx;
+}
+
+
+.swiper-tab {
+  width: 100%;
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  height:81rpx;
+  padding-bottom: 6rpx;
+  line-height:86rpx;
+  text-align: center;
+  color: #666666;
+  font-size: 34rpx;
+  border-bottom: solid 1rpx #e6e6e6;
+  background-color: #fafafa;
+  position: fixed;
+  z-index: 30000;
+}
+
+.swiper-tab-item {
+    width: 50%;
+    border-bottom: 2rpx solid #fafafa; 
+    margin: 0 60rpx;
+}
+.on{
+  color: #33adff;
+  border-bottom: 6rpx solid #33adff;
+}
+.swiper-tab-type {
+  display: flex;
+  width: 320rpx;
+  margin:0 auto;
+  justify-content: space-around;
+  align-items: center;
+  margin-top:30rpx;
+  margin-bottom:30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #b2b2b2;
+}
+.swiper-tab-item-type {
+  width:160rpx;
+  border-radius: 30rpx 0 0 30rpx;
+  background-color: #fff;
+}
+.swiper-tab-item-type:nth-child(2){
+   border-radius: 0 30rpx 30rpx 0;
+}
+.ontype{
+  color: #fff;
+ background: #00cdf2;
+}
+
+
+/* 标签切换--E */
+
+
+/* 车型列表 S */
+
+.drawer-content-item > text {
+  display: block;
+  background: #eee;
+  color: #777;
+  font-size: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 17rpx 32rpx;
+}
+
+::-webkit-scrollbar {
+  /*隐藏滚动条*/
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.drawer-child {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 200rpx;
+  overflow: hidden;
+  background-color: #fff;
+  border-bottom: 1rpx solid #f2f2f2;
+  margin: 0 30rpx;
+}
+
+.drawer-info {
+   padding-left: 20rpx; 
+}
+
+
+.drawer-info > text {
+  width: 290rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  font-size: 34rpx;
+  color: #333;
+}
+
+.drawer-price {
+  color: #d0011b;
+}
+.img-model {
+  width: 240rpx;
+  height: 160rpx;
+  border-radius: 0;
+  display: inline-block;
+  overflow: hidden;
+}
+
+/* 车型列表 E */
+.drawer-child-intro{
+  /* width: 100%; */
+  -webkit-box-flex: 1;
+  justify-content: flex-start; 
+  align-items: center;
+  display: flex;
+}
+.drawer-endurance{
+  color: #33adff;
+  font-size: 28rpx;
+  width: 120rpx;
+  min-width: 120rpx;
+  height: 120rpx; 
+  border: 2rpx solid #dff2ff;
+  border-radius: 50%;
+  text-align: center;
+}
+/* .drawer-endurance text{
+    line-height: 90rpx;
+} */
+.drawer-endurance view{
+    margin-top: 26rpx;
+}
+
+.drawer-info-price{
+  font-size: 24rpx;
+  color: #999999;
+  padding-top: 20rpx;
+}
+.explain{
+  height: 60rpx;
+  line-height: 60rpx;
+  background:#fafafa;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  color: #999999;
+}
+.none{
+  display: none;
+}
+
+

@@ -1,0 +1,30 @@
+<!--pages/service/service.wxml-->
+<!--pages/wx_detail/wx_detail.wxml-->
+
+
+
+
+<view class='body' bindtouchstart="handletouchstart" bindtouchmove="handletouchmove" bindtouchend="handletouchend">
+  <view class='body-box'>
+
+    <!-- <view class='click'>点击二维码可长按保存，微信扫描</view> -->
+    <view class='click'>
+      <text>点击二维码可长按保存，微信扫描</text>
+      <view>快速联系客服，勾搭您的车友小秘书</view>
+    </view>
+    <!-- <view class='img'> -->
+    <image class='img' bindtap='preview' src='{{infoService.service_qr}}'></image>
+    <!-- </view> -->
+
+    <view class='title'>{{infoService.name}}</view>
+    <view class='intro'>{{infoService.summary}}</view>
+    <view class='website'>{{infoService.bottem_text}}</view>
+  </view>
+</view>
+
+<loginShade></loginShade>
+
+<button animation="{{animationData}}" class="sharebtn" open-type="share">
+  <text>分享给好友</text>
+  <image class="sharebtnicon" mode="widthFix" src='http://i1.dd-img.com/assets/image/1510898451-a672fd0868b82de9-48w-48h.png'></image>
+</button>

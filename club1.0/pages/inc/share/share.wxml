@@ -1,0 +1,7 @@
+<!--pages/inc/share/share.wxml-->
+<text>pages/inc/share/share.wxml</text>
+<view>
+  <text>分享标题：{{title}}</text>
+  <text>分享路径：{{path}}</text>
+  <text>分享图片：{{imageUrl}}</text>
+</view>

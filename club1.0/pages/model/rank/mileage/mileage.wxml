@@ -1,0 +1,99 @@
+<!--pages/endurance/endurance.wxml-->
+<!-- 续航排行 -->
+
+<view class="container">
+  <!-- <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">  -->
+  <view>
+    <!--选项卡 S-->
+    <view class="swiper-tab">
+      <view class="swiper-tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">纯电续航</view>
+      <view class="swiper-tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">混动续航</view>
+    </view>
+    <!--选项卡 E-->
+
+    <scroll-view enable-back-to-top='true' scroll-y="true" class='mian-scroll' style="height:{{winHeight}}px" bindscroll="scroll" lower-threshold="50" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" bindscrolltolower="scrolltolower">
+      <!--车型列表 S-->
+
+      <!-- <view>纯电续航</view> -->
+
+      <view class="{{currentTab==0 ? '' : 'none'}}">
+        <view class='explain'>按工信部综合续航里程从高到低排列</view>
+        <view class="drawer-child" data-pinyin="{{pure.pinyin}}" bindtap="gotoSeries" wx:for="{{pureListData}}" wx:for-item="pure" wx:for-index="pureIndex">
+          <view class='drawer-child-intro'>
+            <image class="img img-model" src="{{pure.focus}}"></image>
+            <view class="drawer-info">
+              <text>{{pure.pinpai_data.name}} {{pure.name}}</text>
+              <view class='drawer-info-price' wx:if="{{pure.product_status == 1}}">指导价 
+                <block wx:if="{{pure.min_price!=pure.max_price}}">
+                  <text class="drawer-price">￥{{pure.min_price}}-{{pure.max_price}}<text>万</text></text>
+                </block>
+                <block wx:elif="{{pure.min_price== pure.max_price}}">
+                  <text class="drawer-price">￥{{pure.min_price}}<text>万</text></text>
+                </block>
+              </view>
+              <view class='drawer-info-price' wx:if="{{pure.product_status == 2}}">
+                  <text class="drawer-price">停产</text>   
+              </view>
+              <view class='drawer-info-price' wx:if="{{pure.product_status == 3}}">
+               <text class="drawer-price">即将上市</text>  
+              </view>
+            </view>
+          </view>
+          <view class='drawer-endurance'>
+            <text wx:if="{{pure.xhlc != 0}}">{{pure.xhlc}}</text>
+            <text wx:if="{{pure.xhlc == 0}}">-</text>
+            <view>公里</view>
+          </view>
+        </view>
+      </view>
+
+
+
+      <!-- <view>混动续航</view> -->
+
+      <view class="{{currentTab==1 ? '' : 'none'}}">
+        <view class='explain'>按工信部综合续航里程从高到低排列</view>
+        <view class="drawer-child" data-pinyin="{{pure.pinyin}}" bindtap="gotoSeries" wx:for="{{mixListData}}" wx:for-item="pure" wx:for-index="pureIndex">
+          <view class='drawer-child-intro'>
+            <image class="img img-model" src="{{pure.focus}}"></image>
+            <view class="drawer-info">
+              <text>{{pure.pinpai_data.name}} {{pure.name}}</text>
+                <view class='drawer-info-price' wx:if="{{pure.product_status == 1}}">
+                <block wx:if="{{pure.min_price!=pure.max_price}}">指导价 
+                  <text class="drawer-price">￥{{pure.min_price}}-{{pure.max_price}}<text>万</text></text>
+                </block>
+                <block wx:elif="{{pure.min_price== pure.max_price}}">指导价 
+                  <text class="drawer-price">￥{{pure.min_price}}<text>万</text></text>
+                </block>
+              </view>
+              <view class='drawer-info-price' wx:if="{{pure.product_status == 2}}">
+                  <text class="drawer-price">停产</text>   
+              </view>
+              <view class='drawer-info-price' wx:if="{{pure.product_status == 3}}">
+               <text class="drawer-price">即将上市</text>  
+              </view>
+            </view>
+          </view>
+          <view class='drawer-endurance'>
+            <text wx:if="{{pure.xhlc != 0}}">{{pure.xhlc}}</text>
+            <text wx:if="{{pure.xhlc == 0}}">-</text>
+            <view>公里</view>
+          </view>
+        </view>
+      </view>
+
+    </scroll-view>
+
+
+    <!--车型列表 E-->
+    <!-- </scroll-view> -->
+  </view>
+  <!-- <loading hidden="{{hidden}}" bindchange="loadingChange">
+    加载中...
+  </loading> -->
+</view>
+
+<button animation="{{animationData}}" class="sharebtn" open-type="share">
+  <text>分享给好友</text>
+  <image class="sharebtnicon" mode="widthFix" src='http://i1.dd-img.com/assets/image/1510898451-a672fd0868b82de9-48w-48h.png'></image>
+</button>

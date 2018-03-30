@@ -1,0 +1,30 @@
+<template name="dynamic">
+    <view class='elite' wx:if="{{isdigest == 1}}">
+        <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514342094-ccf5f9048c4a25f1-26w-26h.png'></image>
+        精华
+    </view>
+    <view class='contents'>
+        <view class='contents-head'>
+             <view class='contents-head-img'>
+                <image mode='aspectFill' src='{{detailData.avatar}}'></image>
+            </view> 
+            <view class='contents-head-info'>
+                <view>{{detailData.author}}</view>
+                <text>{{detailData.feedTime}}</text>
+            </view>
+            <block wx:if="{{detailData.authorid > 0}}">
+                <view class='contents-head-attention' wx:if="{{isfollow == 0}}" data-followid='{{detailData.authorid}}' bindtap='addfollow'>
+                    <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514342911-4868f4dee9035581-28w-28h.png'></image>
+                    <text>关注</text>
+                </view>
+            </block>
+        </view>
+        <text class='contents-section' decode='true'>{{detailData.content[0].decode.alt}}</text>
+        <view class='contents-img-three' wx:if="{{detailData.content.length>2}}">
+            <image wx:for="{{detailData.content}}" wx:if="{{item.type == 'img'}}" mode='aspectFill' bindtap="previewImage" data-src="{{item.decode.src}}" src='{{item.decode.src}}'></image>
+        </view>
+        <view class='contents-img' wx:else>
+            <image wx:for="{{detailData.content}}" wx:if="{{item.type == 'img'}}" mode='widthFix' bindtap="previewImage" data-src="{{item.decode.src}}" src='{{item.decode.src}}'></image>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,110 @@
+<!-- <scroll-view scroll-y="true" style="height:{{winHeight}}px"  bindscroll="scroll" upper-threshold="32" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">  -->
+<!-- <scroll-view scroll-y="true" style="height:{{winHeight}}px" bindscroll="scroll" lower-threshold="150" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" bindscrolltolower="scrolltolower"> -->
+
+<view bindtouchstart="handletouchstart" bindtouchmove="handletouchmove" bindtouchend="handletouchend">
+
+  <view class="swiper-container">
+
+    <swiper autoplay="{{autoplay}}" interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+      <block wx:for="{{focusImg}}" wx:key="unique">
+        <swiper-item bindtap="photoClick" data-ext_info="{{item.ext_info}}">
+          <image wx:if="{{item.img}}" src="{{item.img}}" class="img"></image>
+          <view class="title">{{item.title}}
+            <view class="title-little">{{item.link}}</view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view class="dots">
+      <block wx:for="{{focusImg}}" wx:key="unique">
+        <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+      </block>
+    </view>
+  </view>
+
+
+  <!-- <rich-text nodes="{{nodes}}"></rich-text>
+<rich-text nodes="{{nodes1}}"></rich-text> -->
+
+  <button animation="{{animationData}}" class="sharebtn" open-type="share">
+    <text>分享给好友</text>
+    <image class="sharebtnicon" mode="widthFix" src='http://i1.dd-img.com/assets/image/1510898451-a672fd0868b82de9-48w-48h.png'></image>
+  </button>
+
+
+  <view class="stream-item" wx:for="{{listData}}" data-sourceid="{{item.sourceid}}" data-platid="{{item.platid}}" data-feedid="{{item.feedid}}" bindtap="itemClick">
+    <view class="little-one" wx:if="{{item.feedtype==0}}">
+      <!-- <view class="little-one">  -->
+      <view class="little-one-text">
+        <view class="stream-item-title">{{item.title}}</view>
+        <view class="stream-item-info">
+          <view>
+            <text>{{item.author}}</text>
+          </view>
+          <!-- <view>
+            评论
+            <text>{{points[item.feedid]['replies']?points[item.feedid]['replies']:0}}</text> 阅读
+            <text wx:if="{{points[item.feedid]['pv']>0}}">{{points[item.feedid]['pv']}}</text>
+            <text wx:else>0</text>
+          </view> -->
+          <view>{{item.showTime}}</view>
+        </view>
+      </view>
+      <view class="little-one-photo">
+        <image src="{{item.imgs[0].imgurl}}" mode='widthFix'></image>
+      </view>
+    </view>
+
+    <view class="little-three" wx:if="{{item.feedtype==2}}">
+      <view class="stream-item-title">{{item.title}}</view>
+      <view class="stream-item-photo">
+        <view class="img-box" wx:for="{{item.imgs}}" wx:for-item="imgsItem">
+          <image src="{{imgsItem.imgurl}}" mode='widthFix'></image>
+        </view>
+      </view>
+      <view class="stream-item-info">
+        <view>
+          <text>{{item.author}}</text>
+        </view>
+        <!-- <view>
+          评论
+          <text>{{item.points.replies}}</text> 阅读
+          <text>{{item.points.pv}}</text>
+        </view> -->
+        <view>{{item.showTime}}</view>
+      </view>
+    </view>
+
+    <view class="big-one" wx:if="{{item.feedtype==1}}">
+      <view class="stream-item-title">{{item.title}}</view>
+      <view class="stream-item-photo">
+        <view class='big-img-box'>
+          <image wx:for="{{item.imgs}}" wx:for-item="imgsItem" src="{{imgsItem.imgurl}}" mode='widthFix'></image>
+        </view>
+      </view>
+      <view class="stream-item-info">
+        <view>
+          <text>{{item.author}}</text>
+        </view>
+        <!-- <view>
+          评论
+          <text>{{item.points.replies}}</text> 阅读
+          <text>{{item.points.pv}}</text>
+        </view> -->
+        <view>{{item.showTime}}</view>
+      </view>
+    </view>
+
+    <loading hidden="{{hidden}}" bindchange="loadingChange">
+      加载中...
+    </loading>
+
+  </view>
+</view>
+
+
+
+
+
+<!-- </scroll-view> -->

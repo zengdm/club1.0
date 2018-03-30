@@ -1,0 +1,29 @@
+<template name="card-footer">
+  <view class='club-card-bottom'>
+        <button class='club-card-bottom-view' data-ctype="{{item.ctype}}" data-title="{{item.title}}" data-sourceid="{{item.sourceid}}" data-platid="{{item.platid}}" data-img="{{item.imgs.length==1?item.imgs[0]['imgurl']:''}}" open-type="share">    
+        <image mode='widthFix' class='club-card-bottom-img' src='http://i1.dd-img.com/assets/image/1514367274-eb8c37a742355b9b-28w-28h.png'></image>
+        <text class='club-card-bottom-text'>分享</text>
+        </button>    
+    <view class='club-card-bottom-view' ontap="_replyEvent" data-sourceid="{{item.sourceid}}" data-platid="{{item.platid}}" data-ctype="{{item.ctype}}">
+    <button-zan action="replies" width="170" height="80" value="{{item.points.replies>0?item.points.replies:''}}" clickable="" args="{{item}}"></button-zan>
+    </view>
+    <view class="lub-card-bottom-view">
+      <button-zan action="praise" width="170" height="80" value="{{item.points.agree>0?item.points.agree:''}}" args="{{item}}"  bind:contact="_onPraise"></button-zan>
+    </view>
+    <!--更多-->
+    <view wx:if="{{isFav || isDigest || goIndex || isFollow}}" data-sourceid="{{item.sourceid}}" data-platid="{{item.platid}}" data-ctype="{{item.ctype}}" bindtap='_onUpmore' hover-class="dotbg"  data-key="{{key}}" style="width:70rpx;text-align:center">
+      <image mode='widthFix' class='club-card-bottom-more' src='http://i1.dd-img.com/assets/image/1514367877-8c58f88487adbbae-28w-28h.png'></image>
+    </view>
+    <view class="club-card-bottom-up {{typeof(tips[key])!='undefined'&&tips[key]>0 ? 'club-card-block' : ''}}">
+      <text wx:if="{{item.authorid>0 && menus.follow[item.authorid+'_0']==1 && isFollow && loginInfo.id!=item.authorid}}" data-authorid="{{item.authorid}}"  data-sourceid="{{item.sourceid}}" data-platid="{{item.platid}}" data-ctype="{{item.ctype}}" data-opt="removefollow" data-key="{{key}}" bindtap='_bindfav'>取消关注</text>
+      <text wx:if="{{menus.favorite[favKey]==1 && isFav}}" data-sourceid="{{item.sourceid}}" data-platid="{{item.platid}}" data-ctype="{{item.ctype}}" data-opt="removefavorite" data-key="{{key}}" bindtap='_bindfav'>取消收藏</text>
+      <text wx:elif="{{isFav}}" data-sourceid="{{item.sourceid}}" data-platid="{{item.platid}}" data-ctype="{{item.ctype}}" data-opt="favorite" data-key="{{key}}" bindtap='_bindfav'>收藏</text>
+      <text wx:if="{{menus.follow[authorid]==2}}" data-authorid="{{item.authorid}}" data-opt="removefollow" data-key="{{key}}" bindtap='_bindfav'>取消关注</text>
+
+      <text wx:if="{{menus.digest[favKey]==1 && isDigest}}" data-sourceid="{{item.sourceid}}" data-platid="{{item.platid}}" data-ctype="{{item.ctype}}" data-opt="removedigest" data-key="{{key}}" bindtap='_bindfav'>取消精华</text>
+      <text wx:elif="{{isDigest}}" data-sourceid="{{item.sourceid}}" data-platid="{{item.platid}}" data-ctype="{{item.ctype}}" data-opt="digest" data-key="{{key}}" bindtap='_bindfav'>推荐精华</text>
+
+      <text wx:if="{{goIndex}}" data-opt="index" bindtap='_goIndex'>回到首页</text>
+    </view>
+  </view>
+</template>

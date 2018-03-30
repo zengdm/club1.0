@@ -1,0 +1,87 @@
+<!--pages/subsidy/subsidy.wxml-->
+<!-- 补贴排行 -->
+
+<view class="container">
+  <view>
+    <!--选项卡 S-->
+    <view class="swiper-tab">
+      <view class="swiper-tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">按补贴金额排列</view>
+      <view class="swiper-tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">按补贴占比排列</view>
+    </view>
+    <!--选项卡 E-->
+
+
+    <!--车型列表 S-->
+    <scroll-view enable-back-to-top='true' class='mian-scroll' scroll-y="true" style="height:{{winHeight}}px" bindscroll="scroll" lower-threshold="50" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" bindscrolltolower="scrolltolower">
+
+      <view class="{{currentTab==0 ? '' : 'none'}}">
+        <view class='explain'>按国家补贴+地方补贴+厂商补贴总和从高到低排列</view>
+
+        <view class="drawer-child" data-pinyin="{{pure.pinyin}}" bindtap="gotoSeries" wx:for="{{pureListData}}" wx:for-item="pure" wx:for-index="pureIndex">
+
+          <view class='drawer-child-intro'>
+            <image class="img img-model" src="{{pure.focus}}"></image>
+            <view class="drawer-info">
+              <text>{{pure.pinpai_data.name}} {{pure.name}}</text>
+                <view class='drawer-info-price' wx:if="{{pure.product_status == 1}}">指导价 
+                
+                  <text wx:if="{{pure.min_price!=pure.max_price}}" class="drawer-price">￥{{pure.min_price}}-{{pure.max_price}}</text>
+                  <text wx:elif="{{pure.min_price== pure.max_price}}" class="drawer-price">￥{{pure.min_price}}万</text>
+                
+              </view>
+              <view class='drawer-info-price' wx:if="{{pure.product_status == 2}}">
+                  <text class="drawer-price">停产</text>   
+              </view>
+              <view class='drawer-info-price' wx:if="{{pure.product_status == 3}}">
+               <text class="drawer-price">即将上市</text>  
+              </view>
+            </view>
+          </view>
+          <view class='drawer-endurance'>
+            <view>{{pure.amount}}万</view>
+            <text>补贴</text>
+          </view>
+
+        </view>
+      </view>
+
+      <view class="{{currentTab==1 ? '' : 'none'}}">
+        <view class='explain'>按补贴总额/厂商指导价的百分比从高到低排列</view>
+
+        <view class="drawer-child" data-pinyin="{{pure.pinyin}}" bindtap="gotoSeries" wx:for="{{mixListData}}" wx:for-item="pure" wx:for-index="pureIndex">
+
+          <view class='drawer-child-intro'>
+            <image class="img img-model" src="{{pure.focus}}"></image>
+            <view class="drawer-info">
+              <text>{{pure.pinpai_data.name}} {{pure.name}}</text>
+                <view class='drawer-info-price' wx:if="{{pure.product_status == 1}}">指导价
+                  <text wx:if="{{pure.min_price!=pure.max_price}}" class="drawer-price">￥{{pure.min_price}}-{{pure.max_price}}</text>
+                  <text wx:elif="{{pure.min_price== pure.max_price}}" class="drawer-price">￥{{pure.min_price}}万</text>
+              </view>
+              <view class='drawer-info-price' wx:if="{{pure.product_status == 2}}">
+                  <text class="drawer-price">停产</text>   
+              </view>
+              <view class='drawer-info-price' wx:if="{{pure.product_status == 3}}">
+               <text class="drawer-price">即将上市</text>  
+              </view>
+            </view>
+          </view>
+          <view class='drawer-endurance'>
+            <view>{{pure.per}}</view>
+            <text>补贴</text>
+          </view>
+
+        </view>
+
+      </view>
+
+    </scroll-view>
+
+    <!--车型列表 E-->
+  </view>
+
+</view>
+<button animation="{{animationData}}" class="sharebtn" open-type="share">
+  <text>分享给好友</text>
+  <image class="sharebtnicon" mode="widthFix" src='http://i1.dd-img.com/assets/image/1510898451-a672fd0868b82de9-48w-48h.png'></image>
+</button>

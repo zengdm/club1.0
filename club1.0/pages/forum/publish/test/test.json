@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "forum-form": "../inc/component/form/forum-form",
+    "forum-bar": "../inc/component/bar/forum-bar",
+    "forum-image": "../inc/component/image/image",
+    "forum-text": "../inc/component/text/text",
+    "forum-tags": "../inc/component/tags/tags"
+  },
+  "navigationBarTitleText": "长文"
+}

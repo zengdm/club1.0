@@ -1,0 +1,39 @@
+/* pages/weChat_group/weChat_group.wxss */
+@import "../car/car.wxss";
+.sharebtn {
+  bottom: 126rpx;
+}
+
+.body{
+  background-color: #fff;
+}
+.title {
+  width: 100%;
+  height: 88rpx;
+  position: relative;
+  background:#fafafa;
+}
+
+.title-hot {
+  font-size: 34rpx;
+  color: #000;
+  text-align: left;
+  line-height: 88rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+
+.title-more>text{
+  font-size: 28rpx;
+  color: #33adff;
+}
+
+.title-more>image {
+  width: 32rpx;
+  height: 42rpx;
+}
+.title-more{
+  position: absolute;
+  right: 30rpx;
+  top: 24rpx;
+}

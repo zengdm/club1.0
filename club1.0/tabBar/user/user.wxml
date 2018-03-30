@@ -1,0 +1,89 @@
+<!--personal.wxml-->
+<!-- 个人中心 -->
+<view class='count-main' bindtouchstart="handletouchstart" bindtouchmove="handletouchmove" bindtouchend="handletouchend">
+    <!--公共头组建-->
+    <user-head authorid="{{userInfo.id}}"></user-head>
+    <view class='section'>
+        <view class='list'>
+            <view class='list-column'>
+                <view class='list-column-intro'>
+                    <image src='http://i1.dd-img.com/assets/image/1521511934-fbab9ea977a454ca-40w-40h.png'></image>
+                    <text>我的余额</text>
+                    <text wx:if="{{amountmoney.amount}}" class='list-column-intro_red'>{{amountmoney.amount}}元</text>
+                </view>
+                <view wx:if="{{amountmoney.amount_status}}" class='list-column-next'>
+                    <!-- <text></text>  -->
+                    <view wx:if="{{amountmoney.amount_status == 1&&amountmoney.amount>amountmoney.fetch_lowest}}" bindtap="amountmoneyto" class='list-column-next_status1'>提现</view>
+                    <view wx:elif="{{amountmoney.amount_status ==2}}" class='list-column-next_status2'>处理中...</view>
+                    <view wx:else class='list-column-next_status3'>超过{{amountmoney.fetch_lowest}}元可提现</view>
+                    <!-- <image src='http://i1.dd-img.com/assets/image/1510126583-a6c644a211cad9a3-16w-26h.png'></image> -->
+                </view>
+            </view>
+        </view>
+        <view class='list'>
+            <view class='list-column' bindtap="goprofile">
+                <view class='list-column-intro'>
+                    <image src='http://i1.dd-img.com/assets/image/1514517406-fd167c117d39453f-40w-40h.png'></image>
+                    <text>修改资料</text>
+                </view>
+            </view>
+        </view>
+        <view class='list'>
+            <view class='list-column' bindtap="myCollect">
+                <view class='list-column-intro'>
+                    <image src='http://i1.dd-img.com/assets/image/1514517405-a2242f5a570af326-40w-40h.png'></image>
+                    <text>我的收藏</text>
+                </view>
+            </view>
+
+            <view class='list-column' bindtap="carContrast">
+                <view class='list-column-intro'>
+                    <image src='http://i1.dd-img.com/assets/image/1514517405-41e4e1dc465ab774-40w-40h.png'></image>
+                    <text>车型对比</text>
+                </view>
+            </view>
+
+        </view>
+
+
+        <view class='list'>
+
+            <view class='list-column' bindtap="wxGroup">
+                <view class='list-column-intro'>
+                    <image src='http://i1.dd-img.com/assets/image/1514517406-997c9300334459b5-40w-40h.png'></image>
+                    <text>车主微信群</text>
+                </view>
+            </view>
+
+            <view class='list-column' bindtap="wxService">
+                <view class='list-column-intro'>
+                    <image src='http://i1.dd-img.com/assets/image/1514517406-c605352b7add6c17-40w-40h.png'></image>
+                    <text>微信客服</text>
+                </view>
+                <!-- <view class='list-column-next'>
+                    <image src='http://i1.dd-img.com/assets/image/1510126583-a6c644a211cad9a3-16w-26h.png'></image>
+                </view> -->
+            </view>
+
+        </view>
+        <view class='list'>
+
+            <view class='list-column' bindtap="gofeedback">
+                <view class='list-column-intro'>
+                    <image src='http://i1.dd-img.com/assets/image/1514517406-3ae8e63c6834155e-40w-40h.png'></image>
+                    <text>意见反馈</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<button animation="{{animationData}}" class="sharebtn" open-type="share">
+    <text>分享给好友</text>
+    <image class="sharebtnicon" mode="widthFix" src='http://i1.dd-img.com/assets/image/1510898451-a672fd0868b82de9-48w-48h.png'></image>
+</button>
+
+<login-tips show="{{loginShow}}"></login-tips>
+
+<import src="/pages/inc/login.wxml" />
+<template is="phone" data="{{verifyCodeTime,buttonDisable,phoneBorder,codeBorder,error,hidden}}"></template>

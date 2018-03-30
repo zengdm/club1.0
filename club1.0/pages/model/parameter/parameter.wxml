@@ -1,0 +1,80 @@
+<!--parameter.wxml-->
+<!-- 车型配置详细参数 -->
+
+<!-- <scroll-view  class='parameter-scroll' scroll-x="false" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">       -->
+<scroll-view class='parameter-scroll' scroll-x="{{scrollData.x}}" scroll-y="{{scrollData.y}}" style='{{scrollData.style}}' bindscroll="onScroll" scroll-into-view="{{toView}}" scroll-left="{{scrollData.left}}" scroll-top="{{scrollData.top}}">
+  <view class='container-web'>
+    <!-- 左侧名称 -->
+    <view class='container-list'>
+      <view class='container-list-btn'>
+        <view class="container-btn-one {{currentTab==0 ? 'on' : ''}}" data-opt="0" bindtap='loadParam'>全部参数</view>
+        <view class="container-btn-two {{currentTab==1 ? 'on' : ''}}" data-opt="1" bindtap='loadParam'>隐藏空项</view>
+        <view class="container-btn-three {{currentTab==2 ? 'on' : ''}}" data-opt="2" bindtap='loadParam'>显示不同</view>
+      </view>
+      <!-- 参数中文释义 -->
+      <view class='container-list-parameter' wx:for="{{carParams[0]}}" wx:key="keyindex" wx:for-index="cindex" wx:for-item="tparam" wx:if="{{tparam.name}}">
+        <view class="car-item-title  {{(fields[currentTab][cindex]['showT']>0 || currentTab==0) ? 'showClass' : 'hideClass'}}">
+          <text id='{{tparam.string}}'>{{tparam.name}}</text>
+        </view>
+        <view wx:for="{{tparam.list}}" wx:for-index="lindex" wx:for-item="lists" class="car-item-list {{(fields[currentTab][cindex][lists.field]>0 || currentTab==0)?'showCalss':'hideClass'}}">
+          <text class=" carname right-text">{{lists.name}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='container-list' >
+    </view>
+    <!-- 车型参数配置列表 -->
+    <view wx:for="{{carParams}}" wx:key="keycindex" wx:for-index="cindex" wx:for-item="cinfo" class="container-list {{delIndexs[cindex]>0?'hideClass':'showClass'}}">
+      <view class='parameter-list'>
+        <view class='parameter-list-name'>{{cinfo.pp_name}} {{cinfo.cx_name}}
+          <view>{{cinfo.niankuan}}款</view>
+          <view>{{cinfo.name}}</view>
+        </view>
+        <image wx:if="{{carNum > 1}}" class='parameter-list-delete' mode='widthFix' src='http://i1.dd-img.com/assets/image/1511595759-46ad77ef2f731675-40w-40h.png' bindtap='getdelete' data-index="{{cindex}}"></image>
+      </view>
+      <view class='container-list-parameter' wx:for="{{cinfo}}" wx:for-index="pkey" wx:for-item="param" wx:if="{{param.name}}">
+
+
+
+
+
+        <view class="car-item {{(fields[currentTab][pkey]['showT']>0) ? 'showClass':'hideClass'}}">
+          <view class="car-item-title">
+            <text>
+            </text>
+          </view>
+          <view wx:for="{{param.list}}" wx:for-index="pindex" wx:for-item="args" class="car-item-list {{args.name && (fields[currentTab][pkey][args.field]>0) ? 'showClass':'hideClass'}}">
+            <text class="carname {{fields[currentTab][pkey][args.field]==2?'diff':''}}">{{args.str}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='container-list'>
+      <view class='parameter-list' wx:if="{{carParamsLen<5}}" bindtap='getcaradd'>
+        <image class='parameter-list-add' mode='widthFix' src='http://i1.dd-img.com/assets/image/1511603021-25538ffa1f429a00-80w-80h.png'></image>
+        <text class='more-cars'>最多添加5款车</text>
+      </view>
+
+      <view class='container-list-parameter' wx:for="{{carParams[0]}}" wx:key="keyindex" wx:for-index="cindex" wx:for-item="tparam" wx:if="{{tparam.name}}">
+        <view class="car-item-title  {{(fields[currentTab][cindex]['showT']>0 || currentTab==0) ? 'showClass' : 'hideClass'}}">
+          <text id='{{tparam.string}}'></text>
+        </view>
+        <view wx:if="{{carParamsLen<5}}" class="car-item-list {{(fields[currentTab][cindex][lists.field]>0 || currentTab==0)?'showCalss':'hideClass'}}" wx:for="{{tparam.list}}" wx:for-index="lindex" wx:for-item="lists">
+          <text class=" carname"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<!-- <view class="nicemenu-mask {{showmask==1 ? 'showClass' : 'hideClass'}} " bindtap='getclassno'></view>
+  <view class='tabclss-btn' bindtap='getclass'>分类</view>
+  <view class="tabclss-btn {{showmask==1 ? 'showClass' : 'hideClass'}} " bindtap='getclassno'>
+    <image mode='widthFix' class='tabclose' src='http://i1.dd-img.com/assets/image/1511602238-3ed74e9bf13ba021-64w-64h.png'></image>
+  </view>
+  <view class="tabclass {{showmask==1 ? 'showClass' : 'hideClass'}} ">
+    <block wx:for="{{carParams[0]}}" wx:for-index="cindex" wx:for-item="tparam" wx:if="{{tparam.name && (currentTab==0 || fields[currentTab][cindex]['showT']>0)}}">
+
+      <text data-letter="{{tparam.string}}"  bindtap="clickLetter" >{{tparam.name}}</text>
+    </block>
+
+  </view> -->

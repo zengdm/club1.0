@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "login-tips": "/pages/inc/component/login/login"
+  }
+}

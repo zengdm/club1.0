@@ -1,0 +1,49 @@
+<!--pages/forum/inc/component/detail-footer/detail-reply.wxml-->
+<view class='footer'>
+
+    <view class='footer-empty'></view>
+
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class='footer-intro' hidden='{{showCollet}}'>
+            <text bindtap='textBind'>我也说俩句...</text>
+            <view class='footer-intro-img'>
+                <button class='onshare' open-type='share'>
+                    <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514369528-c604fd9ca53b72a0-40w-40h.png'></image>
+                </button>
+
+
+                <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514369528-1aaaae1f5958d9b1-40w-40h.png'></image>
+                <!-- <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514369528-6ee4473bffd31e9d-40w-40h.png'></image> -->
+
+                <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514369527-e226cbf2a01d4cf8-40w-40h.png'></image>
+                <!-- <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514369528-5c0505c546041d14-40w-40h.png'></image> -->
+
+
+                <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514369527-83f87ac32eb3270c-28w-28h.png'></image>
+            </view>
+
+        </view>
+
+
+        <view class='write_commit' hidden='{{commentShow}}'>
+            <view class='write_commit_txt'>
+                <view class='write_commit_txt_title'>回复
+                    <image class='write_commit_close' src='http://i1.dd-img.com/assets/image/1511257148-05e45f23897155b3-40w-40h.png' bindtap='infoMain' mode='widthFix'></image>
+                </view>
+
+                <textarea class='info_textarea' focus="{{focus}}" bindinput='bindinput' show-confirm-bar="{{false}}" name="input" placeholder="请输入评论内容" placeholder-style="color:#999999;" fixed='true' value="{{name}}" />
+            </view>
+            <view class='write_commit_button'>
+                <!-- <button class="btn-area" formType="submit">发 送</button> -->
+                <button class="{{btnColor ? '' : 'btn-color'}}" formType="submit">发 送</button>
+            </view>
+        </view>
+
+    </form>
+</view>
+
+
+<view class='hint'>
+    <view>点击右下角菜单</view>
+    可以直接回首页哦~
+</view>

@@ -1,0 +1,30 @@
+<!--pages/contrast_empty/contrast_empty.wxml-->
+<view class='body'>
+
+  <view class='con-main' wx:if="{{!tipsData.carList.length}}">
+    <image class='img' src='http://i1.dd-img.com/assets/image/1510281418-0fab90a5490173f8-280w-280h.jpg'></image>
+    <text class='empty'>车库还空着吶！</text>
+    <text class='like'>快去挑选喜爱的车吧~</text>
+  </view>
+
+  <view class='choose' wx:else>
+    <checkbox-group bindchange="bindSelCars">
+      <view class='choose-list' wx:for="{{tipsData.carList}}" wx:key="carindex" wx:for-item="car"  data-selected="0"  data-pzid="{{car.pzid}}" data-cxid="{{car.cxid}}" data-ppid="{{car.ppid}}">
+        <checkbox  value="{{car.pzid}}" data-id="{{car.pzid}}" checked="{{tipsData.selIds[car.pzid]>0?true:false}}" />{{car.pp_name}}  |  {{car.cx_name}} {{car.name}}
+      </view>
+    </checkbox-group>
+  </view>
+  
+  <view class='add' bindtap='addCar'>
+    <text>添加车型</text>
+  </view>
+
+</view>
+
+<view class='begin fix' wx:if="{{tipsData.carList.length>0}}">
+    <view class='begin-delete' wx:if="{{tipsData.selCars.length>0}}" bindtap="remCars">删除</view>
+    <view class='begin-delete cancel' bindtap='onClose' wx:else>关闭</view>
+    
+    <view class='begin-choose' wx:if="{{tipsData.selCars.length>0}}" bindtap="goParam">开始对比这 <text>{{tipsData.selCars.length}}</text> 款车</view>
+    <view class='begin-choose zero' wx:else>开始对比这 <text>{{tipsData.selCars.length}}</text> 款车</view>
+  </view>

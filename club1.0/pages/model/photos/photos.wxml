@@ -1,0 +1,37 @@
+<view class="wrap">
+  <view class="nav">
+    <text  wx:for="{{pagePicture}}" class="{{currentTab==index ? 'border-blue' : ''}}" data-current="{{index}}" bindtap="picClick">{{item.type_name}}</text>
+  </view>
+
+ <swiper current="{{currentTab}}" class="section" vertical="false" duration="0" style="height:{{winHeight - 170}}rpx" bindchange="bindPic">
+    <swiper-item wx:for="{{picture}}" wx:for-index="oneIndex" wx:for-item="oneItem">
+
+      <swiper duration="300" current="{{imgIndex}}" bindchange="swiperChange">
+        <swiper-item wx:for="{{oneItem.photo_data}}"  wx:for-index="littleIndex">
+            <image src="{{item.img}}" data-src="{{item.img}}" data-index='{{littleIndex}}' bindtap="previewImage"></image> 
+        </swiper-item>
+      </swiper>
+       <view class='pagination'>{{imgTab+1}}/{{oneItem.type_count}}</view>
+
+       <scroll-view class='scollImg' scroll-x='true' bindscrolltolower="Rightmost">
+        <view class='little-box'>
+          <view class='img-box' wx:for="{{oneItem.photo_data}}" wx:for-index="littleIndex">
+            <image class="{{imgTab==littleIndex ? 'onimg' : ''}}" mode='widthFix' src="{{item.img}}" data-src="{{item.img}}" data-index='{{littleIndex}}'  bindtap="littleClick" ></image>
+          </view>
+        </view>
+
+      </scroll-view> 
+
+
+
+    </swiper-item>
+
+  </swiper> 
+
+
+
+
+</view>
+
+
+

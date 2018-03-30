@@ -1,0 +1,41 @@
+<!-- 即将上市 -->
+
+<scroll-view scroll-y="true" style="height:{{winHeight}}px" bindscroll="scroll" lower-threshold="50" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" enable-back-to-top='true' bindscrolltolower="scrolltolower">
+
+  <view class="container">
+
+    <view class='explain'>未来3个月会上市的车型</view>
+    <view class="drawer-content-item">
+      <view class="drawer-child" data-pinyin="{{pure.pinyin}}" bindtap="gotoSeries" wx:for="{{listData}}" wx:for-item="pure" wx:for-index="pureIndex">
+        <view class='drawer-child-intro'>
+          <image class="img img-model" src="{{pure.focus}}"></image>
+          <view class="drawer-info">
+            <text>{{pure.pinpai_data.name}} {{pure.name}}</text>
+            <view class='drawer-info-price'>
+              <block>
+                <text class="drawer-price" wx:if="{{pure.product_status==1}}">在产</text>
+                <text class="drawer-price" wx:if="{{pure.product_status==2}}">停产</text>
+                <text class="drawer-price" wx:if="{{pure.product_status==3}}">即将上市</text>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class='drawer-endurance'>
+          <text wx:if="{{pure.cron_xhlc != 0}}">{{pure.cron_xhlc}}</text>
+          <text wx:if="{{pure.cron_xhlc == 0}}">-</text>
+          <view>公里</view>
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+
+
+  <button animation="{{animationData}}" class="sharebtn" open-type="share">
+    <text>分享给好友</text>
+    <image class="sharebtnicon" mode="widthFix" src='http://i1.dd-img.com/assets/image/1510898451-a672fd0868b82de9-48w-48h.png'></image>
+  </button>
+
+</scroll-view>
+<!-- </view> -->

@@ -1,0 +1,99 @@
+<!--info_detail.wxml-->
+<!-- 资讯详情页 -->
+<view bindtouchstart="handletouchstart" bindtouchmove="handletouchmove" bindtouchend="handletouchend">
+  <view class='info_main' bindtap='infoMain'>
+    <view class='info_title'>{{detailData.title}}</view>
+    <view class='info_person'>
+      <image class="img info_person_img" wx:if="{{detailData.avatar}}" src="{{detailData.avatar}}"></image>
+      <image class="img info_person_img" wx:else src="http://i1.dd-img.com/assets/image/1517466287-bb81d5d98c3824fd-512w-509h.png"></image>
+      <text class='info_person_txt'>{{detailData.author}}</text>
+      <text class='info_person_comment' wx:if="{{detailData.points.pv}}">阅读{{detailData.points.pv}}</text>
+      <text class='info_person_comment' wx:else>阅读{{detailData.read_num}}</text>
+      <text class='info_person_time'>{{detailData.showTime}}</text>
+    </view>
+
+    <block wx:for="{{detailData.content}}">
+      <view class='info_conttext' style="text-indent:62rpx;" wx:if="{{item.type=='text'}}">{{item.decode.text}}</view>
+      <view class='info_conttext' wx:else="{{item.type=='img'}}">
+        <image class="img info_conttext_img" src="{{item.decode.src}}" mode='widthFix'></image>
+
+
+      </view>
+
+    </block>
+
+
+    <!-- <view class='info_conttext' wx:for="{{detailData.content}}">
+      <block style="text-indent:48rpx;" wx:if="{{item.type=='text'}}">
+        {{item.decode.text}}
+      </block>
+      <block wx:else="{{item.type=='img'}}">
+        <image class="img info_conttext_img" src="{{item.decode.src}}" mode='widthFix'></image>
+      </block>
+    </view> -->
+
+
+
+    <view class='info_dianzan' bindtap='onPraise'>
+      <image wx:if="{{!ispraise}}" class="img info_praise_img" mode='widthFix' src='http://i1.dd-img.com/assets/image/1511491608-2c4343cc46f8d419-40w-40h.png'></image>
+      <image wx:else class="img info_praise_img" mode='widthFix' src='http://i1.dd-img.com/assets/image/1511491608-ab6ee48caf1b98a5-40w-40h.png'></image>
+      <text class='info_praise_txt'>{{agree}}</text>
+    </view>
+  </view>
+  <view class='info_bg'></view>
+  <view class='info_discuss' bindtap='infoMain'>
+
+    <view class='info_discuss_list' wx:for="{{listsData}}">
+      <image class="img info_discuss_img" wx:if="{{item.avatar}}" src="{{item.avatar}}"></image>
+      <image class="img info_discuss_img" wx:elif="{{item.avatar=='1'}}" src="http://i1.dd-img.com/assets/image/1517466287-bb81d5d98c3824fd-512w-509h.png"></image>
+      <image class="img info_discuss_img" wx:else src="http://i1.dd-img.com/assets/image/1517466287-bb81d5d98c3824fd-512w-509h.png"></image>
+      <view class='info_discuss_list_right'>
+        <view class='info_discuss_list_person'>
+          <text class='info_discuss_txt'>{{item.author}}</text>
+          <text class='info_discuss_time'>{{item.showTime}}</text>
+        </view>
+        <view class='info_discuss_list_comment'>
+          {{item.content}}
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class='info_bottombg'></view>
+  <view class='info_bottom'>
+    <form bindsubmit="formSubmit" bindreset="formReset" class='info_form'>
+
+      <view class='show_comment' hidden='{{showCollet}}'>
+        <view class='empty'></view>
+        <view class='info_icon'>
+          <text bindtap='textBind'>我来说两句...</text>
+          <image wx:if="{{!isfav}}" bindtap='favArticle' data-sourceid="{{detailData.sourceid}}" data-platid="{{detailData.platid}}" mode='widthFix' class='info_icon_collet' src='http://i1.dd-img.com/assets/image/1510226727-7c1d2999b3a07d62-40w-40h.png'></image>
+          <image wx:else bindtap='favArticle' mode='widthFix' class='info_icon_collet' src='http://i1.dd-img.com/assets/image/1510125363-f62fcf31025cc29f-40w-40h.png'></image>
+          <image wx:if="{{!ispraise}}" bindtap='onPraise' mode='widthFix' src='http://i1.dd-img.com/assets/image/1511491608-2c4343cc46f8d419-40w-40h.png'></image>
+          <image wx:else bindtap='onPraise' mode='widthFix' src='http://i1.dd-img.com/assets/image/1511491608-ab6ee48caf1b98a5-40w-40h.png'></image>
+        </view>
+      </view>
+
+      <view class='write_commit' hidden='{{commentShow}}'>
+        <view class='write_commit_txt'>
+          <view class='write_commit_txt_title'>发表评论
+            <image class='write_commit_close' src='http://i1.dd-img.com/assets/image/1511257148-05e45f23897155b3-40w-40h.png' bindtap='infoMain' mode='widthFix'></image>
+          </view>
+
+          <textarea class='info_textarea' focus="{{focus}}" show-confirm-bar="{{false}}" name="input" placeholder="请输入评论内容" placeholder-style="color:#999999;" fixed='true' value="{{name}}" />
+        </view>
+        <view class='write_commit_button'>
+          <button class="btn-area" formType="submit">发表</button>
+        </view>
+      </view>
+
+    </form>
+  </view>
+
+  <button animation="{{animationData}}" class="sharebtn" open-type="share">
+    <text>分享给好友</text>
+    <image class="sharebtnicon" mode="widthFix" src='http://i1.dd-img.com/assets/image/1510898451-a672fd0868b82de9-48w-48h.png'></image>
+  </button>
+</view>
+<import src="../../inc/login.wxml" />
+<template is="phone" data="{{verifyCodeTime,buttonDisable,phoneBorder,codeBorder,error,hidden}}"></template>

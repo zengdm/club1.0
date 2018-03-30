@@ -1,0 +1,51 @@
+<!--pages/forum/tag/detail/detail.wxml-->
+<view class='detail-label'>
+    <view class='detail-label-main'>
+        <view class='detail-label-info'>
+            <view class='detail-label-info-img'>
+                <image mode="aspectFill" src='{{taginfo.tag_img_url}}'></image>
+            </view>
+            <view class='detail-label-info-text'>
+                <view class='detail-label-info-title'>{{taginfo.tag_name}}</view>
+                <text class='detail-label-info-copy'>{{taginfo.tag_summary}}</text>
+            </view>
+        </view>
+        <view class='detail-label-focus' wx:if="{{!isfollow}}" bindtap='tagfollow'>关注</view>
+        <view class='detail-label-focus focusold' wx:else>已关注</view>
+
+    </view>
+    <view class='detail-label-tab'>
+        <text class="text-off {{args.nav == 'info' ? 'text-on' : ''}}" data-current="info" bindtap='_bindNav'>简介</text>
+        <text class="text-off {{args.nav == 'last' ? 'text-on' : ''}}" data-current="last" bindtap='_bindNav'>最新</text>
+        <text class="text-off {{args.nav == 'digest' ? 'text-on' : ''}}" data-current="digest" bindtap='_bindNav'>精华</text>
+    </view>
+    <view class='detail-label-content' wx:if="{{args.nav == 'info'}}">
+        <view class='detail-label-content-one' wx:if="{{taginfo.tag_summary}}">
+            <view class='detail-label-content-text'>{{taginfo.tag_summary}}</view>
+            <!-- <view class='detail-label-content-line'></view>
+            <view class='detail-label-content-info'>
+
+                <view class='detail-label-content-info-head'>贡献者</view>
+                <view class='detail-label-content-info-img'>
+                    <image mode="widthFix" style="width:40rpx;" src='http://i1.dd-img.com/assets/image/1481890625-911d24607e55e31e-270w-337h.jpg'></image>
+                </view>
+                <text>邦老湿</text>
+
+            </view> -->
+        </view>
+        <view class='detail-label-content-none' wx:else>
+            <view class='detail-label-content-none-img'>
+                <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514860747-b3fdf80cae418f26-140w-140h.png'></image>
+            </view>
+            <view class='detail-label-content-none-txt'>小编还没有反应过来，原来这里空空如也</view>
+            <view class='detail-label-content-none-txt'>把问题
+                <text class='detail-label-content-none-txt-col'>反馈</text>给小编
+            </view>
+        </view>
+    </view>
+     <component-forum-list tlist="{{thread[args.nav]}}" wx:if="{{args.nav != 'info'}}" loginInfo="{{loginInfo}}" goIndex="1"></component-forum-list> 
+      <component-publish-btn></component-publish-btn>
+</view>
+   
+
+<login-tips show="{{loginShow}}"></login-tips>

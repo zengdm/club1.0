@@ -1,0 +1,423 @@
+/* pages/user/profile/profile.wxss */
+page{
+    height: 100%;
+    overflow: hidden;
+}
+view.btn-color{
+  /* background:#3399ff; */
+  /* box-shadow:0 6rpx 10rpx 0 rgba(51,153,255,0.30); */
+    background:#cce7ff;
+}
+.none{
+    display: none;
+}
+.list-column-picinfoimg{
+    float: left;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 100%;
+    background: red;
+    margin-top: 20rpx;
+}
+.list-column-pic{
+    width: 80rpx;
+    height: 80rpx;
+    border: 1rpx solid red;
+    margin-top: 20rpx;
+    float: left;
+    border-radius: 100%;
+    /* overflow: hidden; */
+}
+.section{
+    height: 100%; 
+   background-color: #f8f8f8;
+   padding-top: 40rpx;
+
+ }
+ .list{
+   background-color: #fff;
+   margin-bottom:40rpx;
+ }
+ .list:nth-child(1) .list-column{
+    height: 120rpx;
+    line-height: 120rpx;
+ }
+.list-column{
+   display: -webkit-box;
+   -webkit-box-orient: horizontal;
+   height: 88rpx;
+   line-height: 88rpx;
+   padding: 0 24rpx;
+   border-bottom: 1px solid #fafafa;
+ }
+ .list-column-intro{
+   -webkit-box-flex: 1;
+     font-size:32rpx;
+color:#2e3033;
+letter-spacing:0;
+ }
+.list-column-intro image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+  margin-bottom: 10rpx;
+
+}
+.list-column-intro text{
+  font-size: 34rpx;
+  color: #333333;
+}
+
+.list-column-next image{
+  width:12rpx;
+  height: 28rpx;
+margin-left:8rpx;
+}
+image.list-column-picinfo{
+width: 80rpx;
+height:80rpx;
+border-radius: 50%;
+}
+.list-column-next{
+    font-size:32rpx;
+color:#8a9199;
+}
+.list-column-next text{
+  height: 40rpx;
+  min-width: 40rpx;
+  line-height: 40rpx;
+  display: inline-block;
+  background: #ff3333;
+  text-align: center;
+  font-size: 28rpx;
+  border-radius: 50%; 
+  color: #fff;
+  margin-right: 14rpx;
+}
+.list-profile{
+    padding:0 24rpx;
+}
+.list-profile-textarea{
+background:#ffffff;
+border:1rpx solid #e6e6e6;
+border-radius:6rpx;
+ width: auto; 
+padding:16rpx 20rpx;
+margin-top: 10rpx;
+line-height: 50rpx;
+min-height: 200rpx;
+}
+.savechanges{
+    background:#3399ff;
+box-shadow:0 6rpx 10rpx 0 rgba(51,153,255,0.30);
+border-radius:200rpx;
+width:690rpx;
+height:88rpx;
+line-height: 88rpx;
+text-align: center;
+margin: 0 auto;
+margin-top:72rpx;
+color: #fff;
+font-size:32rpx;
+}
+/* .list-column-picinfo{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 100%;
+} */
+/* 修改头像 */
+.profilebg{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #f2f2f2;
+    /* display: none; */
+}
+.wx-content-info{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.wx-corpper{
+  position: relative;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  box-sizing: border-box;
+}
+
+.wx-corpper-content{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.wx-corpper-content image {
+    display: block;
+    width: 100%;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 100%;
+    min-height: 0 !important;
+    max-height: none !important;
+    image-orientation: 0deg !important;
+    margin: 0 auto;
+}
+
+/* 移动图片效果 */
+.wx-cropper-drag-box{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: move;
+    background: rgba(0,0,0,0.6);
+    z-index: 1;
+}
+
+/* 内部的信息 */
+.wx-corpper-crop-box{
+    position: absolute;
+    width: 500rpx;
+    height: 500rpx;
+    background: rgba(255,255,255,0.3); 
+    z-index: 2;
+}
+
+.wx-corpper-crop-box .wx-cropper-view-box {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    outline: 1px solid #69f;
+    outline-color: rgba(102, 153, 255, .75)
+}
+
+/* 横向虚线 */
+.wx-cropper-dashed-h{
+    position: absolute;
+    top: 33.33333333%;
+    left: 0;
+    width: 100%;
+    height: 33.33333333%;
+    border-top: 1px dashed rgba(255,255,255,0.5);
+    border-bottom: 1px dashed rgba(255,255,255,0.5);
+}
+
+/* 纵向虚线 */
+.wx-cropper-dashed-v{
+    position: absolute;
+    left: 33.33333333%;
+    top: 0;
+    width: 33.33333333%;
+    height: 100%;
+    border-left: 1px dashed rgba(255,255,255,0.5);
+    border-right: 1px dashed rgba(255,255,255,0.5);
+}
+
+/* 四个方向的线  为了之后的拖动事件*/
+.wx-cropper-line-t{
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #69f;
+    top: 0;
+    left: 0;
+    height: 1px;
+    opacity: 0.1;
+    cursor: n-resize;
+}
+
+.wx-cropper-line-t::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0rpx;
+  width: 100%;
+  -webkit-transform: translate3d(0,-50%,0);
+  transform: translate3d(0,-50%,0);
+  bottom: 0;
+  height: 41rpx;
+  background: transparent;
+  z-index: 11;
+}
+
+.wx-cropper-line-r{
+    position: absolute;
+    display: block;
+    background-color: #69f;
+    top: 0;
+    right: 0px;
+    width: 1px;
+    opacity: 0.1;
+    height: 100%;
+    cursor: e-resize;
+}
+.wx-cropper-line-r::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 41rpx;
+  -webkit-transform: translate3d(-50%,0,0);
+  transform: translate3d(-50%,0,0);
+  bottom: 0;
+  height: 100%;
+  background: transparent;
+  z-index: 11;
+}
+
+.wx-cropper-line-b{
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #69f;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    opacity: 0.1;
+    cursor: s-resize;
+}
+
+.wx-cropper-line-b::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0rpx;
+  width: 100%;
+  -webkit-transform: translate3d(0,-50%,0);
+  transform: translate3d(0,-50%,0);
+  bottom: 0;
+  height: 41rpx;
+  background: transparent;
+  z-index: 11;
+}
+
+.wx-cropper-line-l{
+    position: absolute;
+    display: block;
+    background-color: #69f;
+    top: 0;
+    left: 0;
+    width: 1px;
+    opacity: 0.1;
+    height: 100%;
+    cursor: w-resize;
+}
+.wx-cropper-line-l::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 41rpx;
+  -webkit-transform: translate3d(-50%,0,0);
+  transform: translate3d(-50%,0,0);
+  bottom: 0;
+  height: 100%;
+  background: transparent;
+  z-index: 11;
+}
+
+.wx-cropper-point{
+    width: 5px;
+    height: 5px;
+    background-color: #69f;
+    opacity: .75;
+    position: absolute;
+    z-index: 3;
+}
+
+.point-t{
+    top: -3px;
+    left: 50%;
+    margin-left: -3px;
+    cursor: n-resize;
+}
+
+.point-tr{
+    top: -3px;
+    left: 100%;
+    margin-left: -3px;
+    cursor: n-resize;
+}
+
+.point-r{
+    top: 50%;
+    left:100%;
+    margin-left: -3px;
+    margin-top: -3px;
+    cursor: n-resize;
+}
+
+.point-rb{
+    left: 100%;
+    top: 100%;
+    -webkit-transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,-50%,0);
+    cursor: n-resize;
+    width: 24rpx;
+    height: 24rpx;
+    background-color: #69f;
+    position: absolute;
+    z-index: 1112;
+    opacity: 1;
+}
+
+.point-b{
+    left:50%;
+    top: 100%;
+    margin-left: -3px;
+    margin-top: -3px;
+    cursor: n-resize;
+}
+
+.point-bl{
+    left:0%;
+    top: 100%;
+    margin-left: -3px;
+    margin-top: -3px;
+    cursor: n-resize;
+}
+
+.point-l{
+    left:0%;
+    top: 50%;
+    margin-left: -3px;
+    margin-top: -3px;
+    cursor: n-resize;
+}
+
+.point-lt{
+    left:0%;
+    top: 0%;
+    margin-left: -3px;
+    margin-top: -3px;
+    cursor: n-resize;
+}
+
+/* 裁剪框预览内容 */
+.wx-cropper-viewer{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.wx-cropper-viewer image{
+  position: absolute;
+  z-index: 2;
+}

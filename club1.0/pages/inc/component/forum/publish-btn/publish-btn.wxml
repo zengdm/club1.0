@@ -1,0 +1,32 @@
+<!--pages/forum/inc/component/publish-btn/publish-btn.wxml-->
+<view class='publish-btn' bindtap='publishBtn' data-current="0">发帖</view>
+<view class="publish-page {{globalData.publishCurrent == 0 ? 'publish-block' : ''}}">
+  <view class='publish-page-item'>
+    <view class='publish-page-item-list' bindtap='goDynamic'>
+      <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514514870-267b2c99f449cc3c-140w-140h.png'></image>
+      <view>短文</view>
+    </view>
+    <view class='publish-page-item-list' bindtap='goLong'>
+      <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514514869-9df01625c3c2efe9-140w-140h.png'></image>
+      <view>长文</view>
+    </view>
+  </view>
+
+  <!-- <view class='publish-page-item'>
+    <view class='publish-page-item-list' bindtap="goShowPhoto">
+      <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514514870-17e99f73a3d63e49-140w-140h.png'></image>
+      <view>图片</view>
+    </view>
+    <view class='publish-page-item-list' bindtap="goTakePhoto">
+      <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514514869-445ea0ab19e74367-140w-140h.png'></image>
+      <view>拍照</view>
+    </view>
+  </view> -->
+
+  <view class='publish-page-close' bindtap='backBtn' data-current="1">
+    <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1514514870-99b667f40ad0bfce-40w-40h.png'></image>
+  </view>
+
+</view>
+
+<login-tips show="{{loginShow}}"></login-tips>

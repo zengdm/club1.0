@@ -1,0 +1,580 @@
+/* condition.wxss */
+/* 标签切换--S */
+
+
+.twokong {
+  background: url("http://i1.dd-img.com/assets/image/1511162067-1816e391e231c735-16w-36h.png") no-repeat right center;
+  background-size: 16rpx 39rpx;
+}
+.nicemenu-mask{
+  width:100%;
+height:100%;
+position:fixed;
+top:0;
+left:0;
+z-index:10;
+background:#000;
+opacity:0.5;
+overflow:hidden;
+
+}
+.canvasnumber{
+ position: absolute;
+left:80px;
+ top:101px;
+ font-size: 34rpx;
+ color:#666666;
+}
+.canvasnumber text{
+  margin: 0 30rpx;
+}
+.hiddenClass{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+}
+.car-item-title{
+  position: absolute;
+  font-size:34rpx;
+color:#000000;
+top: 100rpx;
+margin-left: -130rpx;
+}
+.choose{
+  background:#fafafa;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color:#666666;
+}
+.choose text{
+  color:#33adff;
+}
+.swiper-tab-item {
+  width: 140rpx;
+}
+.niceblue{
+   color:#33adff;
+}
+.roundblue{
+    width: 30rpx;
+  height: 30rpx;
+  display:inline-block;
+margin-right: 10rpx;
+  border-radius: 50%;
+  background: #fff;
+  line-height: 30rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 20rpx;
+  background:#33adff;
+  position: relative;
+  top: -5rpx;
+}
+.onup {
+  color: #33adff;
+  background: url("http://i1.dd-img.com/assets/image/1511162067-8db830dc001004ba-16w-36h.png") no-repeat right center;
+  background-size: 16rpx 39rpx;
+}
+
+.ondown{
+  color: #33adff;
+  background: url("http://i1.dd-img.com/assets/image/1511162067-11076b082017704c-16w-36h.png") no-repeat right center;
+  background-size: 16rpx 39rpx;
+}
+
+
+.showClass{
+  display:block;
+}
+.hideClass{
+  display:none;
+}
+.nicemenubg{
+  height: 100rpx;
+}
+.nicemenu{
+background:#f8f8f8;
+z-index: 1111;
+  height:100rpx;
+   line-height:120rpx; 
+
+  text-align: center;
+  color: #9a9a9a;
+  border-bottom: solid 1rpx #e5e5e5;
+    position:fixed;
+  left: 0;
+  bottom: 0;
+  width: 750rpx;
+    display: flex;
+  flex-flow: row;
+  font-size: 28rpx;
+
+}
+.nicemenu-item{
+  /* width: 187.5rpx;
+  float: left; */
+     height:100rpx; 
+flex: 1
+
+}
+.nicemenu-item-box{
+   width: 750rpx; 
+  height: 462rpx;
+  position:fixed;
+  left:0;
+  /* top:-460rpx; */
+  bottom: 100rpx;
+  background: #fff;
+  z-index: 111;
+}
+.color-hui{
+
+background:#f8f8f8;
+}
+.color-blue{
+background:#ffffff;
+color: #33adff
+}
+
+.nicemenuimg{
+  width: 20rpx;
+  height: 12rpx;
+  position: absolute;
+  top: 10rpx;
+
+}
+.color-hui .nicemenuimg{
+ background: url(http://i1.dd-img.com/assets/image/1510384145-c20cd7d862e67368-20w-12h.png)no-repeat;
+ background-size: 100%;
+}
+.color-blue .nicemenuimg{
+ background: url(http://i1.dd-img.com/assets/image/1512036839-43c31633eba3a41a-20w-12h.png)no-repeat;
+ background-size: 100%;
+}
+canvas{
+	width:370px;
+  /* overflow: hidden; */
+	box-sizing: border-box;
+	height:140px;
+  position:fixed;
+  left:20px;
+  /* border-top: 1px solid #cff;
+  border-bottom: 1px solid #cff */
+  /* width:618px;
+box-sizing:border-box;
+height:140px;
+position:relative; */
+
+
+}
+
+.car-item-button{
+background:#ffffff;
+box-shadow:0 1px 0 0 #f2f2f2;
+width:750rpx;
+height:88rpx;
+line-height: 88rpx;
+    display: flex;
+  flex-flow: row;
+  margin-bottom: 20rpx;
+}
+.car-item-unlimited{
+  text-align: left;
+  padding-left: 20rpx;
+  flex: 1;
+  font-size:34rpx;
+color:#666666;
+}
+.car-item-submit{
+  text-align: right;
+    flex: 1;
+    font-size:34rpx;
+color:#33adff;
+  padding-right: 20rpx;
+}
+
+
+
+.clearfix{
+  overflow: hidden;
+  clear: both;
+}
+
+.on{
+  color: #00cdf2;
+  border-bottom: 4rpx solid #00cdf2;
+}
+
+
+.car-item-list {
+  width: 212rpx;
+  height: 60rpx;
+  float: left;
+  line-height: 60rpx;
+ background:#fafafa;
+border:1rpx solid #e6e6e6;
+border-radius:200rpx;
+  color: #242726;
+  margin-top: 30rpx;
+  margin-right: 20rpx;
+  text-align: center;
+  margin-left: 17rpx;
+}
+
+.car-item-list:nth-child(3n) {
+  margin-right: 0;
+}
+.onblue{
+   border: 1rpx solid #33adff; 
+  color: #fff;
+  background:#33adff;
+  border-radius:100px;
+}
+/* 标签切换--E */
+
+/* 标签切换--S */
+
+.main-box{
+  margin-top: 82rpx;
+}
+.swiper-tab {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height:81rpx;
+  padding-bottom: 6rpx;
+  line-height:86rpx;
+  text-align: center;
+  color: #666666;
+  font-size: 34rpx;
+  border-bottom: solid 1rpx #e6e6e6;
+  background-color: #fafafa;
+  position: fixed;
+  z-index: 9;
+  width: 100%;
+}
+
+/* .swiper-tab-item {
+   border-bottom: 6rpx solid #fafafa;
+} */
+.on{
+  color: #33adff;
+  border-bottom: 6rpx solid #33adff;
+}
+.swiper-tab-type {
+  display: flex;
+  width: 320rpx;
+  margin:0 auto;
+  justify-content: space-around;
+  align-items: center;
+  margin-top:30rpx;
+  margin-bottom:30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #b2b2b2;
+}
+.swiper-tab-item-type {
+  width:160rpx;
+  border-radius: 30rpx 0 0 30rpx;
+  background-color: #fff;
+}
+.swiper-tab-item-type:nth-child(2){
+   border-radius: 0 30rpx 30rpx 0;
+}
+.ontype{
+  color: #fff;
+ background: #00cdf2;
+}
+
+
+/* 标签切换--E */
+
+
+/* 车型列表 S */
+
+
+
+::-webkit-scrollbar {
+  /*隐藏滚动条*/
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+
+
+.drawer-info {
+  padding-left: 20rpx;
+}
+
+.drawer-info > text {
+  width: 310rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  font-size: 34rpx;
+  color: #333;
+}
+
+.drawer-price {
+  color: #d0011b;
+}
+.img-model {
+  width: 240rpx;
+  height: 160rpx;
+  border-radius: 0;
+  display: inline-block;
+  overflow: hidden;
+}
+
+
+/* 车型列表 E */
+.drawer-child-intro{
+  width: 100%;
+  -webkit-box-flex: 1;
+  justify-content: flex-start; 
+  align-items: center;
+  display: flex;
+}
+.drawer-endurance{
+  width: 82rpx;
+  height:80rpx;
+  color: #33adff;
+  background: url("http://i1.dd-img.com/assets/image/1510122385-093826c8cf8ed6d1-100w-80h.png") no-repeat;
+  background-size: 100%;
+  /* text-align: left; */
+  padding-left: 18rpx;
+}
+.drawer-endurance text{
+  font-size: 36rpx;
+  line-height:55rpx;
+}
+.drawer-endurance view{
+  font-size: 20rpx;
+  line-height: 2rpx;
+}
+
+.drawer-info-price{
+  font-size: 24rpx;
+  color: #999999;
+  padding: 20rpx 0;
+}
+.drawer-info-num{
+  font-size:28rpx;
+  color:#33adff;
+}
+
+.explain{
+  height: 60rpx;
+  line-height: 60rpx;
+  background:#fafafa;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  color: #999999;
+}
+
+
+
+
+/* 车型列表 S */
+
+.drawer-content-item > text {
+  display: block;
+  background: #eee;
+  color: #777;
+  font-size: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 17rpx 32rpx;
+}
+
+::-webkit-scrollbar {
+  /*隐藏滚动条*/
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.drawer-child {
+    overflow: hidden;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 30rpx;
+  height: 160rpx;
+  padding: 20rpx 0;
+  position: relative;
+    margin: 0 30rpx;
+      border-bottom: solid 1rpx #eee;
+}
+
+
+
+.drawer-info {
+  padding-left: 34rpx;
+}
+
+.drawer-info > text {
+  display: block;
+  /* padding-bottom: 20rpx; */
+}
+
+.drawer-price {
+  color: #e74b3c;
+}
+
+.drawer-close {
+  position: absolute;
+  right: 20rpx;
+}
+
+.img-model {
+  width: 220rpx;
+  height: 147rpx;
+  border-radius: 0;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.img-brand {
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  left: 20rpx;
+  top: 20rpx;
+  border-radius: 0;
+  display: inline-block;
+  overflow: hidden;
+}
+
+/* 车型列表 E */
+
+
+
+
+.product-level-choose {
+  height: 98rpx;
+  width: 98rpx;
+  margin: 0 41rpx;
+  float: left;
+  text-align: center;
+  color: #b2b2b2;
+   background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-bottom: 20rpx;
+}
+
+.product-level-choose:nth-child(4n) {
+  margin-right: 22rpx;
+}
+
+.product-level-choose:nth-child(1), .product-level-choose:nth-child(5),
+.product-level-choose:nth-child(9) {
+  margin-left: 57rpx;
+}
+.circle{
+  background-color:#fafafa;
+border:1rpx solid #e6e6e6;
+}
+.success{
+ border: 1rpx solid #33adff; 
+  color: #fff;
+  background-color:#33adff;
+}
+
+.chooseon {
+  color: #00cdf1;
+}
+.product-level-1.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-9381441f8d0f1352-100w-100h.png);
+}
+
+.product-level-1.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-601f1e32d650d308-100w-100h.png);
+}
+
+.product-level-2.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-47c8bd2587e9b114-100w-100h.png);
+}
+
+.product-level-2.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-d95ca8e9a2870be9-100w-100h.png);
+}
+
+.product-level-3.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-700d0e446730ab83-100w-100h.png);
+}
+
+.product-level-3.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-8bf5291f9b2d921e-100w-100h.png);
+}
+
+.product-level-4.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-d48788288cf87f27-100w-100h.png);
+}
+
+.product-level-4.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-0e5958fcac6acd4a-100w-100h.png);
+}
+
+.product-level-5.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-6f1f4701a7d59323-100w-100h.png);
+}
+
+.product-level-5.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-3a8a7629261807ae-100w-100h.png);
+}
+
+.product-level-6.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-62980e0e0edcd0c9-100w-100h.png);
+}
+
+.product-level-6.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300689-4d3e841cfd0b6005-100w-100h.png);
+}
+
+.product-level-7.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-97c0d395170cac04-100w-100h.png);
+}
+
+.product-level-7.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-e9611cdda1205b9b-100w-100h.png);
+}
+
+.product-level-8.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-3870f8f4744475e1-100w-100h.png);
+}
+
+.product-level-8.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-add6f1bf9a08ed2e-100w-100h.png);
+}
+
+.product-level-9.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-81316e48b81d3046-100w-100h.png);
+}
+
+.product-level-9.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-9efad79b4bbb598c-100w-100h.png);
+}
+
+.product-level-10.circle_car{
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-b40852da3df664fe-100w-100h.png);
+}
+
+.product-level-10.success_car {
+  background-image: url(http://i1.dd-img.com/assets/image/1510300688-a4241f2cfee2b692-100w-100h.png);
+}
+
+.carType .circle_car{
+  border: none;
+  background-color: none;
+}
+.carType .success_car{
+  border: none;
+    background-color: none;
+}

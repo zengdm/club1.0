@@ -1,0 +1,35 @@
+<!--pages/forum/inc/component/forum-list/forum-list.wxml-->
+<!--引入子模块-->
+ <import   src="block/card-header.wxml" /> 
+<!-- <import src="block/card-footer.wxml" /> -->
+<import src="block/one-img.wxml" />
+<import src="block/big-img.wxml" />
+<import src="block/more-img.wxml" />
+<import src="block/title-img.wxml" />
+
+<!--通用列表模板-->
+<!-- <view class='stream-item'> -->
+<view class="club-card">
+  <view wx:if="{{tlist.list.length>0}}" class='club-card-list' wx:for="{{tlist.list}}" wx:for-index="key" wx:for-item="item">
+    <!-- <view class='club-card-list'> -->
+    <template is="card-header" wx:if="{{item.feed_show != 'left_title_right_img'}}" data="{{item:item, key:key, menus:menus, authorid:item.authorid, loginInfo:loginInfo, favKey:item.sourceid+'_'+item.platid}}"  bindtap='_hideTips' />
+    <template is="{{item.feed_show=='dynamic'?(item.imgs.length==1?'one-img':'more-img'):(item.feed_show=='top_title_big_img'?'big-img':'title-img')}}" data="{{item:item, key:key}}" />
+    <!-- <template is="{{item.ctype=='dynamic'?(item.imgs.length==1?'one-img':'more-img'):'big-img'}}" data="{{item:item, key:key}}" /> -->
+    <!-- <template is="{{item.feedtype==0?'one-img':(item.feedtype==1?'big-img':'more-img')}}" data="{{item:item}}" />  -->
+    <template is="card-footer" data="{{item:item, tips:tips, menuShow:menuShow ,goIndex:goIndex, key:key, menus:menus, authorid:item.authorid, favKey:item.sourceid+'_'+item.platid, isFav:isFav, isFollow:isFollow, isDigest:isDigest, loginInfo:loginInfo}}" />
+    <!-- </view> -->
+  </view>
+  <!-- <view class='textcenter' wx:if="{{!tlist.isEnd}}">努力加载中...</view> -->
+  <view class='textcenter' wx:if="{{tlist.isEnd && tlist.list.length>20}}">没有更多了</view>
+  <!-- <view>作者: {{userInfo.nickName}}</view>  -->
+</view>
+
+<view class='forum-list-not' wx:if="{{tlist.list.length == 0}}">
+    <image class='forum-list-notimg' src='http://i1.dd-img.com/assets/image/1517799519-3f08f52613e498fe-70w-60h.png'></image>
+    <view class='forum-list-notlen'>暂无内容</view>
+    <view class='forum-list-notlen'>点击<view class='forum-list-notimgjia'>发帖</view>发布文章</view>
+</view>
+
+
+
+<login-tips show="{{loginShow}}"></login-tips>

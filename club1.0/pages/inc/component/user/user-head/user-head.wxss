@@ -1,0 +1,52 @@
+/* pages/user/inc/component/user-head/user-head.wxss */
+.head {
+  width: 100%;
+  /* height: 320rpx; */
+  min-height: 232rpx;
+  padding-top: 34rpx;
+  background: #39f;
+  text-align: center;
+}
+
+.head-img {
+  width: 120rpx;
+  /* height: 120rpx; */
+  border-radius: 50%;
+  display: inline-block;
+  /* margin-top: 60rpx;  */
+  overflow: hidden;
+}
+
+.head-img image{
+ width: 120rpx;
+  height: 120rpx;
+}
+.head-name {
+  color: #fff;
+  font-size: 36rpx;
+  line-height: 60rpx;
+}
+
+.head-info {
+  display: flex;
+  justify-content: center;
+  height: 69rpx;
+  margin-top: 24rpx;
+  padding-bottom: 40rpx;
+}
+
+.head-info-left {
+  flex: 1;
+  font-size: 24rpx;
+  color: #cce7ff;
+  border-right: 1rpx solid #7fc0ff;
+}
+
+.head-info-left:nth-last-child(1) {
+  border: none;
+}
+
+.head-info-right {
+  font-size: 36rpx;
+  color: #fff;
+}

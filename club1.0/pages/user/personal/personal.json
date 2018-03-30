@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "component-forum-list": "/pages/inc/component/forum/forum-list/forum-list",
+        "component-share": "/pages/inc/share/share",
+        "user-head": "/pages/inc/component/user/user-head/user-head",
+        "component-publish-btn": "/pages/inc/component/forum/publish-btn/publish-btn"
+    },
+   	"enablePullDownRefresh": true,
+    "backgroundTextStyle":"dark",
+    "navigationBarTitleText": "我的主页"
+}

@@ -1,0 +1,20 @@
+<template name="big-img">
+
+    <!-- <view class='club-card-text' wx:if="{{item.summary}}" data-sourceid="{{item.sourceid}}" data-platid="{{item.platid}}" data-ctype="{{item.ctype}}" bindtap='itemClick'>{{item.summary}}
+        <text wx:if="{{item.summary.length>35}}" class='club-card-text-all'>...全文</text>
+    </view> -->
+
+    <view class='club-card-article-title' wx:if="{{item.title}}" data-sourceid="{{item.sourceid}}" data-platid="{{item.platid}}" data-ctype="{{item.ctype}}" bindtap='itemClick'>{{item.title}}
+        <!-- 《特斯拉MODEL 3用户手册》一本超大触控屏圣经 Medium 16pt #FFF 行高50px -->
+    </view>
+    
+    <view class='club-card-article' data-sourceid="{{item.sourceid}}" data-platid="{{item.platid}}" data-ctype="{{item.ctype}}" bindtap='itemClick'>
+        <image class='club-card-article-img' mode='aspectFill' wx:for="{{item.imgs}}" src="{{item.imgurl}}"></image>
+        <!-- 长文的文章icon图标 -->
+        <!-- <view class='club-card-article-label'>
+            <image class='club-card-article-icon' mode='widthFix' src="http://i1.dd-img.com/assets/image/1514375285-9819c763901729d9-12w-10h.png"></image>文章</view> -->
+    </view>
+
+ 
+
+</template>

@@ -1,0 +1,157 @@
+.search-view{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:20rpx;
+    color:#fff;
+}
+.search-view:after{
+    content:'';
+    height:0;
+    clear:both;
+    overflow: hidden;
+    display: block;
+}
+.search-form{
+    width:100%;
+    height:56rpx;
+}
+.search-input{
+    position:relative;
+    display: inline-block;
+    width:100%;
+    height:100%;
+    background:#f4f4f4;
+    font-size:24rpx;
+    border-radius:10rpx;
+    color: #000;
+    padding-left: 55rpx;
+    box-sizing: border-box;
+    border: 1rpx solid #ededef;
+}
+.search-icon{
+    position:absolute;
+    left:38rpx;
+    top:36rpx;
+    z-index:1000;
+}
+
+.current{
+  height: 100rpx;
+  background-color: #fafafa;
+  padding-top: 36rpx;
+  box-sizing: border-box;
+  /* line-height: 100rpx; */
+  /* border-top: 1rpx solid #e5e5e5; */
+}
+
+.current .current-city{
+  font-size: 28rpx;
+  color: #666666;
+  padding-left: 30rpx;
+  /* padding-top: 56rpx; */
+}
+/* .current .current-city::before{
+    content: "";
+    width:7rpx;
+    height: 30rpx;
+    border-radius:10rpx;
+    background:#00cdf2;
+    float: left;
+    margin: 27rpx 16rpx 0 20rpx;
+} */
+
+.city{
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+}
+.city .city-real{
+  font-size: 34rpx;
+  color: #333333;
+  padding-left: 36rpx;
+}
+
+.city-item .letter{
+   height: 60rpx;
+   background-color: #fafafa;
+   line-height: 60rpx;
+}
+.city-item .letter text{
+  padding-left: 30rpx;
+  font-size: 34rpx;
+  color:#666666;
+}
+/* .city-item .address{
+ 
+} */
+.address .address-city{
+   height: 100rpx;
+  line-height: 100rpx;
+  margin:0 36rpx;
+  font-size: 34rpx;
+  color:#333333;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+
+.letter-item {
+  width: 52rpx;
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  right: 10rpx;
+  transform: translate(0, -50%);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+  border-radius:200rpx;
+  padding: 26rpx 0;
+  box-sizing: border-box;
+}
+
+.letter-li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  font-size:28rpx;
+  color:#999;
+  line-height:38rpx; 
+}
+
+.add-color {
+  color:#33adff;
+  font-weight: bold;
+  font-size:35rpx;
+}
+
+ /* .letter-item{
+    position:fixed;
+    width:20px;
+    top:54%;
+    right:14rpx;
+    transform: translate(0,-50%);
+}
+.letter-hover{
+    position:fixed;
+    width:20px;
+    top:54%;
+    right:14rpx;
+    transform: translate(0,-50%);
+    border-radius:7px;
+    background:rgba(0,0,0,.2);
+}
+.letter-li{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color:#d5d5d5;
+    background:transparent;
+    font-size:22rpx;
+    height:32rpx;
+}
+.letter-li .five{
+  width: 22rpx;
+  height: 20rpx;
+}
+.letter-li:target{
+    color:red;
+}  */
